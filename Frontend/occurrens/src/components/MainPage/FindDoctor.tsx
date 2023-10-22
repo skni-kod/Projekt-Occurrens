@@ -1,4 +1,4 @@
-const FindDoctor = () => {
+const FindDoctor: React.FC = () => {
   return <h1>ALL DOCTORS</h1>;
 };
 

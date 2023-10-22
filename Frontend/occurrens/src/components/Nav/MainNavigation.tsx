@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-const MainNavigation = () => {
+const MainNavigation: React.FC = () => {
   return (
     <>
       <nav>

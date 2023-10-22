@@ -1,4 +1,4 @@
-const MainPage = () => {
+const MainPage: React.FC = () => {
   return <h1>STRONA GŁÓWNA</h1>;
 };
 
