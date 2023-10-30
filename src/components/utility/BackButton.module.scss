@@ -1,0 +1,35 @@
+.backButton {
+  background: linear-gradient(
+    to bottom right,
+    /* Zmiana kierunku gradientu */ var(--blue-color-light),
+    var(--blue-color-light)
+  );
+  color: #ffffff;
+  border: none;
+  width: 7rem; /* Ustal szerokość i wysokość, aby uzyskać kształt okręgu */
+  height: 7rem;
+  border-radius: 50%; /* Okrągły kształt */
+  cursor: pointer;
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Wyśrodkowanie tekstu i ikony */
+  transition: transform 0.2s;
+
+  box-shadow: 4px 4px 10px rgba(69, 243, 255, 0.2),
+    -4px -4px 10px rgba(69, 243, 255, 0.3);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__Arrow {
+    font-size: 30px;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

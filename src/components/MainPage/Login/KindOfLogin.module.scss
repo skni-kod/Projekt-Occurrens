@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background-color: var(--bg-color-1);
+
+  &_loginHeader {
+    text-align: center;
+    font-size: 6.5rem; /* Możesz dostosować rozmiar czcionki do swoich preferencji */
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: var(--blue-color-light);
+
+    text-shadow: 1px 3px 3px rgba(69, 243, 255, 0.9);
+  }
+
+  &__paragraph {
+    position: absolute;
+    bottom: 12%; /* Dostosuj wartość, aby ustawić odstęp od dołu strony */
+    color: rgb(143, 143, 143);
+    z-index: 10;
+    font-size: 2rem;
+
+    &_nav {
+      text-transform: uppercase;
+      color: var(--blue-color-light);
+      text-decoration: underline;
+    }
+  }
+}
+
+.img {
+  position: absolute;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 60vh;
+  width: 60%;
+  border-radius: 10px;
+  color: gold;
+  font-size: 30px;
+
+  &1 {
+    background-image: linear-gradient(
+        135deg,
+        var(--purple-color-img),
+        rgba(0, 0, 255, 0.6)
+      ),
+      url("../../../img/doctor.png");
+    background-size: cover;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    border-radius: 10px;
+
+    &_text {
+      position: absolute;
+      left: 5%;
+      top: 5%;
+    }
+  }
+
+  &2 {
+    background-image: linear-gradient(
+        135deg,
+        var(--purple-color-img),
+        var(--blue-color-img)
+      ),
+      url("../../../img/pacjent.png");
+    background-size: cover;
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+    border-radius: 10px;
+
+    &_text {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--purple-color-img);
+  }
+}

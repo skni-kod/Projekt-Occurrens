@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+:root {
+  --blue-color-light: rgb(69, 243, 255);
+  --purple-color-img: rgba(128, 0, 128, 0.6);
+  --blue-color-img: rgba(0, 0, 255, 0.6);
+  --bg-color-1: rgb(66, 66, 66);
+}
