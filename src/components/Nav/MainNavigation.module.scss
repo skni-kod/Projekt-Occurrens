@@ -1,0 +1,13 @@
+.navigation {
+  background-color: var(--bg-color-1);
+
+  &:hover {
+    background-color: red;
+  }
+
+  &_list {
+  }
+}
+
+.navigation_list {
+}

@@ -1,11 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
 
+import classes from "./MainNavigation.module.scss";
 
 const MainNavigation: React.FC = () => {
   return (
-    <>
-      <nav>
-        <ul>
+    <div>
+      <nav className={classes.navigation}>
+        <ul className={classes.navigation_list}>
           <li>
             <NavLink to="/" end>
               Strona Główna
@@ -23,7 +24,7 @@ const MainNavigation: React.FC = () => {
         </ul>
       </nav>
       <Outlet />
-    </>
+    </div>
   );
 };
 
