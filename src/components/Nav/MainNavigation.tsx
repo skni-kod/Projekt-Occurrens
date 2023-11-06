@@ -8,18 +8,45 @@ const MainNavigation: React.FC = () => {
       <nav className={classes.navigation}>
         <ul className={classes.navigation_list}>
           <li>
-            <NavLink to="/" end>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? classes.active : classes.notactive
+              }
+            >
               Strona Główna
             </NavLink>
           </li>
           <li>
-            <NavLink to="/o-nas">O Nas</NavLink>
+            <NavLink
+              to="/o-nas"
+              className={({ isActive }) =>
+                isActive ? classes.active : classes.notactive
+              }
+            >
+              O Nas
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/lekarze">Nasi Lekarze</NavLink>
+            <NavLink
+              to="/lekarze"
+              className={({ isActive }) =>
+                isActive ? classes.active : classes.notactive
+              }
+            >
+              Nasi Lekarze
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/logowanie">Logowanie</NavLink>
+            <NavLink
+              to="/logowanie"
+              className={({ isActive }) =>
+                isActive ? classes.active : classes.notactive
+              }
+            >
+              Logowanie
+            </NavLink>
           </li>
         </ul>
       </nav>
