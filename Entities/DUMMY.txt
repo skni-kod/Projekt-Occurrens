@@ -1,0 +1,6 @@
+﻿namespace occurrensBackend.Entities
+{
+    public class DUMMY
+    {
+    }
+}
