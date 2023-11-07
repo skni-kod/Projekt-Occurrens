@@ -1,0 +1,115 @@
+.mainPage {
+  &_img {
+    margin-top: 10rem;
+    background-image: url("../../../img/lek3.jpg");
+    background-size: cover; /* Dostosowuje obraz do rozmiaru kontenera */
+    background-position: center; /* Wyśrodkowuje obraz */
+    height: 80vh;
+  }
+
+  &_text {
+    padding: auto;
+    width: 50%;
+    color: white;
+    text-align: center;
+
+    & h1 {
+      font-size: 6rem;
+      margin-bottom: 5rem;
+      position: relative;
+      left: -100%;
+      animation: slideIn 0.7s ease-in-out forwards;
+    }
+
+    & h2 {
+      font-size: 4rem;
+      margin-bottom: 5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 0.5s forwards;
+    }
+    & p {
+      font-size: 2.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 0.5s forwards;
+
+      & b {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// DESCRIPTION SECTION
+
+.description {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+
+  & span {
+    width: 100%;
+    color: var(--blue-color-light);
+    text-shadow: 1px 1px 3px var(--blue-color-light);
+    text-align: center;
+    font-size: 5rem;
+  }
+
+  &_steps {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+
+    & div {
+      height: 30rem;
+      width: 35rem;
+      box-shadow: 0 0 20px rgba(28, 28, 28, 0.9);
+      background-color: rgb(28, 28, 28);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+
+    & h3 {
+      height: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: 900;
+      text-decoration: underline;
+      text-shadow: -1px -1px 1px white;
+    }
+
+    & p {
+      height: 75%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    left: -100%;
+  }
+  90% {
+    left: 5%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Początkowa przezroczystość - ukryte */
+  }
+  100% {
+    opacity: 1; /* Końcowa przezroczystość - widoczne */
+  }
+}

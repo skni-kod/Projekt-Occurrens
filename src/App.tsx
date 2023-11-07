@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainNavigation from "./components/Nav/MainNavigation";
-import MainPage from "./components/MainPage/MainPage";
+import MainPage from "./components/MainPage/MainView/MainPage";
 import About from "./components/MainPage/About";
 
 import "./index.scss";
