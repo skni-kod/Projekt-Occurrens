@@ -4,7 +4,7 @@ import MainPage from "./components/MainPage/MainView/MainPage";
 import About from "./components/MainPage/About";
 
 import "./index.scss";
-import FindDoctor from "./components/MainPage/FindDoctor";
+import FindDoctor from "./components/MainPage/DisplayDoctors/FindDoctor";
 import KindOfLogin from "./components/MainPage/Login/KindOfLogin";
 import LoginPage from "./components/MainPage/Login/LoginPage";
 
