@@ -1,6 +1,1 @@
-﻿namespace occurrensBackend.Services
-{
-    public class DUMMY
-    {
-    }
-}
+﻿

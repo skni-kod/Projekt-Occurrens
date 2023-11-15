@@ -1,6 +1,1 @@
-﻿namespace occurrensBackend.Middleware
-{
-    public class DUMMY
-    {
-    }
-}
+﻿
