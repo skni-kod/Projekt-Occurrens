@@ -1,6 +1,1 @@
-﻿namespace occurrensBackend.Models
-{
-    public class DUMMY
-    {
-    }
-}
+﻿
