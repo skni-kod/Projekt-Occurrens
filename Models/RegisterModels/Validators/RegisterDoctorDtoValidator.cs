@@ -11,7 +11,7 @@ namespace occurrensBackend.Models.RegisterModels.Validators
 
             RuleFor(x => x.Password).MinimumLength(6);
 
-            RuleFor(x => x.Repeat_password).Equal(e => e.Password);
+            RuleFor(x => x.Repeat_password).Equal(e => e.Password).WithMessage("Hasła różnią się od siebie!");
 
             RuleFor(x => x.Email).Custom((value, context) =>
             {
@@ -23,6 +23,7 @@ namespace occurrensBackend.Models.RegisterModels.Validators
                 }
             });
 
+            RuleFor(x => x.Acception).Equal(true).WithMessage("Musisz zaakceptować przetwarzanie danych osobowych");
 
         }
     }

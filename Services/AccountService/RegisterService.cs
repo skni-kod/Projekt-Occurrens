@@ -16,7 +16,7 @@ namespace occurrensBackend.Services.AccountService
             _passwordHasher = passwordHasher;
         }
 
-        public void RegisterUser(RegisterDoctorDto dto)
+        public async Task RegisterDoctor(RegisterDoctorDto dto)
         {
             var newDoctor = new Doctor()
             {

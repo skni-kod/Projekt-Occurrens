@@ -16,9 +16,9 @@ namespace occurrensBackend.Controllers.AccountController
         }
 
         [HttpPost("doctor")]
-        public ActionResult RegisterDoctor([FromBody]RegisterDoctorDto dto)
+        public async Task<ActionResult> RegisterDoctor([FromBody]RegisterDoctorDto dto)
         {
-            _registerService.RegisterUser(dto);
+            await _registerService.RegisterDoctor(dto);
             return Ok();
         }
     }

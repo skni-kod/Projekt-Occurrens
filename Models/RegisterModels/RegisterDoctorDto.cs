@@ -28,7 +28,7 @@ namespace occurrensBackend.Models.RegisterModels
         [Required(ErrorMessage ="Podaj datę urodzenia!")]
         public DateOnly Date_of_birth { get; set; }
 
-        [Required(ErrorMessage ="Musisz zaakceptować przetwarzanie danych osobowych")]
+        [Required]
         public bool Acception {  get; set; }
     }
 }

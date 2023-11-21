@@ -4,6 +4,6 @@ namespace occurrensBackend.Services.AccountService
 {
     public interface IRegisterService
     {
-        void RegisterUser(RegisterDoctorDto dto);
+        public Task RegisterDoctor(RegisterDoctorDto dto);
     }
 }
