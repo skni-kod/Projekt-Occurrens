@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakub\\Desktop\\occurrensBackend\\occurrensBackend.csproj": {}
+    "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakub\\Desktop\\occurrensBackend\\occurrensBackend.csproj": {
+    "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakub\\Desktop\\occurrensBackend\\occurrensBackend.csproj",
+        "projectUniqueName": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj",
         "projectName": "occurrensBackend",
-        "projectPath": "C:\\Users\\jakub\\Desktop\\occurrensBackend\\occurrensBackend.csproj",
+        "projectPath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj",
         "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakub\\Desktop\\occurrensBackend\\obj\\",
+        "outputPath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -47,6 +47,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
