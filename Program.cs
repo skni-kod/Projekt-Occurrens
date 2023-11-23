@@ -1,8 +1,10 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
+using NLog.Web;
 using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
+using occurrensBackend.Middleware;
 using occurrensBackend.Models.RegisterModels;
 using occurrensBackend.Models.RegisterModels.Validators;
 using occurrensBackend.Services.AccountService;
@@ -12,10 +14,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Host.UseNLog();
+
 builder.Services.AddControllers().AddFluentValidation();
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ErrorHandlingMiddleware>();
+
 
 builder.Services.AddScoped<DatabaseDbContext>();
 
@@ -41,7 +53,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseAuthentication();
+
+
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
