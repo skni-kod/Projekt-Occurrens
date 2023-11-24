@@ -16,7 +16,7 @@ namespace occurrensBackend.Controllers.AccountController
         }
 
         [HttpPost("doctor")]
-        public async Task<ActionResult> DoctorLogin([FromBody]LoginDoctorDto dto)
+        public ActionResult DoctorLogin([FromBody]LoginDoctorDto dto)
         {
             string token = _loginService.GenerateJwt(dto);
 

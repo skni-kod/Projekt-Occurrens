@@ -29,7 +29,6 @@ namespace occurrensBackend.Services.AccountService
         public string GenerateJwt(LoginDoctorDto dto)
         {
             var doctor = _context.Doctors
-                .Include(u => u.Role)
                 .FirstOrDefault(u => u.Email == dto.Email);
 
             if (doctor is null)
@@ -51,11 +50,6 @@ namespace occurrensBackend.Services.AccountService
                 new Claim(ClaimTypes.Role, $"{doctor.Role}"),
                 new Claim("DateOfBirth", doctor.Date_of_birth.ToString("yyyy-MM-dd")),
             };
-
-            if (!string.IsNullOrEmpty(doctor.Secont_name))
-            {
-                claims.Add(new Claim("Second_name", doctor.Secont_name));
-            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authenticationSettings.JwtKey));
             var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
