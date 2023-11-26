@@ -1,6 +1,0 @@
-﻿namespace occurrensBackend.Exceptions
-{
-    public class DUMMY
-    {
-    }
-}
