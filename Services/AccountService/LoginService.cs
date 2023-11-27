@@ -26,7 +26,7 @@ namespace occurrensBackend.Services.AccountService
         }
 
 
-        public string GenerateJwt(LoginDoctorDto dto)
+        public async Task<string> GenerateJwt(LoginDoctorDto dto)
         {
             var doctor = _context.Doctors
                 .FirstOrDefault(u => u.Email == dto.Email);
