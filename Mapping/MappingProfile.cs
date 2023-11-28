@@ -9,6 +9,8 @@ namespace occurrensBackend.Mapping
         public MappingProfile()
         {
             CreateMap<SpecializationDto, Spetialization>();
+
+            CreateMap<AddressDto, Address>();
         }
     }
 }

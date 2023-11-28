@@ -37,5 +37,18 @@ namespace occurrensBackend.Services.DoctorInformationsService
             return specializationEntity.Id;
         }
 
+
+        public Guid AddAddress(Guid doctorId, AddressDto dto)
+        {
+            var addressEntity = _mapper.Map<Address>(dto);
+
+            addressEntity.DoctorId = doctorId;
+
+            _context.Addresses.Add(addressEntity);
+            _context.SaveChanges(); 
+
+            return addressEntity.Id;
+        }
+
     }
 }

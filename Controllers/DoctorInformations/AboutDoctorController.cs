@@ -25,7 +25,7 @@ namespace occurrensBackend.Controllers.DoctorInformations
         public async Task<ActionResult> AddSpecialization([FromRoute]Guid doctorId, [FromBody]SpecializationDto dto)
         {
             var userIdClaim = CheckTrue(doctorId);
-            if (userIdClaim == false)
+            if (!userIdClaim)
             {
                 return BadRequest("Wystąpił nieoczekiwany błąd!");
             }
@@ -33,6 +33,21 @@ namespace occurrensBackend.Controllers.DoctorInformations
             var addSpecialization = _aboutDoctorService.AddSpecialization(doctorId, dto);
 
             return Created($"doctor/{doctorId}/specialization/{addSpecialization}",null);
+        }
+
+
+        [HttpPost("address")]
+        public async Task<IActionResult> AddAddress([FromRoute]Guid doctorId, [FromBody]AddressDto dto)
+        {
+            var userIdClaim = CheckTrue(doctorId);
+            if(!userIdClaim)
+            {
+                return BadRequest("Wystąpił nieoczekiwany błąd");
+            }
+
+            var addAddress = _aboutDoctorService.AddAddress(doctorId, dto);
+
+            return Created($"doctor/{doctorId}/address/{addAddress}", null);
         }
 
 

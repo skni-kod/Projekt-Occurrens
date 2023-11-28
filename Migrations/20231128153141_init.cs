@@ -53,6 +53,29 @@ namespace occurrensBackend.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Addresses",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Town = table.Column<string>(type: "text", nullable: false),
+                    Street = table.Column<string>(type: "text", nullable: true),
+                    Building_number = table.Column<int>(type: "integer", nullable: false),
+                    Apartament_number = table.Column<int>(type: "integer", nullable: true),
+                    Postal_code = table.Column<string>(type: "text", nullable: false),
+                    City = table.Column<string>(type: "text", nullable: false),
+                    DoctorId = table.Column<Guid>(type: "uuid", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Addresses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Addresses_Doctors_DoctorId",
+                        column: x => x.DoctorId,
+                        principalTable: "Doctors",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Spetializations",
                 columns: table => new
                 {
@@ -101,8 +124,6 @@ namespace occurrensBackend.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     Is_estabilished = table.Column<bool>(type: "boolean", nullable: false),
                     price = table.Column<float>(type: "real", nullable: true),
-                    Id_doctor = table.Column<int>(type: "integer", nullable: false),
-                    Id_patient = table.Column<int>(type: "integer", nullable: false),
                     DoctorId = table.Column<Guid>(type: "uuid", nullable: true),
                     PatientId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
@@ -118,31 +139,6 @@ namespace occurrensBackend.Migrations
                         name: "FK_Visits_Patients_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Patients",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Addresses",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Town = table.Column<string>(type: "text", nullable: false),
-                    Street = table.Column<string>(type: "text", nullable: true),
-                    Building_number = table.Column<string>(type: "text", nullable: false),
-                    Apartament_number = table.Column<string>(type: "text", nullable: true),
-                    Postal_code = table.Column<string>(type: "text", nullable: false),
-                    City = table.Column<string>(type: "text", nullable: false),
-                    Id_doctor = table.Column<int>(type: "integer", nullable: false),
-                    DoctorId = table.Column<Guid>(type: "uuid", nullable: true),
-                    Is_openedId = table.Column<Guid>(type: "uuid", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Addresses", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Addresses_Doctors_DoctorId",
-                        column: x => x.DoctorId,
-                        principalTable: "Doctors",
                         principalColumn: "Id");
                 });
 
@@ -176,12 +172,6 @@ namespace occurrensBackend.Migrations
                 column: "DoctorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Addresses_Is_openedId",
-                table: "Addresses",
-                column: "Is_openedId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Diseases_PatientId",
                 table: "Diseases",
                 column: "PatientId");
@@ -205,28 +195,16 @@ namespace occurrensBackend.Migrations
                 name: "IX_Visits_PatientId",
                 table: "Visits",
                 column: "PatientId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Addresses_Is_opened_Is_openedId",
-                table: "Addresses",
-                column: "Is_openedId",
-                principalTable: "Is_opened",
-                principalColumn: "Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Addresses_Doctors_DoctorId",
-                table: "Addresses");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Addresses_Is_opened_Is_openedId",
-                table: "Addresses");
-
             migrationBuilder.DropTable(
                 name: "Diseases");
+
+            migrationBuilder.DropTable(
+                name: "Is_opened");
 
             migrationBuilder.DropTable(
                 name: "Spetializations");
@@ -235,16 +213,13 @@ namespace occurrensBackend.Migrations
                 name: "Visits");
 
             migrationBuilder.DropTable(
+                name: "Addresses");
+
+            migrationBuilder.DropTable(
                 name: "Patients");
 
             migrationBuilder.DropTable(
                 name: "Doctors");
-
-            migrationBuilder.DropTable(
-                name: "Is_opened");
-
-            migrationBuilder.DropTable(
-                name: "Addresses");
         }
     }
 }
