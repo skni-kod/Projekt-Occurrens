@@ -36,5 +36,6 @@ namespace occurrensBackend.Services.DoctorInformationsService
 
             return specializationEntity.Id;
         }
+
     }
 }

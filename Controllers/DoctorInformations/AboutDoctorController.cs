@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace occurrensBackend.Controllers.DoctorInformations
 {
-    [Route("doctor/{doctorId}/specialization")]
+    [Route("doctor/{doctorId}")]
     [ApiController]
     [Authorize(Roles = "Doctor")]
     public class AboutDoctorController : ControllerBase
@@ -21,11 +21,11 @@ namespace occurrensBackend.Controllers.DoctorInformations
             _aboutDoctorService = aboutDoctorService;
         }
 
-        [HttpPost]
+        [HttpPost("specialization")]
         public async Task<ActionResult> AddSpecialization([FromRoute]Guid doctorId, [FromBody]SpecializationDto dto)
         {
-            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-            if (userIdClaim == null || !Guid.TryParse(userIdClaim.Value, out var userId) || userId != doctorId)
+            var userIdClaim = CheckTrue(doctorId);
+            if (userIdClaim == false)
             {
                 return BadRequest("Wystąpił nieoczekiwany błąd!");
             }
@@ -33,6 +33,17 @@ namespace occurrensBackend.Controllers.DoctorInformations
             var addSpecialization = _aboutDoctorService.AddSpecialization(doctorId, dto);
 
             return Created($"doctor/{doctorId}/specialization/{addSpecialization}",null);
+        }
+
+
+        private bool CheckTrue(Guid doctorId)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null || !Guid.TryParse(userIdClaim.Value, out var userId) || userId != doctorId)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
