@@ -23,6 +23,11 @@ namespace occurrensBackend.Middleware
                 context.Response.StatusCode = 400;
                 await context.Response.WriteAsync(badRequestException.Message);
             }
+            catch(SpecializationIsExisting specializationIsExisting)
+            {
+                context.Response.StatusCode = 409;
+                await context.Response.WriteAsync(specializationIsExisting.Message);
+            }
             catch (Exception e)
             {
                 _logger.LogError(e, e.Message);

@@ -11,6 +11,7 @@ using occurrensBackend.Middleware;
 using occurrensBackend.Models.RegisterModels;
 using occurrensBackend.Models.RegisterModels.Validators;
 using occurrensBackend.Services.AccountService;
+using occurrensBackend.Services.DoctorInformationsService;
 using System.Reflection;
 using System.Text;
 
@@ -61,6 +62,7 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddScoped<IRegisterService, RegisterService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IAboutDoctorService, AboutDoctorService>();
 
 builder.Services.AddScoped<IPasswordHasher<Doctor>, PasswordHasher<Doctor>>();
 
