@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
@@ -48,6 +50,30 @@ namespace occurrensBackend.Services.DoctorInformationsService
             _context.SaveChanges(); 
 
             return addressEntity.Id;
+        }
+
+        public Guid AddIsOpened(Guid doctorId, Is_openedDto dto, Guid addressId)
+        {
+            var test = _context
+                .Addresses
+                .Any(r => r.DoctorId == doctorId && r.Id == addressId);
+
+            var existingIsOpened = _context
+                .Is_opened
+                .FirstOrDefault(s => s.AddressId == addressId);
+
+            if (!test || existingIsOpened != null)
+            {
+                throw new BadRequestException("Nie możesz utworzyć nowej specjalizacji");
+            }
+
+            var isOpenedEntity = _mapper.Map<Is_opened>(dto);
+            isOpenedEntity.AddressId = addressId;
+
+            _context.Is_opened.Add(isOpenedEntity);
+            _context.SaveChanges();
+
+            return isOpenedEntity.Id;
         }
 
     }

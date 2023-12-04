@@ -10,7 +10,7 @@ namespace occurrensBackend.Models.GetDoctorInformationsModels
         public string Specjalization { get; set; }
         public int Telephon_number { get; set; }
 
-        public List<AddressDto> Addresses { get; set; }
+        public List<AddressesDto> Addresses { get; set; }
 
     }
 }

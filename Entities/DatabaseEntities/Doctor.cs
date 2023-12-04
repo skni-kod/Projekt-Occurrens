@@ -14,7 +14,6 @@
         public bool Acception { get; set; }
 
 
-
         public List<Spetialization> spetializations { get; set; }
         public List<Address> addresses { get; set; }
         public List<Visits> visits { get; set; }

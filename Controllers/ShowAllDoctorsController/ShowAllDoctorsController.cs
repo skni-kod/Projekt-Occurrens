@@ -18,11 +18,11 @@ namespace occurrensBackend.Controllers.ShowAllDoctorsController
 
 
         [HttpGet]
-        public async Task<IEnumerable<GetDoctorInformationsModelsDto>> GetAllDoctors([FromQuery]DoctorQuery query)
+        public ActionResult<IEnumerable<GetDoctorInformationsModelsDto>> GetAllDoctors([FromQuery]DoctorQuery query)
         {
             var doctors = _showAllDoctors.GetAllDoctors(query);
 
-            return (IEnumerable<GetDoctorInformationsModelsDto>)Ok(doctors);
+            return Ok(doctors);
         }
     }
 }

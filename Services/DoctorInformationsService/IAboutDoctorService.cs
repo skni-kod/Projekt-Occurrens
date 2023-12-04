@@ -7,5 +7,7 @@ namespace occurrensBackend.Services.DoctorInformationsService
         Guid AddSpecialization(Guid doctorId, SpecializationDto dto);
 
         public Guid AddAddress(Guid doctorId, AddressDto dto);
+
+        public Guid AddIsOpened(Guid doctorId, Is_openedDto dto, Guid addressId);
     }
 }

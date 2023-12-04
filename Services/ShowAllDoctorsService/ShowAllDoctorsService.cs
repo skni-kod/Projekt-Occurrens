@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using occurrensBackend.Entities;
+using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Models.GetDoctorInformationsModels;
 
 namespace occurrensBackend.Services.ShowAllDoctorsService
@@ -19,6 +20,7 @@ namespace occurrensBackend.Services.ShowAllDoctorsService
 
         public PagedResult<GetDoctorInformationsModelsDto> GetAllDoctors(DoctorQuery query)
         {
+            
             var baseQuery = _dbContext
                 .Doctors
                 .Include(r => r.spetializations)
@@ -44,6 +46,7 @@ namespace occurrensBackend.Services.ShowAllDoctorsService
             var result = new PagedResult<GetDoctorInformationsModelsDto>(doctorDtos, totalItemCount, query.PageSize, query.PageNumber);
 
             return result;
+            
         }
     }
 }
