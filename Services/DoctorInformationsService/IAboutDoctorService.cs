@@ -4,10 +4,10 @@ namespace occurrensBackend.Services.DoctorInformationsService
 {
     public interface IAboutDoctorService
     {
-        Guid AddSpecialization(Guid doctorId, SpecializationDto dto);
+        Guid AddSpecialization(SpecializationDto dto);
 
-        public Guid AddAddress(Guid doctorId, AddressDto dto);
+        public Guid AddAddress(AddressDto dto);
 
-        public Guid AddIsOpened(Guid doctorId, Is_openedDto dto, Guid addressId);
+        public Guid AddIsOpened(Is_openedDto dto);
     }
 }

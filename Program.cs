@@ -13,6 +13,7 @@ using occurrensBackend.Models.RegisterModels.Validators;
 using occurrensBackend.Services.AccountService;
 using occurrensBackend.Services.DoctorInformationsService;
 using occurrensBackend.Services.ShowAllDoctorsService;
+using occurrensBackend.Services.UserContextService;
 using System.Reflection;
 using System.Text;
 
@@ -65,6 +66,7 @@ builder.Services.AddScoped<IRegisterService, RegisterService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IAboutDoctorService, AboutDoctorService>();
 builder.Services.AddScoped<IShowAllDoctorsService, ShowAllDoctorsService>();
+builder.Services.AddScoped<IUserContextService, UserContextService>();
 
 builder.Services.AddScoped<IPasswordHasher<Doctor>, PasswordHasher<Doctor>>();
 

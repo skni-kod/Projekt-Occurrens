@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace occurrensBackend.Controllers.DoctorInformations
 {
-    [Route("doctor/{doctorId}")]
+    [Route("doctor")]
     [ApiController]
     [Authorize(Roles = "Doctor")]
     public class AboutDoctorController : ControllerBase
@@ -22,57 +22,29 @@ namespace occurrensBackend.Controllers.DoctorInformations
         }
 
         [HttpPost("specialization")]
-        public async Task<ActionResult> AddSpecialization([FromRoute]Guid doctorId, [FromBody]SpecializationDto dto)
+        public async Task<ActionResult> AddSpecialization([FromBody]SpecializationDto dto)
         {
-            var userIdClaim = CheckTrue(doctorId);
-            if (!userIdClaim)
-            {
-                return BadRequest("Wystąpił nieoczekiwany błąd!");
-            }
+            var addSpecialization = _aboutDoctorService.AddSpecialization(dto);
 
-            var addSpecialization = _aboutDoctorService.AddSpecialization(doctorId, dto);
-
-            return Created($"doctor/{doctorId}/specialization/{addSpecialization}",null);
+            return Created($"doctor/specialization/{addSpecialization}",null);
         }
 
 
         [HttpPost("address")]
-        public async Task<IActionResult> AddAddress([FromRoute]Guid doctorId, [FromBody]AddressDto dto)
+        public async Task<IActionResult> AddAddress([FromBody]AddressDto dto)
         {
-            var userIdClaim = CheckTrue(doctorId);
-            if(!userIdClaim)
-            {
-                return BadRequest("Wystąpił nieoczekiwany błąd");
-            }
+            var addAddress = _aboutDoctorService.AddAddress(dto);
 
-            var addAddress = _aboutDoctorService.AddAddress(doctorId, dto);
-
-            return Created($"doctor/{doctorId}/address/{addAddress}", null);
+            return Created($"doctor/address/{addAddress}", null);
         }
 
-        [HttpPost("is_opened/{addressId}")]
-        public async Task<IActionResult> AddIsOpened([FromRoute]Guid doctorId, [FromBody]Is_openedDto dto, [FromRoute]Guid addressId)
+        [HttpPost("is_opened")]
+        public async Task<IActionResult> AddIsOpened([FromBody]Is_openedDto dto)
         {
-            var userIdClaim = CheckTrue(doctorId);
-            if (!userIdClaim)
-            {
-                return BadRequest("Wystąpił nieoczekiwany błąd");
-            }
+            var addOpened = _aboutDoctorService.AddIsOpened(dto);
 
-            var addOpened = _aboutDoctorService.AddIsOpened(doctorId, dto, addressId);
-
-            return Created($"doctor/{doctorId}/is_opened/{addOpened}", null);
+            return Created($"doctor/is_opened/{addOpened}", null);
         }
        
-
-        private bool CheckTrue(Guid doctorId)
-        {
-            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-            if (userIdClaim == null || !Guid.TryParse(userIdClaim.Value, out var userId) || userId != doctorId)
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }
