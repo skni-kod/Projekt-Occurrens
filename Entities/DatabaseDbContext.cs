@@ -24,10 +24,7 @@ namespace occurrensBackend.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Address>()
-                .HasOne(i => i.Is_opened)
-                .WithOne(a => a.Address)
-                .HasForeignKey<Is_opened>(i => i.AddressId);
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

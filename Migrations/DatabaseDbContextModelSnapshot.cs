@@ -28,12 +28,11 @@ namespace occurrensBackend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Apartament_number")
-                        .HasColumnType("text");
+                    b.Property<int?>("Apartament_number")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("Building_number")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Building_number")
+                        .HasColumnType("integer");
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -141,10 +140,6 @@ namespace occurrensBackend.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<Guid?>("AddressId")
-                        .IsRequired()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("AddressId1")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Fridady")
@@ -177,10 +172,7 @@ namespace occurrensBackend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId")
-                        .IsUnique();
-
-                    b.HasIndex("AddressId1");
+                    b.HasIndex("AddressId");
 
                     b.ToTable("Is_opened");
                 });
@@ -309,14 +301,8 @@ namespace occurrensBackend.Migrations
             modelBuilder.Entity("occurrensBackend.Entities.DatabaseEntities.Is_opened", b =>
                 {
                     b.HasOne("occurrensBackend.Entities.DatabaseEntities.Address", "Address")
-                        .WithOne("Is_opened")
-                        .HasForeignKey("occurrensBackend.Entities.DatabaseEntities.Is_opened", "AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("occurrensBackend.Entities.DatabaseEntities.Address", null)
                         .WithMany("is_opened")
-                        .HasForeignKey("AddressId1");
+                        .HasForeignKey("AddressId");
 
                     b.Navigation("Address");
                 });
@@ -347,9 +333,6 @@ namespace occurrensBackend.Migrations
 
             modelBuilder.Entity("occurrensBackend.Entities.DatabaseEntities.Address", b =>
                 {
-                    b.Navigation("Is_opened")
-                        .IsRequired();
-
                     b.Navigation("is_opened");
                 });
 
