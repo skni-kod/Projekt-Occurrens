@@ -4,6 +4,7 @@ namespace occurrensBackend.Services.AccountService
 {
     public interface ILoginService
     {
-        Task<string> GenerateJwt(LoginDoctorDto dto);
+        Task<string> GenerateDoctorJwt(LoginDto dto);
+        Task<string> GeneratePatientJwt(LoginDto dto);
     }
 }

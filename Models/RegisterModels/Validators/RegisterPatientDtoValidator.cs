@@ -3,9 +3,9 @@ using occurrensBackend.Entities;
 
 namespace occurrensBackend.Models.RegisterModels.Validators
 {
-    public class RegisterDoctorDtoValidator : AbstractValidator<RegisterDoctorDto>
+    public class RegisterPatientDtoValidator : AbstractValidator<RegisterPatientDto>
     {
-        public RegisterDoctorDtoValidator(DatabaseDbContext dbContext)
+        public RegisterPatientDtoValidator(DatabaseDbContext dbContext)
         {
             RuleFor(x => x.Email).NotEmpty().EmailAddress();
 
@@ -13,18 +13,19 @@ namespace occurrensBackend.Models.RegisterModels.Validators
 
             RuleFor(x => x.Repeat_password).Equal(e => e.Password).WithMessage("Hasła różnią się od siebie!");
 
+            RuleFor(x => x.Pesel.ToString()).Length(11).WithMessage("Niepoprawny PESEL!");
+
             RuleFor(x => x.Email).Custom((value, context) =>
             {
-                var emailIsUsed = dbContext.Doctors.Any(u => u.Email == value);
+                var emailIsUsed = dbContext.Patients.Any(u => u.Email == value);
 
-                if(emailIsUsed)
+                if (emailIsUsed)
                 {
-                    context.AddFailure("E-mail", "Wprowadź inny adres e-mail!");
+                    context.AddFailure("E-mail", "Wprowadź inny e-mail");
                 }
             });
 
             RuleFor(x => x.Acception).Equal(true).WithMessage("Musisz zaakceptować przetwarzanie danych osobowych");
-
         }
     }
 }
