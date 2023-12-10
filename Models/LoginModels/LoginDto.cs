@@ -2,7 +2,7 @@
 
 namespace occurrensBackend.Models.LoginModels
 {
-    public class LoginDoctorDto
+    public class LoginDto
     {
         [Required(ErrorMessage = "Podaj e-mail!")]
         public string Email { get; set; }

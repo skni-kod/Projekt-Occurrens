@@ -15,18 +15,20 @@ namespace occurrensBackend.Services.AccountService
     public class LoginService : ILoginService
     {
         private readonly DatabaseDbContext _context;
-        private readonly IPasswordHasher<Doctor> _passwordHasher;
+        private readonly IPasswordHasher<Doctor> _passwordDoctorHasher;
+        private readonly IPasswordHasher<Patient> _passwordPatientHasher;
         private readonly AuthenticationSettings _authenticationSettings;
 
-        public LoginService(DatabaseDbContext context, IPasswordHasher<Doctor> passwordHasher, AuthenticationSettings authenticationSettings)
+        public LoginService(DatabaseDbContext context, IPasswordHasher<Doctor> passwordDoctorHasher,IPasswordHasher<Patient> passwordPatientHasher, AuthenticationSettings authenticationSettings)
         {
             _context = context;
-            _passwordHasher = passwordHasher;
+            _passwordDoctorHasher = passwordDoctorHasher;
+            _passwordPatientHasher = passwordPatientHasher;
             _authenticationSettings = authenticationSettings;
         }
 
 
-        public async Task<string> GenerateJwt(LoginDoctorDto dto)
+        public async Task<string> GenerateDoctorJwt(LoginDto dto)
         {
             var doctor = _context.Doctors
                 .FirstOrDefault(u => u.Email == dto.Email);
@@ -36,7 +38,7 @@ namespace occurrensBackend.Services.AccountService
                 throw new BadRequestException("Niepoprawny e-mail lub hasło!");
             }
 
-            var result = _passwordHasher.VerifyHashedPassword(doctor, doctor.Password, dto.Password);
+            var result = _passwordDoctorHasher.VerifyHashedPassword(doctor, doctor.Password, dto.Password);
 
             if (result == PasswordVerificationResult.Failed)
             {
@@ -51,6 +53,11 @@ namespace occurrensBackend.Services.AccountService
                 new Claim("DateOfBirth", doctor.Date_of_birth.ToString("yyyy-MM-dd")),
             };
 
+            if(!string.IsNullOrEmpty(doctor.Secont_name))
+            {
+                claims.Add(new Claim("SecontName", $"{doctor.Secont_name}"));
+            }
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authenticationSettings.JwtKey));
             var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var expires = DateTime.Now.AddDays(_authenticationSettings.JwtExpireDays);
@@ -61,6 +68,51 @@ namespace occurrensBackend.Services.AccountService
                 expires: expires,
                 signingCredentials: cred);
 
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            return tokenHandler.WriteToken(token);
+        }
+
+
+        public async Task<string> GeneratePatientJwt(LoginDto dto)
+        {
+            var patient = _context.Patients
+                .FirstOrDefault(x => x.Email == dto.Email);
+
+            if(patient is null)
+            {
+                throw new BadRequestException("Niepoprawny e-mail lub hasło!");
+            }
+
+            var result = _passwordPatientHasher.VerifyHashedPassword(patient, patient.Password, dto.Password);
+
+            if(result == PasswordVerificationResult.Failed)
+            {
+                throw new BadRequestException("Niepoprawny e-mail lub hasło!");
+            }
+
+            var claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.NameIdentifier, patient.Id.ToString()),
+                new Claim(ClaimTypes.Name, $"{patient.Name} {patient.Last_name}"),
+                new Claim(ClaimTypes.Role, $"{patient.Role}"),
+                new Claim("DateOfBirth", patient.Date_of_birth.ToString("yyyy-MM-dd")),
+            };
+
+            if(!string.IsNullOrEmpty(patient.Secont_name))
+            {
+                claims.Add(new Claim("SecontName", $"{patient.Secont_name}"));
+            }
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authenticationSettings.JwtKey));
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.Now.AddDays(_authenticationSettings.JwtExpireDays);
+
+            var token = new JwtSecurityToken(_authenticationSettings.JwtIssuer,
+                _authenticationSettings.JwtIssuer,
+                claims,
+                expires: expires,
+                signingCredentials: cred);
 
             var tokenHandler = new JwtSecurityTokenHandler();
             return tokenHandler.WriteToken(token);

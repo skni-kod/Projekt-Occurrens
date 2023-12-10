@@ -16,9 +16,18 @@ namespace occurrensBackend.Controllers.AccountController
         }
 
         [HttpPost("doctor")]
-        public async Task<ActionResult> DoctorLogin([FromBody]LoginDoctorDto dto)
+        public async Task<ActionResult> DoctorLogin([FromBody]LoginDto dto)
         {
-            string token = await _loginService.GenerateJwt(dto);
+            string token = await _loginService.GenerateDoctorJwt(dto);
+
+            return Ok(token);
+        }
+
+
+        [HttpPost("patient")]
+        public async Task<ActionResult> PatientLogin([FromBody]LoginDto dto)
+        {
+            string token = await _loginService.GeneratePatientJwt(dto);
 
             return Ok(token);
         }

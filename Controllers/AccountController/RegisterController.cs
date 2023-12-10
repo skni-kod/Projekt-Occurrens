@@ -21,5 +21,12 @@ namespace occurrensBackend.Controllers.AccountController
             await _registerService.RegisterDoctor(dto);
             return Ok();
         }
+
+        [HttpPost("patient")]
+        public async Task<IActionResult> RegisterPatient([FromBody]RegisterPatientDto dto)
+        {
+            await _registerService.RegisterPatient(dto);
+            return Ok();
+        }
     }
 }

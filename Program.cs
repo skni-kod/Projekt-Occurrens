@@ -69,8 +69,10 @@ builder.Services.AddScoped<IShowAllDoctorsService, ShowAllDoctorsService>();
 builder.Services.AddScoped<IUserContextService, UserContextService>();
 
 builder.Services.AddScoped<IPasswordHasher<Doctor>, PasswordHasher<Doctor>>();
+builder.Services.AddScoped<IPasswordHasher<Patient>, PasswordHasher<Patient>>();
 
 builder.Services.AddScoped<IValidator<RegisterDoctorDto>, RegisterDoctorDtoValidator>();
+builder.Services.AddScoped<IValidator<RegisterPatientDto>, RegisterPatientDtoValidator>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
