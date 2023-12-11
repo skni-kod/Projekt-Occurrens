@@ -7,6 +7,7 @@ using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Exceptions;
 using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
 using occurrensBackend.Services.UserContextService;
 
 namespace occurrensBackend.Services.DoctorInformationsService
@@ -146,6 +147,26 @@ namespace occurrensBackend.Services.DoctorInformationsService
             isOpened.Sunday = dto.Sunday ?? isOpened.Sunday;
             
             _context.SaveChanges();
+        }
+
+        public BasicInformationsDto GetSelfInformations()
+        {
+            var userId = _userContextService.GetUserId;
+
+            var doctor = _context.Doctors
+                .Include(x => x.addresses)
+                .ThenInclude(x => x.is_opened)
+                .Include(x => x.spetializations)              
+                .FirstOrDefault(x => x.Id == userId);
+
+            if (doctor == null)
+            {
+                throw new NotFoundException("Zaloguj się!");
+            }
+
+            var result = _mapper.Map<BasicInformationsDto>(doctor);
+
+            return result;
         }
 
     }

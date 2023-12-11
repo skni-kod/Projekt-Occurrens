@@ -4,6 +4,7 @@ using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Exceptions;
 using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
 using occurrensBackend.Services.DoctorInformationsService;
 using System.Security.Claims;
 
@@ -63,6 +64,14 @@ namespace occurrensBackend.Controllers.DoctorInformations
             return Ok();
         }
 
+
+        [HttpGet("info")]
+        public async Task<ActionResult<List<BasicInformationsDto>>> GetSelfInformations()
+        {
+            var result = _aboutDoctorService.GetSelfInformations();
+
+            return Ok(result);
+        }
        
     }
 }

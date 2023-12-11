@@ -1,4 +1,5 @@
 ﻿using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
 
 namespace occurrensBackend.Services.DoctorInformationsService
 {
@@ -13,5 +14,7 @@ namespace occurrensBackend.Services.DoctorInformationsService
         public void UpdateSpecialization(SpecializationUpdateDto dto);
 
         public void UpdateAddressAndIsOpened(AddressAndIsOpenedUpdateDto dto, Guid id);
+
+        public BasicInformationsDto GetSelfInformations();
     }
 }
