@@ -2,6 +2,7 @@
 using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Models.AboutDoctorModels.CreateModels;
 using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
+using occurrensBackend.Models.DiseaseModels;
 using occurrensBackend.Models.GetDoctorInformationsModels;
 
 namespace occurrensBackend.Mapping
