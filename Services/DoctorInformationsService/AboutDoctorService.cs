@@ -6,8 +6,9 @@ using Microsoft.IdentityModel.Tokens;
 using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Exceptions;
-using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.CreateModels;
 using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
+using occurrensBackend.Models.AboutDoctorModels.UpdateModels;
 using occurrensBackend.Services.UserContextService;
 
 namespace occurrensBackend.Services.DoctorInformationsService
@@ -146,6 +147,26 @@ namespace occurrensBackend.Services.DoctorInformationsService
             isOpened.Saturday = dto.Saturday ?? isOpened.Saturday;
             isOpened.Sunday = dto.Sunday ?? isOpened.Sunday;
             
+            _context.SaveChanges();
+        }
+
+        public void UpdateSelfInformations(SelfInformationsUpdateDto dto)
+        {
+            var userId = _userContextService.GetUserId;
+
+            var doctor = _context.Doctors.FirstOrDefault(x => x.Id == userId);
+
+            if (doctor is null)
+            {
+                throw new NotFoundException("Użytkownik nie istenieje!");
+            }
+
+            doctor.Name = dto.Name ?? doctor.Name;
+            doctor.Secont_name = dto.Secont_name ?? doctor.Secont_name;    
+            doctor.Last_name = dto.Last_name ?? doctor.Last_name;   
+            doctor.Telephon_number = dto.Telephon_number ?? doctor.Telephon_number;
+            doctor.Date_of_birth = dto.Date_of_birth ?? doctor.Date_of_birth;   
+
             _context.SaveChanges();
         }
 

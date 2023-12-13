@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using occurrensBackend.Entities.DatabaseEntities;
-using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.CreateModels;
 using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
 using occurrensBackend.Models.GetDoctorInformationsModels;
 

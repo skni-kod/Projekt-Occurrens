@@ -4,7 +4,9 @@ using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Exceptions;
 using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.CreateModels;
 using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
+using occurrensBackend.Models.AboutDoctorModels.UpdateModels;
 using occurrensBackend.Services.DoctorInformationsService;
 using System.Security.Claims;
 
@@ -61,6 +63,14 @@ namespace occurrensBackend.Controllers.DoctorInformations
         {
             _aboutDoctorService.UpdateAddressAndIsOpened(dto, id);
 
+            return Ok();
+        }
+
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateSelfInformations([FromBody]SelfInformationsUpdateDto dto)
+        {
+            _aboutDoctorService.UpdateSelfInformations(dto);
             return Ok();
         }
 
