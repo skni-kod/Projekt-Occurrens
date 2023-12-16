@@ -51,7 +51,14 @@ builder.Services.AddAuthentication(option =>
     };
 });
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontEndCliend", builder =>
+        builder.AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:8080")
+        );
+});
 
 
 builder.Services.AddEndpointsApiExplorer();

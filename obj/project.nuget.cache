@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VnngBvsO1DfqZn57RQci3YAOxFdwoJkAVWSxf7mZIECS7GRtuNQtObdBRX38lgDPwyM8PVV36hPjy+H+AUg0aQ==",
+  "dgSpecHash": "nqRBRmhURG38N01zLUprXzJCqfF1yFe5qqIMgCCBR/49tfTbWV6wgJOX47EZ7yTYPP/zfHqXaCctaMl810ntWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj",
+  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Pomocniczy do backendu\\Projekt-Occurrens\\occurrensBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jakub\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
