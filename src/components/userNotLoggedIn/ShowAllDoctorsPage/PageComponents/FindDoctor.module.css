@@ -1,0 +1,50 @@
+.finding {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+  border-radius: 5px;
+  width: 75%;
+}
+
+.svg {
+  background-color: white;
+  border: 1px solid black;
+  border-right: none;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.input {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  font-size: 2rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  background-color: #136cfb;
+  color: white;
+  width: 10rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: 1px solid black;
+  border-left: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(1);
+}

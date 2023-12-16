@@ -1,5 +1,5 @@
 .background {
-  background-image: url("../../../images/BgImg.png");
+  background-image: url("../../../images/Main.png");
   background-size: cover;
   height: 100vh;
   margin-top: -10vh;
@@ -13,66 +13,6 @@
   align-items: center;
 }
 
-.finding {
-  display: flex;
-  justify-content: center;
-  margin-top: 3.5rem;
-  border-radius: 5px;
-  width: 75%;
-}
-
-.svg {
-  background-color: white;
-  border: 1px solid black;
-  border-right: none;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-}
-
-.input {
-  width: 50%;
-  padding: 10px;
-  border: none;
-  border: 1px solid black;
-  border-left: none;
-  border-right: none;
-  font-size: 2rem;
-}
-
-.input:focus {
-  outline: none;
-}
-
-.button {
-  background-color: #136cfb;
-  color: white;
-  width: 10rem;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  border: 1px solid black;
-  border-left: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  font-size: 2rem;
-}
-
-.button:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-.button:active {
-  transform: scale(1);
-}
-
-.show {
-  margin-top: 2rem;
-  background-color: #eaf2f8;
-  width: 90%;
-  height: 48rem;
-  border: 1px solid black;
-  border-radius: 2rem;
-}
-
 .radios {
   display: flex;
   width: 15%;
@@ -81,49 +21,3 @@
   justify-content: space-between;
   width: 75%;
 }
-
-.radio1 {
-  background-color: blue;
-}
-
-.radio2 {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-
-.p1 {
-    font-size: 3rem;
-}
-
-.label {
-    position: relative;
-    background-color: #136cfb;
-    width: 5rem;
-    height: 5rem;
-    font-size: 4rem;
-    border-radius: 5px;
-  }
-  
-  .label input {
-    display: none;
-  }
-  
-  .label .input2:checked + .span {
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #001a42; 
-    border-radius: 5px;
-  }
-  
-  .span {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-  }
