@@ -1,8 +1,54 @@
 .show {
-    margin-top: 2rem;
-    background-color: #e9ebec;
-    width: 90%;
-    height: 48rem;
-    border: 1px solid black;
-    border-radius: 2rem;
-  }
+  margin-top: 2rem;
+  background-color: #e9ebec;
+  width: 90%;
+  height: 48rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 3rem;
+  margin: 1rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 30rem;
+  height: 40rem;
+  perspective: 1000rem;
+  margin-bottom: 2rem;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
