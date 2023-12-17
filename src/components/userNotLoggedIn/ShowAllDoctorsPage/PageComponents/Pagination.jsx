@@ -4,7 +4,6 @@ export default function Pagination() {
   return (
     <>
       <div className={classes.radio1}>siema</div>
-
       <div className={classes.radio2}>
         <p className={classes.p1}>Ilu Lekarzy chcesz wyświetlić?</p>
         <label className={classes.label}>
