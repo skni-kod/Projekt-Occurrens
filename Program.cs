@@ -29,6 +29,15 @@ builder.Services.AddControllers().AddFluentValidation();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontEndClient", builder =>
+        builder.AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:8080")
+        );
+});
+
 
 var authenticationSettings = new AuthenticationSettings();
 builder.Configuration.GetSection("Authentication").Bind(authenticationSettings);
@@ -51,14 +60,7 @@ builder.Services.AddAuthentication(option =>
     };
 });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("FrontEndCliend", builder =>
-        builder.AllowAnyMethod()
-            .AllowAnyHeader()
-            .WithOrigins("http://localhost:8080")
-        );
-});
+
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -97,7 +99,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+app.UseCors("FrontEndClient");
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseAuthentication();
 

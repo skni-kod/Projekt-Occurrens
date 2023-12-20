@@ -48,10 +48,6 @@ namespace occurrensBackend.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("text");
 
-                    b.Property<string>("Town")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("DoctorId");

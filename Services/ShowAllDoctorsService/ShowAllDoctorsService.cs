@@ -30,7 +30,6 @@ namespace occurrensBackend.Services.ShowAllDoctorsService
                 (r.spetializations.Any(g => g.Specjalization.ToLower().Contains(query.SearchPhrase.ToLower()))) ||
                 (r.Name.ToLower().Contains(query.SearchPhrase.ToLower())) ||
                 (r.Last_name.ToLower().Contains(query.SearchPhrase.ToLower())) ||
-                (r.addresses.Any(g => g.Town.ToLower().Contains(query.SearchPhrase.ToLower()))) ||
                 (r.addresses.Any(g => g.Street.ToLower().Contains(query.SearchPhrase.ToLower())))
                 );
 

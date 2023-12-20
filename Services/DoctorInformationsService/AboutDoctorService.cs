@@ -132,7 +132,6 @@ namespace occurrensBackend.Services.DoctorInformationsService
                 throw new NotFoundException("Taki adres nie istnieje");
             }
 
-            address.Town = dto.Town ?? address.Town;
             address.Street = dto.Street ?? address.Street;
             address.Building_number = dto.Building_number ?? address.Building_number;
             address.Apartament_number = dto.Apartament_number ?? address.Apartament_number;
