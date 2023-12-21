@@ -11,9 +11,6 @@ const showAllDoctors = createSlice({
     changeHowManyDoctors(state, action) {
       state.howManyDoctors = action.payload.howManyDoctors;
     },
-    changeItems(state, action) {
-      state.items = action.payload.items;
-    },
   },
 });
 
