@@ -4,8 +4,6 @@ const showAllDoctors = createSlice({
   name: "showAllDoctors",
   initialState: {
     howManyDoctors: 30,
-    items: [],
-    page: 1,
   },
   reducers: {
     changeHowManyDoctors(state, action) {

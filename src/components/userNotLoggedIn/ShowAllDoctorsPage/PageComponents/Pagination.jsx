@@ -1,16 +1,12 @@
-import { useDispatch } from "react-redux";
 import classes from "./Pagination.module.css";
-import { showAllDoctorsActions } from "../../../../store/showAllDoctors";
+import { useState } from "react";
 
-export default function Pagination() {
-  const dispatch = useDispatch();
+export default function Pagination(props) {
+  const [selectedValue, setSelectedValue] = useState('10');
 
   const changeHandler = (event) => {
-    dispatch(
-      showAllDoctorsActions.changeHowManyDoctors({
-        howManyDoctors: event.target.value,
-      })
-    );
+    setSelectedValue(event.target.value);
+    props.howManyDoctors(event.target.value);
   };
 
   return (
@@ -25,7 +21,7 @@ export default function Pagination() {
             id="option1"
             name="options"
             value="10"
-            checked
+            checked={selectedValue === '10'}
             onChange={changeHandler}
           />
           <span className={classes.span}>10</span>
@@ -37,7 +33,7 @@ export default function Pagination() {
             id="option2"
             name="options"
             value="20"
-            checked
+            checked={selectedValue === '20'}
             onChange={changeHandler}
           />
           <span className={classes.span}>20</span>
@@ -49,7 +45,7 @@ export default function Pagination() {
             id="option3"
             name="options"
             value="30"
-            checked
+            checked={selectedValue === '30'}
             onChange={changeHandler}
           />
           <span className={classes.span}>30</span>
