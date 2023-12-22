@@ -2,10 +2,13 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using occurrensBackend.Entities;
 using occurrensBackend.Entities.DatabaseEntities;
 using occurrensBackend.Exceptions;
-using occurrensBackend.Models.AboutDoctorModels;
+using occurrensBackend.Models.AboutDoctorModels.CreateModels;
+using occurrensBackend.Models.AboutDoctorModels.GetSelfInformationsDtos;
+using occurrensBackend.Models.AboutDoctorModels.UpdateModels;
 using occurrensBackend.Services.UserContextService;
 
 namespace occurrensBackend.Services.DoctorInformationsService
@@ -98,6 +101,92 @@ namespace occurrensBackend.Services.DoctorInformationsService
             _context.SaveChanges();
 
             return isOpenedEntity.Id;
+        }
+
+        public void UpdateSpecialization(SpecializationUpdateDto dto)
+        {
+            var doctorId = _userContextService.GetUserId;
+
+            var specialization = _context.Spetializations.FirstOrDefault(x => x.DoctorId == doctorId);
+
+            if(specialization is null)
+            {
+                throw new NotFoundException("Nie posiadasz jeszcze żadnej specjalizacji!");
+            }
+
+            specialization.Specjalization = dto.Specjalization ?? specialization.Specjalization;
+
+            _context.SaveChanges();
+        }
+
+
+        public void UpdateAddressAndIsOpened(AddressAndIsOpenedUpdateDto dto, Guid id)
+        {
+            var userId = _userContextService.GetUserId;
+
+            var address = _context.Addresses.FirstOrDefault(x => x.DoctorId == userId && x.Id == id);
+            var isOpened = _context.Is_opened.FirstOrDefault(x => x.AddressId == id);
+
+            if(address is null)
+            {
+                throw new NotFoundException("Taki adres nie istnieje");
+            }
+
+            address.Street = dto.Street ?? address.Street;
+            address.Building_number = dto.Building_number ?? address.Building_number;
+            address.Apartament_number = dto.Apartament_number ?? address.Apartament_number;
+            address.Postal_code = dto.Postal_code ?? address.Postal_code;
+            address.City = dto.City ?? address.City;
+
+            isOpened.Monday = dto.Monday ?? isOpened.Monday;
+            isOpened.Tuesday = dto.Tuesday ?? isOpened.Tuesday;
+            isOpened.Wednesday = dto.Wednesday ?? isOpened.Wednesday;
+            isOpened.Thursday = dto.Thursday ?? isOpened.Thursday;
+            isOpened.Fridady = dto.Fridady ?? isOpened.Fridady;
+            isOpened.Saturday = dto.Saturday ?? isOpened.Saturday;
+            isOpened.Sunday = dto.Sunday ?? isOpened.Sunday;
+            
+            _context.SaveChanges();
+        }
+
+        public void UpdateSelfInformations(SelfInformationsUpdateDto dto)
+        {
+            var userId = _userContextService.GetUserId;
+
+            var doctor = _context.Doctors.FirstOrDefault(x => x.Id == userId);
+
+            if (doctor is null)
+            {
+                throw new NotFoundException("Użytkownik nie istenieje!");
+            }
+
+            doctor.Name = dto.Name ?? doctor.Name;
+            doctor.Secont_name = dto.Secont_name ?? doctor.Secont_name;    
+            doctor.Last_name = dto.Last_name ?? doctor.Last_name;   
+            doctor.Telephon_number = dto.Telephon_number ?? doctor.Telephon_number;
+            doctor.Date_of_birth = dto.Date_of_birth ?? doctor.Date_of_birth;   
+
+            _context.SaveChanges();
+        }
+
+        public BasicInformationsDto GetSelfInformations()
+        {
+            var userId = _userContextService.GetUserId;
+
+            var doctor = _context.Doctors
+                .Include(x => x.addresses)
+                .ThenInclude(x => x.is_opened)
+                .Include(x => x.spetializations)              
+                .FirstOrDefault(x => x.Id == userId);
+
+            if (doctor == null)
+            {
+                throw new NotFoundException("Zaloguj się!");
+            }
+
+            var result = _mapper.Map<BasicInformationsDto>(doctor);
+
+            return result;
         }
 
     }

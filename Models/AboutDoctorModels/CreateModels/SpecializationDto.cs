@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace occurrensBackend.Models.AboutDoctorModels
+namespace occurrensBackend.Models.AboutDoctorModels.CreateModels
 {
     public class SpecializationDto
     {

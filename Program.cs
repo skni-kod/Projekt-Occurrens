@@ -11,6 +11,7 @@ using occurrensBackend.Middleware;
 using occurrensBackend.Models.RegisterModels;
 using occurrensBackend.Models.RegisterModels.Validators;
 using occurrensBackend.Services.AccountService;
+using occurrensBackend.Services.DiseaseDoctorService;
 using occurrensBackend.Services.DoctorInformationsService;
 using occurrensBackend.Services.ShowAllDoctorsService;
 using occurrensBackend.Services.UserContextService;
@@ -28,6 +29,15 @@ builder.Services.AddControllers().AddFluentValidation();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontEndClient", builder =>
+        builder.AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:8080")
+        );
+});
+
 
 var authenticationSettings = new AuthenticationSettings();
 builder.Configuration.GetSection("Authentication").Bind(authenticationSettings);
@@ -67,6 +77,7 @@ builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IAboutDoctorService, AboutDoctorService>();
 builder.Services.AddScoped<IShowAllDoctorsService, ShowAllDoctorsService>();
 builder.Services.AddScoped<IUserContextService, UserContextService>();
+builder.Services.AddScoped<IDiseaseService, DiseaseService>();
 
 builder.Services.AddScoped<IPasswordHasher<Doctor>, PasswordHasher<Doctor>>();
 builder.Services.AddScoped<IPasswordHasher<Patient>, PasswordHasher<Patient>>();
@@ -88,7 +99,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+app.UseCors("FrontEndClient");
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseAuthentication();
 

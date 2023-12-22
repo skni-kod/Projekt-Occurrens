@@ -2188,11 +2188,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj",
+      "projectUniqueName": "C:\\Users\\jakub\\Desktop\\Pomocniczy do backendu\\Projekt-Occurrens\\occurrensBackend.csproj",
       "projectName": "occurrensBackend",
-      "projectPath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\occurrensBackend.csproj",
+      "projectPath": "C:\\Users\\jakub\\Desktop\\Pomocniczy do backendu\\Projekt-Occurrens\\occurrensBackend.csproj",
       "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\obj\\",
+      "outputPath": "C:\\Users\\jakub\\Desktop\\Pomocniczy do backendu\\Projekt-Occurrens\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,4 +1,4 @@
-﻿namespace occurrensBackend.Models.AboutDoctorModels
+﻿namespace occurrensBackend.Models.AboutDoctorModels.CreateModels
 {
     public class Is_openedDto
     {
