@@ -1,0 +1,11 @@
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\Occurrens\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\Occurrens\Domain\bin\Debug\net7.0\Domain.dll
+D:\Occurrens\Domain\bin\Debug\net7.0\Domain.pdb
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.dll
+D:\Occurrens\Domain\obj\Debug\net7.0\refint\Domain.dll
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.pdb
+D:\Occurrens\Domain\obj\Debug\net7.0\ref\Domain.dll
