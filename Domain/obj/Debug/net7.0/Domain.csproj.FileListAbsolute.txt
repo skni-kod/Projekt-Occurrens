@@ -9,3 +9,4 @@ D:\Occurrens\Domain\obj\Debug\net7.0\Domain.dll
 D:\Occurrens\Domain\obj\Debug\net7.0\refint\Domain.dll
 D:\Occurrens\Domain\obj\Debug\net7.0\Domain.pdb
 D:\Occurrens\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\Occurrens\Domain\obj\Debug\net7.0\Domain.sourcelink.json

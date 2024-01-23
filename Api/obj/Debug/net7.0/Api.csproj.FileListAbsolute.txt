@@ -55,3 +55,7 @@ D:\Occurrens\Api\bin\Debug\net7.0\Mono.TextTemplating.dll
 D:\Occurrens\Api\bin\Debug\net7.0\System.CodeDom.dll
 D:\Occurrens\Api\bin\Debug\net7.0\ErrorOr.dll
 D:\Occurrens\Api\obj\Debug\net7.0\Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Occurrens\Api\bin\Debug\net7.0\BCrypt.Net-Core.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Core.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Core.pdb
+D:\Occurrens\Api\obj\Debug\net7.0\Api.sourcelink.json

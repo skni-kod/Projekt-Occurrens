@@ -12,7 +12,7 @@
         public string Password { get; set; }
         public DateOnly Date_of_birth { get; set; }
         public string Role { get; set; } = "Patient";
-        public bool Acceptation { get; set; }
+        public bool Acception { get; set; }
 
 
         public List<Visit> visits { get; set; }

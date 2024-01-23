@@ -1,6 +1,6 @@
 using Application;
 using Infrastructure;
-using Microsoft.EntityFrameworkCore.Design;
+using Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,9 @@ builder.Services.AddSwaggerGen();
 builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration)
-    .AddPresentation();
+    .AddPresentation()
+    .AddCore();
+
 
 var app = builder.Build();
 

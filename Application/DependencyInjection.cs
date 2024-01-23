@@ -8,15 +8,15 @@ namespace Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApplication(this IServiceCollection service)
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         var assembly = typeof(DependencyInjection).Assembly;
 
-        service.AddMediatR(configuration => configuration.RegisterServicesFromAssembly(assembly));
+        services.AddMediatR(configuration => configuration.RegisterServicesFromAssembly(assembly));
 
 
-        service.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-        service.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-        return service;
+        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        return services;
     }
 }

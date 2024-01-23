@@ -117,6 +117,9 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<decimal>("Pesel")
+                        .HasColumnType("numeric");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("text");
@@ -130,6 +133,9 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("Pesel")
                         .IsUnique();
 
                     b.ToTable("Doctors");
@@ -185,7 +191,7 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<bool>("Acceptation")
+                    b.Property<bool>("Acception")
                         .HasColumnType("boolean");
 
                     b.Property<DateOnly>("Date_of_birth")
@@ -223,6 +229,9 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("Pesel")
                         .IsUnique();
 
                     b.ToTable("Patients");

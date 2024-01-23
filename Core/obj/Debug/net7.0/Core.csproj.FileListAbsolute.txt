@@ -1,0 +1,16 @@
+D:\Occurrens\Core\bin\Debug\net7.0\Core.deps.json
+D:\Occurrens\Core\bin\Debug\net7.0\Core.dll
+D:\Occurrens\Core\bin\Debug\net7.0\Core.pdb
+D:\Occurrens\Core\bin\Debug\net7.0\Domain.dll
+D:\Occurrens\Core\bin\Debug\net7.0\Domain.pdb
+D:\Occurrens\Core\obj\Debug\net7.0\Core.csproj.AssemblyReference.cache
+D:\Occurrens\Core\obj\Debug\net7.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Occurrens\Core\obj\Debug\net7.0\Core.AssemblyInfoInputs.cache
+D:\Occurrens\Core\obj\Debug\net7.0\Core.AssemblyInfo.cs
+D:\Occurrens\Core\obj\Debug\net7.0\Core.csproj.CoreCompileInputs.cache
+D:\Occurrens\Core\obj\Debug\net7.0\Core.sourcelink.json
+D:\Occurrens\Core\obj\Debug\net7.0\Core.csproj.CopyComplete
+D:\Occurrens\Core\obj\Debug\net7.0\Core.dll
+D:\Occurrens\Core\obj\Debug\net7.0\refint\Core.dll
+D:\Occurrens\Core\obj\Debug\net7.0\Core.pdb
+D:\Occurrens\Core\obj\Debug\net7.0\ref\Core.dll

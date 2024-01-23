@@ -9,11 +9,13 @@
       "Api/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Core": "1.0.0",
           "ErrorOr": "1.9.0",
           "Infrastructure": "1.0.0",
           "MediatR": "12.2.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.11",
           "Microsoft.EntityFrameworkCore.Design": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.11",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.11",
           "Presentation": "1.0.0",
@@ -21,6 +23,14 @@
         },
         "runtime": {
           "Api.dll": {}
+        }
+      },
+      "BCrypt.Net-Core/1.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/BCrypt.Net-Core.dll": {
+            "assemblyVersion": "1.6.0.0",
+            "fileVersion": "1.6.0.0"
+          }
         }
       },
       "ErrorOr/1.9.0": {
@@ -117,7 +127,7 @@
       "Microsoft.EntityFrameworkCore.Design/7.0.11": {
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
@@ -128,15 +138,15 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.15": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.15",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "7.0.11.0",
-            "fileVersion": "7.0.1123.40906"
+            "assemblyVersion": "7.0.15.0",
+            "fileVersion": "7.0.1523.57109"
           }
         }
       },
@@ -240,7 +250,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.15",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.15",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.11",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
           "Npgsql": "7.0.6"
         },
         "runtime": {
@@ -304,13 +314,25 @@
       },
       "Application/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
+          "Domain": "1.0.0",
           "ErrorOr": "1.9.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
-          "Infrastructure": "1.0.0",
-          "MediatR": "12.2.0"
+          "MediatR": "12.2.0",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.15"
         },
         "runtime": {
           "Application.dll": {}
+        }
+      },
+      "Core/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "Core.dll": {}
         }
       },
       "Domain/1.0.0": {
@@ -320,8 +342,12 @@
       },
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
+          "BCrypt.Net-Core": "1.6.0",
+          "Core": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.15",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.11"
         },
@@ -344,6 +370,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BCrypt.Net-Core/1.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hsKiHGjrnlDW05MzuzzlD9gNP8YOW2KbZ+FbvISrilsKJJ76tXKhWey6psZX5sd7DczNpSU2U6ldjPoblk8BLw==",
+      "path": "bcrypt.net-core/1.6.0",
+      "hashPath": "bcrypt.net-core.1.6.0.nupkg.sha512"
     },
     "ErrorOr/1.9.0": {
       "type": "package",
@@ -422,12 +455,12 @@
       "path": "microsoft.entityframeworkcore.design/7.0.11",
       "hashPath": "microsoft.entityframeworkcore.design.7.0.11.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.11": {
+    "Microsoft.EntityFrameworkCore.Relational/7.0.15": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yHEEyah1XARStV1SJOsdKj8ieoMCZ0MkNuQaLfWONMWmbqwuDohfGQZk/FuzdT4aO/lJrUYiXbBSFv0ACzphEw==",
-      "path": "microsoft.entityframeworkcore.relational/7.0.11",
-      "hashPath": "microsoft.entityframeworkcore.relational.7.0.11.nupkg.sha512"
+      "sha512": "sha512-D03N/DF3lmtHHVd0RqHxZg+rtd3r8C4h7RJoy/ShxQA0r6rpJ/99ZA6HY9WeEgqsRbm2M8Lmj9MwJomcsJ+4GQ==",
+      "path": "microsoft.entityframeworkcore.relational/7.0.15",
+      "hashPath": "microsoft.entityframeworkcore.relational.7.0.15.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Tools/7.0.11": {
       "type": "package",
@@ -591,6 +624,11 @@
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
     },
     "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

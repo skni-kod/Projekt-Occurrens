@@ -20,9 +20,17 @@ public class OccurrensDbContext : DbContext
         modelBuilder.Entity<Doctor>()
             .HasIndex(r => r.Email)
             .IsUnique();
+        
+        modelBuilder.Entity<Doctor>()
+            .HasIndex(r => r.Pesel)
+            .IsUnique();
 
         modelBuilder.Entity<Patient>()
             .HasIndex(r => r.Email)
+            .IsUnique();
+        
+        modelBuilder.Entity<Patient>()
+            .HasIndex(r => r.Pesel)
             .IsUnique();
 
     }

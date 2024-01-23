@@ -3,6 +3,7 @@
     public class Doctor
     {
         public Guid Id { get; set; }
+        public decimal Pesel { get; set; }
         public string Name { get; set; }
         public string? Secont_name { get; set; } = string.Empty;
         public string Last_name { get; set; }
