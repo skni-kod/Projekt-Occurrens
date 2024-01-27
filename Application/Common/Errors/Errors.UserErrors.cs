@@ -11,5 +11,11 @@ public static partial class Errors
         code: "Duplicate e-mail",
         description: "Niepoprawne dane rejestracji!"
         );
+
+        public static Error nullEmailOrPasswork => Error.Conflict
+        (
+            code: "E-mail or password is null",
+            description: "Podałeś niepoprawne dane logowania!"
+        );
     }
 }

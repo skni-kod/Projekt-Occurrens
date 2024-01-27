@@ -13,7 +13,8 @@ builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration)
     .AddPresentation()
-    .AddCore();
+    .AddCore()
+    .AddAuthorization(builder.Configuration);
 
 
 var app = builder.Build();

@@ -19,7 +19,7 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
     
     public async Task<ErrorOr<AccountResponse>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-        bool isEmailExist = await _accountRepository.IsEmailExist(request.Email, request.Role.ToString(), cancellationToken);
+        bool isEmailExist = await _accountRepository.IsEmailExist(request.Email, request.Role, cancellationToken);
 
         if (isEmailExist)
         {

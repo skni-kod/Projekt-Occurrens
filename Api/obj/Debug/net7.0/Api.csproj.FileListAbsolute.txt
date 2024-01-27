@@ -59,3 +59,11 @@ D:\Occurrens\Api\bin\Debug\net7.0\BCrypt.Net-Core.dll
 D:\Occurrens\Api\bin\Debug\net7.0\Core.dll
 D:\Occurrens\Api\bin\Debug\net7.0\Core.pdb
 D:\Occurrens\Api\obj\Debug\net7.0\Api.sourcelink.json
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Occurrens\Api\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Occurrens\Api\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
