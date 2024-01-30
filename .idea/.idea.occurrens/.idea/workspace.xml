@@ -11,12 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="aba840ab-85fe-40bd-bed6-1403dab427de" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.occurrens/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.occurrens/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Occurrens/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/FileContentIndex/1bc1f9c1-ed69-4a85-8a12-9aafa9d2d501.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/FileContentIndex/4da5be26-4aaf-4dcb-9db2-b7b8708b74f2.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/FileContentIndex/772a5489-4ebf-40fd-ac5c-2327a937ee0e.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/FileContentIndex/781bfc69-97d2-4efe-8097-ef4f6539245e.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/FileContentIndex/f0f67ae7-a833-43a1-920d-cf8295b56163.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Occurrens/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Occurrens/v17/.futdcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Occurrens/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Occurrens/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/occurrens.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/occurrens.metadata.v7.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/occurrens.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/occurrens.projects.v7.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.exe" afterDir="false" />
@@ -29,9 +34,6 @@
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Presentation.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Presentation.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Presentation.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Api.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfoInputs.cache" afterDir="false" />
@@ -51,6 +53,7 @@
       <change beforePath="$PROJECT_DIR$/Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Common/Errors/Errors.UserErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Common/Errors/Errors.UserErrors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/WorkAccount/Commands/RegisterUser/CreateUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/WorkAccount/Commands/RegisterUser/CreateUserHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/WorkAccount/Commands/SingUpUser/SingUpUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/WorkAccount/Commands/SingUpUser/SingUpUserHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" afterDir="false" />
@@ -73,6 +76,8 @@
       <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Account/DTOS/AccountDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Account/DTOS/AccountDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Account/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Account/Extensions/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Account/Repositories/IAccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Account/Repositories/IAccountRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.deps.json" afterDir="false" />
@@ -96,11 +101,12 @@
       <change beforePath="$PROJECT_DIR$/Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Doctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Doctor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Patient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Patient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.sourcelink.json" afterDir="false" />
@@ -109,8 +115,10 @@
       <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Account/Repositories/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Account/Repositories/AccountRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Date/DateService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Date/DateService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistance/Migrations/OccurrensDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistance/Migrations/OccurrensDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.dll" afterDir="false" />
@@ -120,7 +128,6 @@
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.runtimeconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.assets.cache" afterDir="false" />
@@ -137,15 +144,6 @@
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net7.0/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net7.0/Presentation.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net7.0/Presentation.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net7.0/Presentation.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/Presentation.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/ref/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/ref/Presentation.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/refint/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net7.0/refint/Presentation.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/rider.project.restore.info" afterDir="false" />
     </list>
@@ -295,6 +293,12 @@
       <workItem from="1706383147972" duration="2389000" />
       <workItem from="1706385557764" duration="7558000" />
       <workItem from="1706393180827" duration="456000" />
+      <workItem from="1706573093674" duration="2583000" />
+      <workItem from="1706622323965" duration="1331000" />
+      <workItem from="1706624814092" duration="1677000" />
+      <workItem from="1706626509856" duration="998000" />
+      <workItem from="1706628388854" duration="249000" />
+      <workItem from="1706652141227" duration="4683000" />
     </task>
     <servers />
   </component>

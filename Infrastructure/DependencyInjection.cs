@@ -24,6 +24,7 @@ public static class DependencyInjection
         
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<IDateService, DateService>();
+        services.AddScoped<IEmailService, EmailService>();
         
         return services;
     }

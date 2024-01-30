@@ -1,8 +1,10 @@
 using Application.Contracts.AccountAnswer;
 using Application.WorkAccount.Commands.RegisterUser;
 using Application.WorkAccount.Commands.SingUpUser;
+using Application.WorkAccount.Queries.ConfirmAccount;
 using Core.Account.enums;
 using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -32,7 +34,13 @@ public class AccountController : ApiController
             errors => Problem(errors)
             );
     }
-
+    
+    /// <summary>
+    /// Create user account
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="who"></param>
+    /// <returns></returns>
     [HttpPost("sing-up/{who}")]
     public async Task<IActionResult> SingUp([FromBody] SingUpUserRequest request, [FromRoute]UserRoles who)
     {
@@ -42,6 +50,20 @@ public class AccountController : ApiController
             who);
 
         var response = await _mediator.Send(command);
+
+        return response.Match(
+            accountResponse => Ok(accountResponse),
+            errors => Problem(errors)
+            );
+    }
+
+    [HttpGet("verificateAccount/{token}/{role}/{id}")]
+    public async Task<IActionResult> ConfirmAccount([FromRoute] string token, [FromRoute] string role,
+        [FromRoute] Guid id)
+    {
+        var query = new ConfirmAccountQuery(token,role,id);
+
+        var response = await _mediator.Send(query);
 
         return response.Match(
             accountResponse => Ok(accountResponse),

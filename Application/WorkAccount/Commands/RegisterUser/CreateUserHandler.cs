@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Application.Common.Errors;
 using Application.Contracts.AccountAnswer;
 using Core.Account.enums;
@@ -37,7 +38,7 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
             await _accountRepository.CreatePatientAccount(patient, cancellationToken);
         }
         
-        return new AccountResponse("Pomyślnie utworzono konto");
+        return new AccountResponse("Pomyślnie utworzono konto!");
     }
 
     private dynamic CreateUserFromRequest(CreateUserCommand request)
@@ -55,7 +56,8 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
                 Password = request.Password,
                 Date_of_birth = request.BirthDate,
                 Role = request.Role.ToString(),
-                Acception = request.Acception
+                Acception = request.Acception,
+                VerificationToken = CreateRandomToken()
             },
             UserRoles.Patient => new Patient
             {
@@ -68,8 +70,14 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
                 Password = request.Password,
                 Date_of_birth = request.BirthDate,
                 Role = request.Role.ToString(),
-                Acception = request.Acception
+                Acception = request.Acception,
+                VerificationToken = CreateRandomToken()
             },
         };
+    }
+
+    private string CreateRandomToken()
+    {
+        return Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
     }
 }

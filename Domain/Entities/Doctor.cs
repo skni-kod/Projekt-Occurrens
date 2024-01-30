@@ -13,6 +13,10 @@
         public DateOnly Date_of_birth { get; set; }
         public string Role { get; set; } = "Doctor";
         public bool Acception { get; set; }
+        public string? VerificationToken { get; set; }
+        public DateTime? VerifiedAt { get; set; }
+        public string? PasswordResetToken { get; set; }
+        public DateTime? ResetTokenExpires { get; set; }
 
 
         public List<Specialization> spetializations { get; set; }

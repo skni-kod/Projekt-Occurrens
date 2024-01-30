@@ -18,6 +18,10 @@ public static class Extensions
             Telephon_number = doctor.Telephon_number,
             Date_of_birth = doctor.Date_of_birth,
             Role = doctor.Role,
+            VerificationToken = doctor.VerificationToken,
+            VerifiedAt = doctor.VerifiedAt,
+            PasswordResetToken = doctor.VerificationToken,
+            ResetTokenExpires = doctor.ResetTokenExpires
         };
     }
     
@@ -34,6 +38,10 @@ public static class Extensions
             Telephon_number = patient.Telephon_number,
             Date_of_birth = patient.Date_of_birth,
             Role = patient.Role,
+            VerificationToken = patient.VerificationToken,
+            VerifiedAt = patient.VerifiedAt,
+            PasswordResetToken = patient.VerificationToken,
+            ResetTokenExpires = patient.ResetTokenExpires
         };
     }
 }

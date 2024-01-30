@@ -11,4 +11,8 @@ public class AccountDto
     public int Telephon_number { get; set; }
     public DateOnly Date_of_birth { get; set; }
     public string Role { get; set; }
+    public string? VerificationToken { get; set; }
+    public DateTime? VerifiedAt { get; set; }
+    public string? PasswordResetToken { get; set; }
+    public DateTime? ResetTokenExpires { get; set; }
 }

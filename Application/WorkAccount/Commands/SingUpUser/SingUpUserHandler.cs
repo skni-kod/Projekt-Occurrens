@@ -21,6 +21,8 @@
 
             if (user is null) return Errors.UserErrors.nullEmailOrPasswork;
 
+            if (user.VerifiedAt == null) return Errors.UserErrors.accountNotVerified;
+
             var token = await _accountRepository.GenerateJwt(user);
 
             return new AccountResponse(token);

@@ -19,12 +19,14 @@ public class AccountRepository : IAccountRepository
     private readonly OccurrensDbContext _context;
     private readonly AuthenticationSettings _authenticationSettings;
     private readonly IDateService _dateService;
+    private readonly IEmailService _emailService;
 
-    public AccountRepository(OccurrensDbContext context, AuthenticationSettings authenticationSettings, IDateService dateService)
+    public AccountRepository(OccurrensDbContext context, AuthenticationSettings authenticationSettings, IDateService dateService, IEmailService emailService)
     {
         _context = context;
         _authenticationSettings = authenticationSettings;
         _dateService = dateService;
+        _emailService = emailService;
     }
     
     public async Task<bool> IsEmailExist(string email, UserRoles role, CancellationToken cancellationToken)
@@ -96,21 +98,28 @@ public class AccountRepository : IAccountRepository
         return await Task.Run(() => tokenHandler.WriteToken(token));
     }
 
-    public async Task<bool> VerifyPassword(string email, string password, UserRoles role, CancellationToken cancellationToken)
+    public async Task<bool> ConfirmAccount(string token, string role, Guid id)
     {
-        if (role == UserRoles.Doctor)
+        if (role == "Doctor")
         {
-            var doctor = await _context.Doctors.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
-            return BCrypt.Net.BCrypt.Verify(password, doctor?.Password);
+            var doctor = await _context.Doctors.FindAsync(id);
+            if (doctor.VerificationToken != token || doctor is null) return false;
+
+            doctor.VerifiedAt = _dateService.CurrentDateTime();
+            await _context.SaveChangesAsync();
         }
-        else if (role == UserRoles.Patient)
+        else if (role == "Patient")
         {
-            var patient = await _context.Patients.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
-            return BCrypt.Net.BCrypt.Verify(password, patient?.Password);
+            var patient = await _context.Patients.FindAsync(id);
+            if (patient.VerificationToken != token || patient is null) return false;
+
+            patient.VerifiedAt = _dateService.CurrentDateTime();
+            await _context.SaveChangesAsync();
         }
 
-        return false;
+        return true;
     }
+    
 
     public async Task createDoctorAccount(Doctor doctor, CancellationToken cancellationToken)
     {
@@ -120,6 +129,16 @@ public class AccountRepository : IAccountRepository
         
         await _context.Doctors.AddAsync(doctor, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
+
+        
+        var emailData = new EmailDto
+        {
+            To = doctor.Email,
+            Subject = "Weryfikacja konta OCCURRENS",
+            Body = $"<h1>Potwierdź swoje konto klikając <a href='https://localhost:7192/account/verifaceAccount/{doctor.VerificationToken}/{doctor.Role}/{doctor.Id}'>tutaj</a>:</h1>"
+        };
+        
+        _emailService.SendEmail(emailData);
     }
 
     public async Task CreatePatientAccount(Patient patient, CancellationToken cancellationToken)
@@ -130,5 +149,14 @@ public class AccountRepository : IAccountRepository
 
         await _context.Patients.AddAsync(patient, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
+        
+        var emailData = new EmailDto
+        {
+            To = patient.Email,
+            Subject = "Weryfikacja konta OCCURRENS",
+            Body = $"<h1>Potwierdź swoje konto klikając <a href='https://localhost:7192/account/verificateAccount/{patient.VerificationToken}/{patient.Role}/{patient.Id}'>tutaj</a></h1>"
+        };
+        
+        _emailService.SendEmail(emailData);
     }
 }

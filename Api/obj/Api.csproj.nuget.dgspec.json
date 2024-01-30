@@ -251,6 +251,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
               "version": "[7.0.15, )"
@@ -396,6 +400,10 @@
             "BCrypt.Net-Core": {
               "target": "Package",
               "version": "[1.6.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
