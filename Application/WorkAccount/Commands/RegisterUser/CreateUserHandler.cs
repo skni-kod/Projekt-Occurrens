@@ -57,7 +57,7 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
                 Date_of_birth = request.BirthDate,
                 Role = request.Role.ToString(),
                 Acception = request.Acception,
-                VerificationToken = CreateRandomToken()
+                VerificationToken = _accountRepository.CreateRandomToken()
             },
             UserRoles.Patient => new Patient
             {
@@ -71,13 +71,9 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
                 Date_of_birth = request.BirthDate,
                 Role = request.Role.ToString(),
                 Acception = request.Acception,
-                VerificationToken = CreateRandomToken()
+                VerificationToken = _accountRepository.CreateRandomToken()
             },
         };
     }
-
-    private string CreateRandomToken()
-    {
-        return Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
-    }
+    
 }

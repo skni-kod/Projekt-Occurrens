@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using Core.Account.Repositories;
 using Infrastructure.Persistance;
@@ -50,20 +51,24 @@ public class AccountRepository : IAccountRepository
         if (role == UserRoles.Doctor)
         {
             var doctor =  await _context.Doctors.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+
+            if (doctor is null) return null;
             
             var passwordVerify = BCrypt.Net.BCrypt.Verify(password, doctor.Password);
             
-            if (doctor is null || passwordVerify == false) return null;
+            if (passwordVerify == false) return null;
             
             return doctor.DoctorAsDto();
         }
         else if (role == UserRoles.Patient)
         {
             var patient = await _context.Patients.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+
+            if (patient is null) return null;
             
             var passwordVerification = BCrypt.Net.BCrypt.Verify(password, patient.Password);
             
-            if (patient is null || passwordVerification == false) return null;
+            if (passwordVerification == false) return null;
 
             return patient.PatientAsDto();
         }
@@ -98,23 +103,23 @@ public class AccountRepository : IAccountRepository
         return await Task.Run(() => tokenHandler.WriteToken(token));
     }
 
-    public async Task<bool> ConfirmAccount(string token, string role, Guid id)
+    public async Task<bool> ConfirmAccount(string token, string role, Guid id, CancellationToken cancellationToken)
     {
         if (role == "Doctor")
         {
             var doctor = await _context.Doctors.FindAsync(id);
-            if (doctor.VerificationToken != token || doctor is null) return false;
+            if (doctor is null || doctor.VerificationToken != token) return false;
 
             doctor.VerifiedAt = _dateService.CurrentDateTime();
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
         }
         else if (role == "Patient")
         {
             var patient = await _context.Patients.FindAsync(id);
-            if (patient.VerificationToken != token || patient is null) return false;
+            if (patient is null || patient.VerificationToken != token) return false;
 
             patient.VerifiedAt = _dateService.CurrentDateTime();
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         return true;
@@ -135,7 +140,7 @@ public class AccountRepository : IAccountRepository
         {
             To = doctor.Email,
             Subject = "Weryfikacja konta OCCURRENS",
-            Body = $"<h1>Potwierdź swoje konto klikając <a href='https://localhost:7192/account/verifaceAccount/{doctor.VerificationToken}/{doctor.Role}/{doctor.Id}'>tutaj</a>:</h1>"
+            Body = $"<h1>Potwierdź swoje konto klikając <a href='https://localhost:7192/account/verificateAccount/{doctor.VerificationToken}/{doctor.Role}/{doctor.Id}'>tutaj</a>:</h1>"
         };
         
         _emailService.SendEmail(emailData);
@@ -158,5 +163,105 @@ public class AccountRepository : IAccountRepository
         };
         
         _emailService.SendEmail(emailData);
+    }
+    
+    public string CreateRandomToken() => Convert.ToHexString(RandomNumberGenerator.GetBytes(256));
+    
+    public async Task<bool> ForgotPasswordEmail(string email, UserRoles role, CancellationToken cancellationToken)
+    {
+        if (role == UserRoles.Doctor)
+        {
+            var doctor = await _context.Doctors.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+
+            if (doctor is null) return false;
+            
+            var emailData = new EmailDto
+            {
+                To = email,
+                Subject = "Reset hasła OCCURRENS",
+                Body = $"<h1>Aby zresetować hasło kliknij<a href='https://localhost:7192/account/generate-token-to-reset-password/{doctor.Id}/{doctor.Role}'>tutaj</a>:</h1>"
+            };
+            
+            _emailService.SendEmail(emailData);
+        }
+        else if(role == UserRoles.Patient)
+        {
+            var patient = await _context.Patients.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+
+            if (patient is null) return false;
+            
+            var emailData = new EmailDto
+            {
+                To = email,
+                Subject = "Reset hasła OCCURRENS",
+                Body = $"<h1>Aby zresetować hasło kliknij<a href='https://localhost:7192/account/generate-token-to-reset-password/{patient.Id}/{patient.Role}'>tutaj</a>:</h1>"
+            };
+
+            _emailService.SendEmail(emailData);
+        }
+        
+        return true;
+    }
+
+    public async Task<string> GenerateTokenToResterPassword(Guid id, string role, CancellationToken cancellationToken)
+    {
+        if (role == "Doctor")
+        {
+            var doctor = await _context.Doctors.FindAsync(id, cancellationToken);
+
+            if (doctor is null) return null;
+
+            doctor.PasswordResetToken = CreateRandomToken();
+            doctor.ResetTokenExpires = _dateService.CurrentDateTime().AddMinutes(5);
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return doctor.PasswordResetToken;
+        }
+        else if (role == "Patient")
+        {
+            var patient = await _context.Patients.FindAsync(id, cancellationToken);
+
+            if (patient is null) return null;
+
+            patient.PasswordResetToken = CreateRandomToken();
+            patient.ResetTokenExpires = _dateService.CurrentDateTime().AddMinutes(5);
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return patient.PasswordResetToken;
+        }
+
+        return null;
+    }
+
+    public async Task<bool> ResetPassword(string token, string password, UserRoles role, CancellationToken cancellationToken)
+    {
+        if (role == UserRoles.Doctor)
+        {
+            var doctor = await _context.Doctors.FirstOrDefaultAsync(x => x.PasswordResetToken == token, cancellationToken);
+
+            if (doctor is null) return false;
+
+            doctor.Password = BCrypt.Net.BCrypt.HashPassword(password);
+
+            doctor.ResetTokenExpires = null;
+
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+        else if (role == UserRoles.Patient)
+        {
+            var patient = await _context.Patients.FirstOrDefaultAsync(x => x.PasswordResetToken == token, cancellationToken);
+
+            if (patient is null) return false;
+
+            patient.Password = BCrypt.Net.BCrypt.HashPassword(password);
+
+            patient.ResetTokenExpires = null;
+            
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+
+        return true;
     }
 }

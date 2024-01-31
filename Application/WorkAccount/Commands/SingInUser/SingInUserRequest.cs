@@ -1,5 +1,5 @@
 namespace Application.WorkAccount.Commands.SingUpUser;
 
-public record SingUpUserRequest(
+public record SingInUserRequest(
     string Login,
     string Password);

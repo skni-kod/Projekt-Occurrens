@@ -1,7 +1,10 @@
 using Application.Contracts.AccountAnswer;
 using Application.WorkAccount.Commands.RegisterUser;
+using Application.WorkAccount.Commands.ResetPassword;
 using Application.WorkAccount.Commands.SingUpUser;
 using Application.WorkAccount.Queries.ConfirmAccount;
+using Application.WorkAccount.Queries.ForgotPassword;
+using Application.WorkAccount.Queries.GenerateTokenToResetPassword;
 using Core.Account.enums;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -42,9 +45,9 @@ public class AccountController : ApiController
     /// <param name="who"></param>
     /// <returns></returns>
     [HttpPost("sing-up/{who}")]
-    public async Task<IActionResult> SingUp([FromBody] SingUpUserRequest request, [FromRoute]UserRoles who)
+    public async Task<IActionResult> SingIn([FromBody] SingInUserRequest request, [FromRoute]UserRoles who)
     {
-        var command = new SingUpUserCommand(
+        var command = new SingInUserCommand(
             request.Login,
             request.Password,
             who);
@@ -56,7 +59,49 @@ public class AccountController : ApiController
             errors => Problem(errors)
             );
     }
+    
+    /// <summary>
+    /// Send e-mail to access reset password
+    /// </summary>
+    /// <param name="email"></param>
+    /// <param name="role"></param>
+    /// <returns></returns>
+    [HttpPost("forgot-password/{role}")]
+    public async Task<IActionResult> ForgotPassword([FromBody] string email, [FromRoute] UserRoles role)
+    {
+        var query = new ForgotPasswordQuery(email, role);
 
+        var response = await _mediator.Send(query);
+
+        return response.Match(
+            accountResponse => Ok(accountResponse),
+            errors => Problem(errors)
+        );
+    }
+    
+    /// <summary>
+    /// Reset user password
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpPost("reset-password")]
+    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordCommand command)
+    {
+        var response = await _mediator.Send(command);
+        
+        return response.Match(
+            accountResponse => Ok(accountResponse),
+            errors => Problem(errors)
+        );
+    }
+
+    /// <summary>
+    /// Verification account on email
+    /// </summary>
+    /// <param name="token"></param>
+    /// <param name="role"></param>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("verificateAccount/{token}/{role}/{id}")]
     public async Task<IActionResult> ConfirmAccount([FromRoute] string token, [FromRoute] string role,
         [FromRoute] Guid id)
@@ -69,5 +114,24 @@ public class AccountController : ApiController
             accountResponse => Ok(accountResponse),
             errors => Problem(errors)
             );
+    }
+
+    /// <summary>
+    /// Generate reset password token after click email link
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="role"></param>
+    /// <returns></returns>
+    [HttpGet("generate-token-to-reset-password/{id}/{role}")]
+    public async Task<IActionResult> GenerateTokenToResetPassword([FromRoute] Guid id, [FromRoute] string role)
+    {
+        var query = new GenerateTokenToResetPasswordCommand(id, role);
+
+        var response = await _mediator.Send(query);
+        
+        return response.Match(
+            accountResponse => Ok(accountResponse),
+            errors => Problem(errors)
+        );
     }
 }

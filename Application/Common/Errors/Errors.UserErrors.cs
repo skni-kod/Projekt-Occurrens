@@ -23,5 +23,8 @@ public static partial class Errors
 
         public static Error somethinkWentWrong => Error.Conflict
             (code:"Somethink went wrong!", description:"Coś poszło nie tak!");
+        
+        public static Error badEmail => Error.Conflict
+            (code:"Bad e-mail!", description:"Podałeś niepoprawny e-mail");
     }
 }

@@ -6,16 +6,16 @@
 
     namespace Application.WorkAccount.Commands.SingUpUser;
 
-    public class SingUpUserHandler : IRequestHandler<SingUpUserCommand, ErrorOr<AccountResponse>>
+    public class SingInUserHandler : IRequestHandler<SingInUserCommand, ErrorOr<AccountResponse>>
     {
         private readonly IAccountRepository _accountRepository;
 
-        public SingUpUserHandler(IAccountRepository accountRepository)
+        public SingInUserHandler(IAccountRepository accountRepository)
         {
             _accountRepository = accountRepository;
         }
         
-        public async Task<ErrorOr<AccountResponse>> Handle(SingUpUserCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<AccountResponse>> Handle(SingInUserCommand request, CancellationToken cancellationToken)
         {
             var user = await _accountRepository.UserData(request.Login,request.Password ,request.Who, cancellationToken);
 

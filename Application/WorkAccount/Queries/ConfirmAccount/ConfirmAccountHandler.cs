@@ -17,7 +17,7 @@ public class ConfirmAccountHandler : IRequestHandler<ConfirmAccountQuery, ErrorO
     
     public async Task<ErrorOr<AccountResponse>> Handle(ConfirmAccountQuery request, CancellationToken cancellationToken)
     {
-        bool response = await _accountRepository.ConfirmAccount(request.token, request.role, request.id);
+        bool response = await _accountRepository.ConfirmAccount(request.token, request.role, request.id, cancellationToken);
 
         if (response == false)
         {

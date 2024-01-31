@@ -5,7 +5,7 @@ using ErrorOr;
 
 namespace Application.WorkAccount.Commands.SingUpUser;
 
-public record SingUpUserCommand(
+public record SingInUserCommand(
     string Login,
     string Password,
     UserRoles Who
