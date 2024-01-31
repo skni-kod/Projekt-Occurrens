@@ -4,5 +4,5 @@ namespace Core.Account.Repositories;
 
 public interface IEmailService
 {
-    void SendEmail(EmailDto request);
+    Task SendEmail(EmailDto request);
 }

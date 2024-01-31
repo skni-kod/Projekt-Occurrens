@@ -143,7 +143,7 @@ public class AccountRepository : IAccountRepository
             Body = $"<h1>Potwierdź swoje konto klikając <a href='https://localhost:7192/account/verificateAccount/{doctor.VerificationToken}/{doctor.Role}/{doctor.Id}'>tutaj</a>:</h1>"
         };
         
-        _emailService.SendEmail(emailData);
+        await _emailService.SendEmail(emailData);
     }
 
     public async Task CreatePatientAccount(Patient patient, CancellationToken cancellationToken)
@@ -162,7 +162,7 @@ public class AccountRepository : IAccountRepository
             Body = $"<h1>Potwierdź swoje konto klikając <a href='https://localhost:7192/account/verificateAccount/{patient.VerificationToken}/{patient.Role}/{patient.Id}'>tutaj</a></h1>"
         };
         
-        _emailService.SendEmail(emailData);
+        await _emailService.SendEmail(emailData);
     }
     
     public string CreateRandomToken() => Convert.ToHexString(RandomNumberGenerator.GetBytes(256));
@@ -182,7 +182,7 @@ public class AccountRepository : IAccountRepository
                 Body = $"<h1>Aby zresetować hasło kliknij<a href='https://localhost:7192/account/generate-token-to-reset-password/{doctor.Id}/{doctor.Role}'>tutaj</a>:</h1>"
             };
             
-            _emailService.SendEmail(emailData);
+            await _emailService.SendEmail(emailData);
         }
         else if(role == UserRoles.Patient)
         {
@@ -197,7 +197,7 @@ public class AccountRepository : IAccountRepository
                 Body = $"<h1>Aby zresetować hasło kliknij<a href='https://localhost:7192/account/generate-token-to-reset-password/{patient.Id}/{patient.Role}'>tutaj</a>:</h1>"
             };
 
-            _emailService.SendEmail(emailData);
+            await _emailService.SendEmail(emailData);
         }
         
         return true;
@@ -243,6 +243,8 @@ public class AccountRepository : IAccountRepository
 
             if (doctor is null) return false;
 
+            if (doctor.ResetTokenExpires < _dateService.CurrentDateTime()) return false;
+
             doctor.Password = BCrypt.Net.BCrypt.HashPassword(password);
 
             doctor.ResetTokenExpires = null;
@@ -254,6 +256,8 @@ public class AccountRepository : IAccountRepository
             var patient = await _context.Patients.FirstOrDefaultAsync(x => x.PasswordResetToken == token, cancellationToken);
 
             if (patient is null) return false;
+            
+            if (patient.ResetTokenExpires < _dateService.CurrentDateTime()) return false;
 
             patient.Password = BCrypt.Net.BCrypt.HashPassword(password);
 

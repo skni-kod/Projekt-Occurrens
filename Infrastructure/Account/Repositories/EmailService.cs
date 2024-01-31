@@ -9,7 +9,7 @@ namespace Infrastructure.Account.Repositories;
 
 public class EmailService : IEmailService
 {
-    public void SendEmail(EmailDto request)
+    public async Task SendEmail(EmailDto request)
     {
         var email = new MimeMessage();
         email.From.Add(MailboxAddress.Parse("francisco.flatley82@ethereal.email"));
@@ -19,9 +19,9 @@ public class EmailService : IEmailService
         
         using var smtp = new SmtpClient();
         
-        smtp.Connect("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-        smtp.Authenticate("francisco.flatley82@ethereal.email", "hCytCSRme9QwjxQ1XN");
-        smtp.Send(email);
-        smtp.Disconnect(true);
+        await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
+        await smtp.AuthenticateAsync("francisco.flatley82@ethereal.email", "hCytCSRme9QwjxQ1XN");
+        await smtp.SendAsync(email);
+        await smtp.DisconnectAsync(true);
     }
 }
