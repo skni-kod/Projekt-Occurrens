@@ -1,3 +1,4 @@
+using Application.DoctorInformations.Commands.SetAddress;
 using Application.DoctorInformations.Commands.SetSpecialization;
 using Core.Account.enums;
 using MediatR;
@@ -31,6 +32,22 @@ public class SelfDoctorInformationsController : ApiController
         return response.Match(
             infoResponse => Ok(infoResponse),
             errors => Problem(errors) 
+            );
+    }
+
+    /// <summary>
+    /// Set doctor's office address
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpPost("SetAddress")]
+    public async Task<IActionResult> SetAddress([FromBody] SetAddressCommand command)
+    {
+        var response = await _mediator.Send(command);
+
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors)
             );
     }
 }

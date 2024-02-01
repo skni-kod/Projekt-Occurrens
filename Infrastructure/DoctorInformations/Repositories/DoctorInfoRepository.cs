@@ -13,15 +13,15 @@ public class DoctorInfoRepository : IDoctorInfoRepository
         _context = context;
     }
     
-    public async Task SetSpecialization(Guid userId,string specialization, CancellationToken cancellationToken)
+    public async Task SetSpecialization(Specialization specialization, CancellationToken cancellationToken)
     {
-        var result = new Specialization
-        {
-            DoctorId = userId,
-            Specjalization = specialization
-        };
+        await _context.AddAsync(specialization, cancellationToken);
+        await _context.SaveChangesAsync();
+    }
 
-        await _context.AddAsync(result, cancellationToken);
+    public async Task SetAddress(Address address, CancellationToken cancellationToken)
+    {
+        await _context.Addresses.AddAsync(address, cancellationToken);
         await _context.SaveChangesAsync();
     }
 }

@@ -6,7 +6,7 @@ using ErrorOr;
 namespace Application.WorkAccount.Commands.RegisterUser;
 
 public record CreateUserCommand(
-    decimal Pesel,
+    long Pesel,
     string Name,
     string? SecontName,
     string LastName,

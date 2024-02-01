@@ -3,9 +3,9 @@
     public class Address
     {
         public Guid Id { get; set; }
-        public string? Street { get; set; } = string.Empty;
+        public string Street { get; set; }
         public int Building_number { get; set; }
-        public int? Apartament_number { get; set; } 
+        public int? Apartament_number { get; set; } = null;
         public string Postal_code { get; set; }
         public string City { get; set; }
 

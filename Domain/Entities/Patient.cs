@@ -3,7 +3,7 @@
     public class Patient
     {
         public Guid Id { get; set; }
-        public decimal Pesel { get; set; }
+        public long Pesel { get; set; }
         public string Name { get; set; }
         public string? Secont_name { get; set; }
         public string Last_name { get; set; }

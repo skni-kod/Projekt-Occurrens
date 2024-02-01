@@ -46,6 +46,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Street")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -120,8 +121,8 @@ namespace Infrastructure.Migrations
                     b.Property<string>("PasswordResetToken")
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Pesel")
-                        .HasColumnType("numeric");
+                    b.Property<long>("Pesel")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("ResetTokenExpires")
                         .HasColumnType("timestamp with time zone");
@@ -228,8 +229,8 @@ namespace Infrastructure.Migrations
                     b.Property<string>("PasswordResetToken")
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Pesel")
-                        .HasColumnType("numeric");
+                    b.Property<long>("Pesel")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("ResetTokenExpires")
                         .HasColumnType("timestamp with time zone");

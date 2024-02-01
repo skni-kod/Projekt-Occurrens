@@ -12,7 +12,7 @@ public class EmailService : IEmailService
     public async Task SendEmail(EmailDto request)
     {
         var email = new MimeMessage();
-        email.From.Add(MailboxAddress.Parse("francisco.flatley82@ethereal.email"));
+        email.From.Add(MailboxAddress.Parse("craig.lind24@ethereal.email"));
         email.To.Add(MailboxAddress.Parse(request.To));
         email.Subject = request.Subject;
         email.Body = new TextPart(TextFormat.Html) {Text = request.Body};
@@ -20,7 +20,7 @@ public class EmailService : IEmailService
         using var smtp = new SmtpClient();
         
         await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-        await smtp.AuthenticateAsync("francisco.flatley82@ethereal.email", "hCytCSRme9QwjxQ1XN");
+        await smtp.AuthenticateAsync("craig.lind24@ethereal.email", "Y7Bzyx3qKQ3tjXzuSG");
         await smtp.SendAsync(email);
         await smtp.DisconnectAsync(true);
     }

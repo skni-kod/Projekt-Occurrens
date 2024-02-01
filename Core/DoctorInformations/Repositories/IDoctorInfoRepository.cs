@@ -1,6 +1,9 @@
+using occurrensBackend.Entities.DatabaseEntities;
+
 namespace Core.DoctorInformations.Repositories;
 
 public interface IDoctorInfoRepository
 {
-    Task SetSpecialization(Guid userId,string specialization, CancellationToken cancellationToken);
+    Task SetSpecialization(Specialization specialization, CancellationToken cancellationToken);
+    Task SetAddress(Address address, CancellationToken cancellationToken);
 }

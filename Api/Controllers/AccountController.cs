@@ -42,7 +42,7 @@ public class AccountController : ApiController
     /// <param name="request"></param>
     /// <param name="who"></param>
     /// <returns></returns>
-    [HttpPost("sing-up/{who}")]
+    [HttpPost("sing-in/{who}")]
     public async Task<IActionResult> SingIn([FromBody] SingInUserRequest request, [FromRoute]UserRoles who)
     {
         var command = new SingInUserCommand(
