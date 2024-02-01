@@ -11,9 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aba840ab-85fe-40bd-bed6-1403dab427de" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.occurrens/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.occurrens/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Account/Repositories/IEmailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Account/Repositories/IEmailService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Account/Repositories/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Account/Repositories/AccountRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Account/Repositories/EmailService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Account/Repositories/EmailService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +170,7 @@
       <workItem from="1706656943326" duration="8906000" />
       <workItem from="1706665940497" duration="92000" />
       <workItem from="1706733789106" duration="359000" />
+      <workItem from="1706741832171" duration="6649000" />
     </task>
     <servers />
   </component>

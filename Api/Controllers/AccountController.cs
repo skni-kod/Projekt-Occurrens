@@ -1,4 +1,3 @@
-using Application.Contracts.AccountAnswer;
 using Application.WorkAccount.Commands.RegisterUser;
 using Application.WorkAccount.Commands.ResetPassword;
 using Application.WorkAccount.Commands.SingUpUser;
@@ -7,7 +6,6 @@ using Application.WorkAccount.Queries.ForgotPassword;
 using Application.WorkAccount.Queries.GenerateTokenToResetPassword;
 using Core.Account.enums;
 using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
