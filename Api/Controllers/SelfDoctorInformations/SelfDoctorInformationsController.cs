@@ -1,3 +1,4 @@
+using Application.DoctorInformations.Commands.SetSpecialization;
 using Core.Account.enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -17,9 +18,19 @@ public class SelfDoctorInformationsController : ApiController
         _mediator = mediator;
     }
 
+    /// <summary>
+    /// Set specialization
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
     [HttpPost("SetSpecialization")]
-    public async Task<IActionResult> SetSpecialization()
+    public async Task<IActionResult> SetSpecialization([FromBody] SetSpecializationCommand command)
     {
-        
+        var response = await _mediator.Send(command);
+
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors) 
+            );
     }
 }
