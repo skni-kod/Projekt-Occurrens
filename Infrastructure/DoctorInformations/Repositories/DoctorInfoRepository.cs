@@ -50,4 +50,20 @@ public class DoctorInfoRepository : IDoctorInfoRepository
         await _context.IsOpeneds.AddAsync(isOpened, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
     }
+
+    public async Task<bool> UpdateSpecialization(Guid userId, Guid specializationId,string newSpecialization ,CancellationToken cancellationToken)
+    {
+        var result = await _context.Specializations.FindAsync(specializationId, cancellationToken);
+
+        if (result != null && result.DoctorId == userId)
+        {
+            result.Specjalization = newSpecialization;
+            
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return true;
+        }
+
+        return false;
+    }
 }

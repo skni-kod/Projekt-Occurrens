@@ -55,7 +55,6 @@
       <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.sourcelink.json" afterDir="false" />
@@ -252,6 +251,7 @@
       <workItem from="1706829108194" duration="116000" />
       <workItem from="1707154887127" duration="780000" />
       <workItem from="1707156906846" duration="4458000" />
+      <workItem from="1707252574062" duration="6890000" />
     </task>
     <servers />
   </component>

@@ -10,4 +10,5 @@ public interface IDoctorInfoRepository
     Task<AddressDto> GetAddress(Guid addressId, CancellationToken cancellationToken);
     Task<bool> IsOpenedDataExists(Guid id, CancellationToken cancellationToken);
     Task CreateOpenedInfo(Is_opened isOpened, CancellationToken cancellationToken);
+    Task<bool> UpdateSpecialization(Guid userId, Guid specializationId,string newSpecialization, CancellationToken cancellationToken);
 }

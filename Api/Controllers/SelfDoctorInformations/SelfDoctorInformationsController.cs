@@ -1,3 +1,5 @@
+using Application.Contracts.DoctorInformationsAnswers.Specialization;
+using Application.DoctorInformations.Commands.EditSpecialization;
 using Application.DoctorInformations.Commands.SetAddress;
 using Application.DoctorInformations.Commands.SetOpenedData;
 using Application.DoctorInformations.Commands.SetSpecialization;
@@ -52,9 +54,27 @@ public class SelfDoctorInformationsController : ApiController
             );
     }
 
+    /// <summary>
+    /// Set date-opened office
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
     [HttpPost("Set-opened-info")]
     public async Task<IActionResult> SetOpenedInfo([FromBody] SetOpenedDataCommand command)
     {
+        var response = await _mediator.Send(command);
+
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors)
+            );
+    }
+
+    [HttpPut("Edit-specialization/{id}")]
+    public async Task<IActionResult> EditSpecialization([FromRoute] Guid id, [FromBody] UpdateSpecializationRequest request)
+    {
+        var command = new EditSpecializationCommand(id, request.specialization);
+
         var response = await _mediator.Send(command);
 
         return response.Match(
