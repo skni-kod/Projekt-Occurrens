@@ -66,4 +66,36 @@ public class DoctorInfoRepository : IDoctorInfoRepository
 
         return false;
     }
+
+    public async Task<bool> UpdateOfficeInfo(ToUpdateOfficeDto dto, Guid userId, Guid officeId, CancellationToken cancellationToken)
+    {
+        var address = await _context.Addresses
+            .FirstOrDefaultAsync(address => address.Id == officeId && address.DoctorId == userId, cancellationToken);
+
+        if (address == null) return false;
+
+        address.Street = dto.Street ?? address.Street;
+        if (dto.BuildingNumber != 0) address.Building_number = (int)dto.BuildingNumber;
+        if (dto.ApartamentNumber != 0) address.Apartament_number = (int)dto.ApartamentNumber;
+        address.Postal_code = dto.PostalCode ?? address.Postal_code;
+
+        await _context.SaveChangesAsync(cancellationToken);
+
+        var openedData = await _context.IsOpeneds.FirstOrDefaultAsync(x => x.AddressId == address.Id, cancellationToken);
+
+        if (openedData != null)
+        {
+            openedData.Monday = dto.Monday ?? openedData.Monday;
+            openedData.Tuesday = dto.Tuesday ?? openedData.Tuesday;
+            openedData.Wednesday = dto.Wednesday ?? openedData.Wednesday;
+            openedData.Thursday = dto.Thursday ?? openedData.Thursday;
+            openedData.Fridady = dto.Fridady ?? openedData.Fridady;
+            openedData.Saturday = dto.Saturday ?? openedData.Saturday;
+            openedData.Sunday = dto.Sunday ?? openedData.Sunday;
+        }
+
+        await _context.SaveChangesAsync(cancellationToken);
+        
+        return true;
+    }
 }

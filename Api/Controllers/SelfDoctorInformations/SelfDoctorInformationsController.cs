@@ -1,4 +1,6 @@
+using Application.Contracts.DoctorInformationsAnswers.Office;
 using Application.Contracts.DoctorInformationsAnswers.Specialization;
+using Application.DoctorInformations.Commands.EditOfficeInfo;
 using Application.DoctorInformations.Commands.EditSpecialization;
 using Application.DoctorInformations.Commands.SetAddress;
 using Application.DoctorInformations.Commands.SetOpenedData;
@@ -70,6 +72,12 @@ public class SelfDoctorInformationsController : ApiController
             );
     }
 
+    /// <summary>
+    /// Update doctor specialization
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="request"></param>
+    /// <returns></returns>
     [HttpPut("Edit-specialization/{id}")]
     public async Task<IActionResult> EditSpecialization([FromRoute] Guid id, [FromBody] UpdateSpecializationRequest request)
     {
@@ -77,6 +85,38 @@ public class SelfDoctorInformationsController : ApiController
 
         var response = await _mediator.Send(command);
 
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors)
+            );
+    }
+
+    /// <summary>
+    /// Update doctor office info
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="request"></param>
+    /// <returns></returns>
+    [HttpPut("Edit-doctor-office-info/{id}")]
+    public async Task<IActionResult> EditDoctorOfficeInfo([FromRoute] Guid id, [FromBody] UpdateOfficeInfoRequest request)
+    {
+        var command = new EditOfficeInfoCommand(
+            request.Street,
+            request.BuildingNumber,
+            request.ApartamentNumber,
+            request.PostalCode,
+            request.City,
+            request.Monday,
+            request.Tuesday,
+            request.Wednesday,
+            request.Thursday,
+            request.Fridady,
+            request.Saturday,
+            request.Sunday,
+            id);
+
+        var response = await _mediator.Send(command);
+        
         return response.Match(
             infoResponse => Ok(infoResponse),
             errors => Problem(errors)
