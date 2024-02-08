@@ -12,5 +12,5 @@ public record SetOpenedDataCommand(
     string? Fridady,
     string? Saturday,
     string? Sunday,
-    Guid addressId
+    Guid AddressId
     ) : IRequest<ErrorOr<DoctorInfoResponse>>;

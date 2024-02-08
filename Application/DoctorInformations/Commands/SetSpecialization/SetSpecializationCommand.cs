@@ -5,5 +5,5 @@ using MediatR;
 namespace Application.DoctorInformations.Commands.SetSpecialization;
 
 public record SetSpecializationCommand(
-    string specialization
+    string Specialization
     ) : IRequest<ErrorOr<DoctorInfoResponse>>;

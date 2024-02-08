@@ -5,6 +5,6 @@ using MediatR;
 namespace Application.DoctorInformations.Commands.EditSpecialization;
 
 public record EditSpecializationCommand(
-    Guid id,
-    string newSpecialization
+    Guid Id,
+    string NewSpecialization
     ) : IRequest<ErrorOr<DoctorInfoResponse>>;

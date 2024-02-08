@@ -6,6 +6,6 @@ using ErrorOr;
 namespace Application.WorkAccount.Queries.ForgotPassword;
 
 public record ForgotPasswordQuery(
-    string email,
-    UserRoles role
+    string Email,
+    UserRoles Role
     ) : IRequest<ErrorOr<AccountResponse>>;

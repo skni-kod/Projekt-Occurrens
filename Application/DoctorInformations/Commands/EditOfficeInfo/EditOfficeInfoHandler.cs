@@ -40,9 +40,9 @@ public class EditOfficeInfoHandler : IRequestHandler<EditOfficeInfoCommand, Erro
         };
 
         var result =
-            await _doctorInfoRepository.UpdateOfficeInfo(toUpdate, (Guid)userId, request.id, cancellationToken);
+            await _doctorInfoRepository.UpdateOfficeInfo(toUpdate, (Guid)userId, request.Id, cancellationToken);
 
-        if (!result) return Errors.Permision.permissionDenied;
+        if (!result) return Errors.Permision.PermissionDenied;
 
         return new DoctorInfoResponse("Pomyślnie zaktualizowano!");
     }

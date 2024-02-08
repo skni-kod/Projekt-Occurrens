@@ -17,9 +17,9 @@ public class GenerateTokenToResetPasswordHandler : IRequestHandler<GenerateToken
     
     public async Task<ErrorOr<AccountResponse>> Handle(GenerateTokenToResetPasswordCommand request, CancellationToken cancellationToken)
     {
-        var result = await _accountRepository.GenerateTokenToResterPassword(request.id, request.role, cancellationToken);
+        var result = await _accountRepository.GenerateTokenToResterPassword(request.Id, request.Role, cancellationToken);
 
-        if (result == null) return Errors.UserErrors.somethinkWentWrong;
+        if (result == null) return Errors.UserErrors.SomethinkWentWrong;
 
         return new AccountResponse(result);
     }

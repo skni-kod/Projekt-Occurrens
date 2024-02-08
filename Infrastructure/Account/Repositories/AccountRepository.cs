@@ -126,7 +126,7 @@ public class AccountRepository : IAccountRepository
     }
     
 
-    public async Task createDoctorAccount(Doctor doctor, CancellationToken cancellationToken)
+    public async Task CreateDoctorAccount(Doctor doctor, CancellationToken cancellationToken)
     {
         var hashPassword = BCrypt.Net.BCrypt.HashPassword(doctor.Password);
         

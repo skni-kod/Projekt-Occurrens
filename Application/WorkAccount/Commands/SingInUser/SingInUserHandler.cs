@@ -19,9 +19,9 @@
         {
             var user = await _accountRepository.UserData(request.Login,request.Password ,request.Who, cancellationToken);
 
-            if (user is null) return Errors.UserErrors.nullEmailOrPasswork;
+            if (user is null) return Errors.UserErrors.NullEmailOrPasswork;
 
-            if (user.VerifiedAt == null) return Errors.UserErrors.accountNotVerified;
+            if (user.VerifiedAt == null) return Errors.UserErrors.AccountNotVerified;
 
             var token = await _accountRepository.GenerateJwt(user);
 

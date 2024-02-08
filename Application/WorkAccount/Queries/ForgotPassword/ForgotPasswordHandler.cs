@@ -18,9 +18,9 @@ public class ForgotPasswordHandler : IRequestHandler<ForgotPasswordQuery, ErrorO
     
     public async Task<ErrorOr<AccountResponse>> Handle(ForgotPasswordQuery request, CancellationToken cancellationToken)
     {
-        bool result = await _accountRepository.ForgotPasswordEmail(request.email, request.role, cancellationToken);
+        bool result = await _accountRepository.ForgotPasswordEmail(request.Email, request.Role, cancellationToken);
 
-        if (result == false) return Errors.UserErrors.badEmail;
+        if (result == false) return Errors.UserErrors.BadEmail;
 
         return new AccountResponse("Sprawdź e-maila!");
     }

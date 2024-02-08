@@ -6,7 +6,7 @@ using ErrorOr;
 namespace Application.WorkAccount.Queries.ConfirmAccount;
 
 public record ConfirmAccountQuery(
-    string token,
-    string role,
-    Guid id
+    string Token,
+    string Role,
+    Guid Id
     ) : IRequest<ErrorOr<AccountResponse>>;

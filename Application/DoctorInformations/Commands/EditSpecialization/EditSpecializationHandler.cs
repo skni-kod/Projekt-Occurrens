@@ -23,9 +23,9 @@ public class EditSpecializationHandler : IRequestHandler<EditSpecializationComma
     {
         var userId = _getUserId.UserId;
 
-        var specializationToUpdate = await _doctorInfoRepository.UpdateSpecialization((Guid)userId, request.id, request.newSpecialization, cancellationToken);
+        var specializationToUpdate = await _doctorInfoRepository.UpdateSpecialization((Guid)userId, request.Id, request.NewSpecialization, cancellationToken);
 
-        if (!specializationToUpdate) return Errors.Permision.permissionDenied;
+        if (!specializationToUpdate) return Errors.Permision.PermissionDenied;
 
         return new DoctorInfoResponse("Zaktualizowano!");
     }

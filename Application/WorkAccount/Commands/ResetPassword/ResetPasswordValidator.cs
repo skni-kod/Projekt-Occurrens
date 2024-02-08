@@ -7,14 +7,14 @@ public class ResetPasswordValidator : AbstractValidator<ResetPasswordCommand>
 {
     public ResetPasswordValidator()
     {
-        RuleFor(x => x.token)
+        RuleFor(x => x.Token)
             .NotEmpty().WithMessage("Coś poszło nie tak!");
 
-        RuleFor(x => x.newPassword)
-            .Equal(e => e.confirmPassword)
+        RuleFor(x => x.NewPassword)
+            .Equal(e => e.ConfirmPassword)
             .WithMessage("Hasła się różnią!");
 
-        RuleFor(x => x.role)
+        RuleFor(x => x.Role)
             .IsInEnum().WithMessage("Niepoprawna rola!");
     }
 }

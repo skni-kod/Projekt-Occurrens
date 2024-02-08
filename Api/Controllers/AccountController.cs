@@ -100,7 +100,7 @@ public class AccountController : ApiController
     /// <param name="role"></param>
     /// <param name="id"></param>
     /// <returns></returns>
-    [HttpGet("verificateAccount/{token}/{role}/{id}")]
+    [HttpGet("verificate-account/{token}/{role}/{id}")]
     public async Task<IActionResult> ConfirmAccount([FromRoute] string token, [FromRoute] string role,
         [FromRoute] Guid id)
     {

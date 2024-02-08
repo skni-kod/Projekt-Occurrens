@@ -17,5 +17,5 @@ public record EditOfficeInfoCommand(
     string? Fridady,
     string? Saturday,
     string? Sunday,
-    Guid id
+    Guid Id
     ) : IRequest<ErrorOr<DoctorInfoResponse>>;

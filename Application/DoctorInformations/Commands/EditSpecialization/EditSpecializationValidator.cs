@@ -6,10 +6,10 @@ public class EditSpecializationValidator : AbstractValidator<EditSpecializationC
 {
     public EditSpecializationValidator()
     {
-        RuleFor(x => x.id)
+        RuleFor(x => x.Id)
             .NotNull().NotEmpty().WithMessage("Nie wybrano specjalizacji do edycji!");
 
-        RuleFor(x => x.newSpecialization)
+        RuleFor(x => x.NewSpecialization)
             .NotNull().NotEmpty().WithMessage("Nie podałeś nowej specjalizacji!");
     }
 }

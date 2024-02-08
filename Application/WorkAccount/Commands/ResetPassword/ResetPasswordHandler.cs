@@ -17,9 +17,9 @@ public class ResetPasswordHandler : IRequestHandler<ResetPasswordCommand, ErrorO
     
     public async Task<ErrorOr<AccountResponse>> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
     {
-        bool result = await _accountRepository.ResetPassword(request.token, request.newPassword, request.role, cancellationToken);
+        bool result = await _accountRepository.ResetPassword(request.Token, request.NewPassword, request.Role, cancellationToken);
 
-        if (result == false) return Errors.UserErrors.somethinkWentWrong;
+        if (result == false) return Errors.UserErrors.SomethinkWentWrong;
 
         return new AccountResponse("Pomyślnie zmieniono hasło!");
     }

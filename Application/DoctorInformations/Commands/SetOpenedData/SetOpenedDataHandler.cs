@@ -24,15 +24,15 @@ public class SetOpenedDataHandler : IRequestHandler<SetOpenedDataCommand, ErrorO
     {
         var userId = _getUserId.UserId;
 
-        var address = await _doctorInfoRepository.GetAddress(request.addressId, cancellationToken);
+        var address = await _doctorInfoRepository.GetAddress(request.AddressId, cancellationToken);
 
-        if (address is null) return Errors.DoctorInfoErrors.wrongAddressId;
+        if (address is null) return Errors.DoctorInfoErrors.WrongAddressId;
 
-        if (address.DoctorId != userId) return Errors.DoctorInfoErrors.notAccess;
+        if (address.DoctorId != userId) return Errors.DoctorInfoErrors.NotAccess;
 
         var isOpenedDataExist = await _doctorInfoRepository.IsOpenedDataExists(address.Id, cancellationToken);
 
-        if (isOpenedDataExist == true) return Errors.DoctorInfoErrors.dataExists;
+        if (isOpenedDataExist == true) return Errors.DoctorInfoErrors.DataExists;
 
         var openedData = new Is_opened
         {

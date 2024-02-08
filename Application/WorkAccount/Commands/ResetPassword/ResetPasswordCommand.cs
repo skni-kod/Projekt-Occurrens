@@ -6,8 +6,8 @@ using ErrorOr;
 namespace Application.WorkAccount.Commands.ResetPassword;
 
 public record ResetPasswordCommand(
-    string token,
-    string newPassword,
-    string confirmPassword,
-    UserRoles role
+    string Token,
+    string NewPassword,
+    string ConfirmPassword,
+    UserRoles Role
     ) : IRequest<ErrorOr<AccountResponse>>;

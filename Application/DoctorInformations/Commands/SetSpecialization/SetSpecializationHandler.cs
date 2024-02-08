@@ -25,7 +25,7 @@ public class SetSpecializationHandler : IRequestHandler<SetSpecializationCommand
         var specialization = new Specialization
         {
             DoctorId = userId,
-            Specjalization = request.specialization
+            Specjalization = request.Specialization
         };
         
         await _doctorInfoRepository.SetSpecialization(specialization, cancellationToken);

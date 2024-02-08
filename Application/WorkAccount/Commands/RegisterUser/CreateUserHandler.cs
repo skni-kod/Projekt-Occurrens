@@ -24,14 +24,14 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, ErrorOr<Acco
 
         if (isEmailExist)
         {
-            return Errors.UserErrors.duplicateEmail;
+            return Errors.UserErrors.DuplicateEmail;
         }
 
         var user = CreateUserFromRequest(request);
 
         if (user is Doctor doctor)
         {
-            await _accountRepository.createDoctorAccount(doctor, cancellationToken);
+            await _accountRepository.CreateDoctorAccount(doctor, cancellationToken);
         }
         else if (user is Patient patient)
         {

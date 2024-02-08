@@ -6,7 +6,7 @@ public class SetSpecializationValidator : AbstractValidator<SetSpecializationCom
 {
     public SetSpecializationValidator()
     {
-        RuleFor(x => x.specialization)
+        RuleFor(x => x.Specialization)
             .NotEmpty().WithMessage("Nie możesz dodać pustej specjalizacji!");
     }
 }
