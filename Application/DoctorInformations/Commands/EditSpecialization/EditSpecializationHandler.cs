@@ -22,6 +22,8 @@ public class EditSpecializationHandler : IRequestHandler<EditSpecializationComma
     public async Task<ErrorOr<DoctorInfoResponse>> Handle(EditSpecializationCommand request, CancellationToken cancellationToken)
     {
         var userId = _getUserId.UserId;
+        
+        if (userId is null) return Errors.DoctorInfoErrors.NotLogged;
 
         var specializationToUpdate = await _doctorInfoRepository.UpdateSpecialization((Guid)userId, request.Id, request.NewSpecialization, cancellationToken);
 

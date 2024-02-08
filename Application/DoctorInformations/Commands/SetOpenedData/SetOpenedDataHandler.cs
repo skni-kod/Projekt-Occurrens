@@ -23,6 +23,8 @@ public class SetOpenedDataHandler : IRequestHandler<SetOpenedDataCommand, ErrorO
     public async Task<ErrorOr<DoctorInfoResponse>> Handle(SetOpenedDataCommand request, CancellationToken cancellationToken)
     {
         var userId = _getUserId.UserId;
+        
+        if (userId is null) return Errors.DoctorInfoErrors.NotLogged;
 
         var address = await _doctorInfoRepository.GetAddress(request.AddressId, cancellationToken);
 

@@ -23,6 +23,8 @@ public class EditOfficeInfoHandler : IRequestHandler<EditOfficeInfoCommand, Erro
     {
         var userId = _getUserId.UserId;
 
+        if (userId is null) return Errors.DoctorInfoErrors.NotLogged;
+
         var toUpdate = new ToUpdateOfficeDto
         {
             Street = request.Street,

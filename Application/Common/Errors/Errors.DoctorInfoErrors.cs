@@ -20,5 +20,15 @@ public static partial class Errors
             code: "Data Exist",
             description: "Nie możesz utworzyć informacji dla gabinetu który posiada już informacje!"
             );
+        
+        public static Error WrongSpecializationId => Error.Conflict(
+            code: "Wrong id",
+            description: "Wybierz poprawny gabinet!"
+        );
+        
+        public static Error NotLogged => Error.Conflict(
+            code: "Logged error",
+            description: "Aby wykonać tą akcję musisz być zalogowany!"
+        );
     }
 }

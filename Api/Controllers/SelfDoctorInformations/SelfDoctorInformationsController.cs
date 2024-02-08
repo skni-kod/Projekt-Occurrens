@@ -1,5 +1,6 @@
 using Application.Contracts.DoctorInformationsAnswers.Office;
 using Application.Contracts.DoctorInformationsAnswers.Specialization;
+using Application.DoctorInformations.Commands.DeleteSpecialization;
 using Application.DoctorInformations.Commands.EditOfficeInfo;
 using Application.DoctorInformations.Commands.EditSpecialization;
 using Application.DoctorInformations.Commands.SetAddress;
@@ -12,9 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.SelfDoctorInformations;
 
-[ApiController]
 [Authorize(Roles = nameof(UserRoles.Doctor))]
-[Route("DoctorHimselfInformations")]
+[Route("doctor-informations")]
 public class SelfDoctorInformationsController : ApiController
 {
     private readonly IMediator _mediator;
@@ -29,7 +29,7 @@ public class SelfDoctorInformationsController : ApiController
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPost("SetSpecialization")]
+    [HttpPost("set-specialization")]
     public async Task<IActionResult> SetSpecialization([FromBody] SetSpecializationCommand command)
     {
         var response = await _mediator.Send(command);
@@ -45,7 +45,7 @@ public class SelfDoctorInformationsController : ApiController
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPost("SetAddress")]
+    [HttpPost("set-address")]
     public async Task<IActionResult> SetAddress([FromBody] SetAddressCommand command)
     {
         var response = await _mediator.Send(command);
@@ -61,7 +61,7 @@ public class SelfDoctorInformationsController : ApiController
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPost("Set-opened-info")]
+    [HttpPost("set-opened-info")]
     public async Task<IActionResult> SetOpenedInfo([FromBody] SetOpenedDataCommand command)
     {
         var response = await _mediator.Send(command);
@@ -78,10 +78,10 @@ public class SelfDoctorInformationsController : ApiController
     /// <param name="id"></param>
     /// <param name="request"></param>
     /// <returns></returns>
-    [HttpPut("Edit-specialization/{id}")]
+    [HttpPut("edit-specialization/{id}")]
     public async Task<IActionResult> EditSpecialization([FromRoute] Guid id, [FromBody] UpdateSpecializationRequest request)
     {
-        var command = new EditSpecializationCommand(id, request.specialization);
+        var command = new EditSpecializationCommand(id, request.Specialization);
 
         var response = await _mediator.Send(command);
 
@@ -97,7 +97,7 @@ public class SelfDoctorInformationsController : ApiController
     /// <param name="id"></param>
     /// <param name="request"></param>
     /// <returns></returns>
-    [HttpPut("Edit-doctor-office-info/{id}")]
+    [HttpPut("edit-doctor-office-info/{id}")]
     public async Task<IActionResult> EditDoctorOfficeInfo([FromRoute] Guid id, [FromBody] UpdateOfficeInfoRequest request)
     {
         var command = new EditOfficeInfoCommand(
@@ -115,6 +115,17 @@ public class SelfDoctorInformationsController : ApiController
             request.Sunday,
             id);
 
+        var response = await _mediator.Send(command);
+        
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors)
+            );
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteSpecialization([FromRoute] DeleteSpecializationCommand command)
+    {
         var response = await _mediator.Send(command);
         
         return response.Match(

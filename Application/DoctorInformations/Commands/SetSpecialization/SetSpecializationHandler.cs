@@ -1,3 +1,4 @@
+using Application.Common.Errors;
 using Application.Contracts.DoctorInformationsAnswers;
 using Core.DataFromClaims.UserId;
 using Core.DoctorInformations.Repositories;
@@ -21,6 +22,8 @@ public class SetSpecializationHandler : IRequestHandler<SetSpecializationCommand
     public async Task<ErrorOr<DoctorInfoResponse>> Handle(SetSpecializationCommand request, CancellationToken cancellationToken)
     {
         var userId = _getUserId.UserId;
+        
+        if (userId is null) return Errors.DoctorInfoErrors.NotLogged;
 
         var specialization = new Specialization
         {

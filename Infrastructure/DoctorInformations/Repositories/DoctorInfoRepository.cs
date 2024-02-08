@@ -98,4 +98,16 @@ public class DoctorInfoRepository : IDoctorInfoRepository
         
         return true;
     }
+
+    public async Task<bool> DaleteSpecialization(Guid id, Guid doctorId, CancellationToken cancellationToken)
+    {
+        var result = await _context.Specializations.FindAsync(id, cancellationToken);
+
+        if (result == null || result.DoctorId != doctorId) return false;
+
+        _context.Specializations.Remove(result);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return true;
+    }
 }
