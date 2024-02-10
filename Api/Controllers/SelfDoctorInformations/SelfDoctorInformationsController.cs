@@ -1,11 +1,13 @@
 using Application.Contracts.DoctorInformationsAnswers.Office;
 using Application.Contracts.DoctorInformationsAnswers.Specialization;
+using Application.DoctorInformations.Commands.DeleteOffice;
 using Application.DoctorInformations.Commands.DeleteSpecialization;
 using Application.DoctorInformations.Commands.EditOfficeInfo;
 using Application.DoctorInformations.Commands.EditSpecialization;
 using Application.DoctorInformations.Commands.SetAddress;
 using Application.DoctorInformations.Commands.SetOpenedData;
 using Application.DoctorInformations.Commands.SetSpecialization;
+using Application.DoctorInformations.Queries.GetSelfInfo;
 using Core.Account.enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -123,7 +125,12 @@ public class SelfDoctorInformationsController : ApiController
             );
     }
 
-    [HttpDelete("{id}")]
+    /// <summary>
+    /// Delete specialization
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpDelete("delete-specialization/{id}")]
     public async Task<IActionResult> DeleteSpecialization([FromRoute] DeleteSpecializationCommand command)
     {
         var response = await _mediator.Send(command);
@@ -132,5 +139,36 @@ public class SelfDoctorInformationsController : ApiController
             infoResponse => Ok(infoResponse),
             errors => Problem(errors)
             );
+    }
+
+    /// <summary>
+    /// Delete office
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpDelete("delete-office/{id}")]
+    public async Task<IActionResult> DeleteOffice([FromRoute] DeleteOfficeCommand command)
+    {
+        var response = await _mediator.Send(command);
+
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors)
+            );
+    }
+
+    /// <summary>
+    /// Get self informations
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet]
+    public async Task<IActionResult> DisplayData()
+    {
+        var response = await _mediator.Send(new GetSelfInfoQuery());
+        
+        return response.Match(
+            infoResponse => Ok(infoResponse),
+            errors => Problem(errors)
+        );
     }
 }

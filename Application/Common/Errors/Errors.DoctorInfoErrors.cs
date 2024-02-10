@@ -30,5 +30,15 @@ public static partial class Errors
             code: "Logged error",
             description: "Aby wykonać tą akcję musisz być zalogowany!"
         );
+
+        public static Error WrongOffice => Error.Conflict(
+            code: "Wrong id",
+            description: "Wybierz poprawny gabinet!"
+            );
+        
+        public static Error NotDataToDisplay => Error.Conflict(
+            code: "You haven't any data to display",
+            description: "Brak danych do wyświetlenia"
+        );
     }
 }

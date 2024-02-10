@@ -110,4 +110,39 @@ public class DoctorInfoRepository : IDoctorInfoRepository
 
         return true;
     }
+
+    public async Task<bool> DeteleOfiice(Guid id, Guid userId, CancellationToken cancellationToken)
+    {
+        var office = await _context.Addresses.FindAsync(id, cancellationToken);
+
+        if (office == null || office.DoctorId != userId) return false;
+
+        _context.Remove(office);
+
+        var openedInfo = await _context.IsOpeneds.FirstOrDefaultAsync(x => x.AddressId == id, cancellationToken);
+
+        if (openedInfo != null) _context.Remove(openedInfo);
+
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return true;
+    }
+
+    public async Task<GetSelfInfoDto?> GetSelfInfo(Guid userId, CancellationToken cancellationToken)
+    {
+        var doctor = await _context.Doctors
+            .Include(x => x.spetializations)
+            .Include(x => x.addresses)
+            .ThenInclude(x => x.is_opened)
+            .SingleOrDefaultAsync(x => x.Id == userId, cancellationToken);
+        
+        if (doctor == null)
+        {
+            return null;
+        }
+        
+        var selfInfoDto = doctor.SelfInfoAsDto();
+        return selfInfoDto;
+    }
+
 }
