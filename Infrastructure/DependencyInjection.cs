@@ -2,11 +2,13 @@
 using Core.Account.Repositories;
 using Core.DataFromClaims.UserId;
 using Core.Date;
+using Core.Diseases.Repositories;
 using Core.DoctorInformations.Repositories;
 using Domain.AuthenticationSettings;
 using Infrastructure.Account.Repositories;
 using Infrastructure.DataFromClaims.UserId;
 using Infrastructure.Date;
+using Infrastructure.Diseases.Repositories;
 using Infrastructure.DoctorInformations.Repositories;
 using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +33,7 @@ public static class DependencyInjection
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IDoctorInfoRepository, DoctorInfoRepository>();
         services.AddScoped<IGetUserId, GetUserId>();
+        services.AddScoped<IDiseaseRepository, DiseaseRepository>();
         
         services.AddHttpContextAccessor();
         

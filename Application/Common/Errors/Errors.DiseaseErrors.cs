@@ -1,0 +1,19 @@
+using ErrorOr;
+
+namespace Application.Common.Errors;
+
+public static partial class Errors
+{
+    public static class DiseaseErrors
+    {
+        public static Error NotLogged => Error.Conflict(
+            code: "Logged error",
+            description: "Aby wykonać tą akcję musisz być zalogowany!"
+        );
+        
+        public static Error PatientNotExist => Error.Conflict(
+            code: "Patient not exist",
+            description: "Nie możesz dodać nieistniejącemu pacjentowi choroby!"
+        );
+    }
+}

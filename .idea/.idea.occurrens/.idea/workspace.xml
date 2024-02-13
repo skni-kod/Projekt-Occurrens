@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aba840ab-85fe-40bd-bed6-1403dab427de" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.occurrens/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.occurrens/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/SelfDoctorInformations/SelfDoctorInformationsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/SelfDoctorInformations/SelfDoctorInformationsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.pdb" afterDir="false" />
@@ -26,13 +25,13 @@
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/ref/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/ref/Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/refint/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/refint/Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Common/Errors/Errors.DoctorInfoErrors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Common/Errors/Errors.DoctorInfoErrors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net7.0/Core.dll" afterDir="false" />
@@ -48,8 +47,6 @@
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/Application.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/ref/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net7.0/refint/Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DoctorInformations/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DoctorInformations/Extensions/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/DoctorInformations/Repositories/IDoctorInfoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DoctorInformations/Repositories/IDoctorInfoRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Domain.dll" afterDir="false" />
@@ -72,7 +69,8 @@
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/ref/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net7.0/refint/Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DoctorInformations/Repositories/DoctorInfoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DoctorInformations/Repositories/DoctorInfoRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistance/Migrations/OccurrensDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistance/Migrations/OccurrensDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.dll" afterDir="false" />
@@ -84,6 +82,7 @@
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.sourcelink.json" afterDir="false" />
@@ -257,6 +256,7 @@
       <workItem from="1707252574062" duration="11943000" />
       <workItem from="1707432134181" duration="3343000" />
       <workItem from="1707517371627" duration="7013000" />
+      <workItem from="1707851672008" duration="4762000" />
     </task>
     <servers />
   </component>
