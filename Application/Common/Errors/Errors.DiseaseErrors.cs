@@ -15,5 +15,10 @@ public static partial class Errors
             code: "Patient not exist",
             description: "Nie możesz dodać nieistniejącemu pacjentowi choroby!"
         );
+        
+        public static Error WrongPatient => Error.Conflict(
+            code: "Wrong patient",
+            description: "Wybrałeś złego pacjenta"
+        );
     }
 }

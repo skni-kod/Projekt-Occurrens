@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ckCyIH3yCFJjLdebHQk9R5Xx5dWd3Y+qVGNrhZQGWfsozvL6bZ+k2k/MnLxUgBFLSIco7cejjq5ktEr1+zJcmg==",
+  "dgSpecHash": "iTnQbtSNNVfMJbuzJcWpzGfJrwEffAkr5au0XuKvetaU9X76cjxosGbEfH/13H5plv0hqGPAf65Mtk/spTAbVQ==",
   "success": true,
-  "projectFilePath": "D:\\Occurrens\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jakub\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],

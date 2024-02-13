@@ -27,6 +27,7 @@ public class AddDiseaseHandler : IRequestHandler<AddDiseaseCommand, ErrorOr<Dise
 
         var newDisease = new Disease
         {
+            CreatedByDoctor = (Guid)doctorId,
             PatientId = request.PatientId,
             Name = request.Name,
             Description = request.Description,

@@ -1,4 +1,5 @@
 using Application.Diseases.Commands.AddDisease;
+using Application.Diseases.Commands.UpdateDisease;
 using Core.Account.enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -31,5 +32,21 @@ public class DiseasesController : ApiController
             diseaseResponse => Ok(diseaseResponse),
             errors => Problem(errors)
             );
+    }
+
+    /// <summary>
+    /// Update mistakes in disease
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpPut]
+    public async Task<IActionResult> UpdateDisease([FromBody] UpdateDiseaseCommand command)
+    {
+        var response = await _mediator.Send(command);
+        
+        return response.Match(
+            diseaseResponse => Ok(diseaseResponse),
+            errors => Problem(errors)
+        );
     }
 }

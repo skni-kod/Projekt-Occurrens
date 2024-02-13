@@ -1,3 +1,4 @@
+using Core.Diseases.DTOS;
 using Core.Diseases.Repositories;
 using Infrastructure.Persistance;
 using occurrensBackend.Entities.DatabaseEntities;
@@ -21,6 +22,21 @@ public class DiseaseRepository : IDiseaseRepository
 
         await _context.Diseases.AddAsync(disease, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
+        return true;
+    }
+
+    public async  Task<bool> UpdateDisease(Guid userId, Guid diseaseId, ToUpdateDiseaseDto dto, CancellationToken cancellationToken)
+    {
+        var disease = await _context.Diseases.FindAsync(diseaseId, cancellationToken);
+
+        if (disease is null || disease.CreatedByDoctor != userId) return false;
+
+        disease.Name = dto.Name ?? disease.Name;
+        disease.Description = dto.Description ?? disease.Description;
+        disease.Medicines = dto.Medicines ?? disease.Medicines;
+
+        await _context.SaveChangesAsync(cancellationToken);
+
         return true;
     }
 }
