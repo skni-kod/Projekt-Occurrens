@@ -1,4 +1,5 @@
 using Application.Diseases.Commands.AddDisease;
+using Application.Diseases.Commands.DeleteDisease;
 using Application.Diseases.Commands.UpdateDisease;
 using Core.Account.enums;
 using MediatR;
@@ -41,6 +42,22 @@ public class DiseasesController : ApiController
     /// <returns></returns>
     [HttpPut]
     public async Task<IActionResult> UpdateDisease([FromBody] UpdateDiseaseCommand command)
+    {
+        var response = await _mediator.Send(command);
+        
+        return response.Match(
+            diseaseResponse => Ok(diseaseResponse),
+            errors => Problem(errors)
+        );
+    }
+
+    /// <summary>
+    /// Delete disease
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpDelete]
+    public async Task<IActionResult> DeleteDisease([FromBody] DeleteDiseaseCommand command)
     {
         var response = await _mediator.Send(command);
         

@@ -20,5 +20,10 @@ public static partial class Errors
             code: "Wrong patient",
             description: "Wybrałeś złego pacjenta"
         );
+        
+        public static Error WrongDisease => Error.Conflict(
+            code: "Wrong disease",
+            description: "Wybrałeś złą chorobę"
+        );
     }
 }

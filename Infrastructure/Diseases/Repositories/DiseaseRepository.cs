@@ -39,4 +39,15 @@ public class DiseaseRepository : IDiseaseRepository
 
         return true;
     }
+
+    public async Task<bool> DeleteDisease(Guid doctorId, Guid diseaseId, CancellationToken cancellationToken)
+    {
+        var result = await _context.Diseases.FindAsync(diseaseId, cancellationToken);
+
+        if (result is null || result.CreatedByDoctor != doctorId) return false;
+
+        _context.Diseases.Remove(result);
+        await _context.SaveChangesAsync(cancellationToken);
+        return true;
+    }
 }
