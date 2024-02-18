@@ -3,7 +3,8 @@
     justify-content: center;
     width: 90%;
     font-size: 18px;
-    background-color: #16c2d5;
+    background-color: #167fd5;
+    color: white;
 }
 
 .mainTitle {
@@ -11,16 +12,20 @@
     justify-content: center;
     width: 80%;
     font-size: 36px;
-    background-color: #16c2d5;
+    background-color: #167fd5;
+    color: white;
 }
 
 .buttonLogin {
     display: flex;
     justify-content: center;
-    width: 10%;
-    font-size: 20px;
+    width: 15%;
+    font-size: 25px;
     background-color: white;
-    color: #16c2d5;
+    color: #167fd5;
+    border-radius: 15px;
+    text-decoration: none;
+    outline: none;
 }
   
   
