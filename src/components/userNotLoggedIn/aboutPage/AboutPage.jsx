@@ -1,5 +1,7 @@
 import './about.css';
 import { Link } from 'react-router-dom';
+import DoctorWoman from "../../../images/DoctorWoman.png";
+import Doctor from "../../../images/Doctor.png";
 
 const tekst = "Projekt Occurrens to projekt studenckiego koła naukowego SKNI KOD Politechniki Rzeszowskiej. Naszym celem jest zaprzyjaźnienie się z obecnie stosowanymi technologiami, a przy tym zrobienie czegoś wyjątkowego, co może pomóc każemu z nas.";
 const tekst2 = "Tym właśnie jest Projekt Occurrens. Z naszych pasji zrodziła się platforma, która ma w swych założeniach znacząco ułatwić komunikację na drodze lekarz - pacjent";
@@ -12,14 +14,13 @@ function AboutContent() {
       <br></br>
       <p className='mainTitle'>O Projekcie Occurrens</p>
       <br></br><br></br>
-      <p className='mainText'>{tekst}</p>
-      <br></br>
-      <p className='mainText'>{tekst2}</p>
-      <br></br>
-      <p className='mainText'>{tekst3}</p>
-      <br></br>
-      <p className='mainText'>{tekst4}</p>
-      <br></br>
+      <p className='mainText'>{tekst}</p> <br></br>
+
+      <p className='mainText'>{tekst2}</p> <br></br>
+      
+      <p className='mainText'>{tekst3}</p> <br></br>
+      
+      <p className='mainText'>{tekst4}</p> <br></br>
       <Link to="/login" className='buttonLogin'>
         Zaloguj się
       </Link>
@@ -31,14 +32,29 @@ function AboutContent() {
 
 
 function AboutPage() {
+  const containerStyle = {
+    display: 'grid',
+    gridTemplateColumns: '19% 62% 19%',
+    gridGap: '0px'
+  };
 
   return (    
-  <div className='background'>
-    <br></br>
-    <br></br>
-    <br></br><br></br><br></br><br></br>
-    <AboutContent />
-  </div>
+    <div  className='background' style={containerStyle}>
+      <div style={{height: '100vh', display: 'flex',
+    alignItems: 'flex-end'}}>
+        <img src={DoctorWoman} className='imageContainer'/>
+      </div>
+      <div>
+        <br></br>
+        <br></br>
+        <br></br><br></br><br></br><br></br>
+        <AboutContent />
+      </div>
+      <div style={{height: '100vh', display: 'flex',
+    alignItems: 'flex-end'}}>
+        <img src={Doctor} className='imageContainer'/>
+      </div>
+    </div>
   );
 }
 
