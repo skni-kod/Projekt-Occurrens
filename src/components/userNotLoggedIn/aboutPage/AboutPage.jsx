@@ -1,26 +1,24 @@
 import './about.css';
 import { Link } from 'react-router-dom';
 
-const tekst = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla turpis orci, tempor non elementum molestie, accumsan vel nulla. Integer gravida odio velit. In sit amet turpis dolor. Nulla sit amet turpis lectus. Nunc vel sollicitudin felis. Integer faucibus blandit nisl vel vehicula. Aliquam ultrices nec ligula in mollis. Praesent viverra mollis pharetra. Etiam semper nunc non enim placerat commodo. Proin elementum dapibus vestibulum. Nunc nunc velit, facilisis in eros ac, eleifend molestie neque. Nam in metus non nisi viverra rutrum et in quam. Nam eu risus et nunc dapibus efficitur vel ut risus. Integer non tristique erat. Etiam id feugiat felis, imperdiet maximus magna. Cras imperdiet feugiat erat. Integer hendrerit risus a elit ultrices cursus. Donec eu tortor lacus. Nullam non lacus posuere ligula venenatis faucibus. Donec sed quam imperdiet turpis dictum auctor. Ut rutrum, eros ut pulvinar bibendum, mi dolor commodo odio, sodales fermentum urna dolor sed ipsum. Etiam mattis a quam a fermentum. Fusce sollicitudin venenatis varius. Praesent dui justo, accumsan non pretium suscipit, semper eu libero. Proin nibh lorem, pharetra et massa sed, posuere venenatis ipsum. Donec vitae sagittis nisi, id malesuada orci. Quisque et mauris dictum, iaculis magna sed, cursus neque. Pellentesque non quam velit. In euismod id tellus in tempus. Nullam ornare sit amet mi sed feugiat. Nullam egestas consectetur ex a pretium. Nullam a viverra tortor. Nulla facilisi. Cras iaculis eros turpis, vel tincidunt est mattis et. Nullam laoreet risus sit amet ipsum tristique, a molestie ipsum sollicitudin. Vivamus sit amet ipsum et tellus efficitur vulputate. Donec accumsan pharetra turpis, eu commodo quam pharetra eget. Proin faucibus pretium erat, nec accumsan turpis sollicitudin eu. Quisque aliquet convallis magna eget rutrum. Aliquam at lectus fermentum, tincidunt quam vitae, ultrices mauris. Ut porta at arcu sed laoreet. Curabitur sagittis velit nec purus pretium, sed maximus elit dignissim. Integer condimentum consequat turpis eu varius."
-
+const tekst = "Projekt Occurrens to projekt studenckiego koła naukowego SKNI KOD Politechniki Rzeszowskiej. Naszym celem jest zaprzyjaźnienie się z obecnie stosowanymi technologiami, a przy tym zrobienie czegoś wyjątkowego, co może pomóc każemu z nas.";
+const tekst2 = "Tym właśnie jest Projekt Occurrens. Z naszych pasji zrodziła się platforma, która ma w swych założeniach znacząco ułatwić komunikację na drodze lekarz - pacjent";
+const tekst3 = "Aplikacja jest ciągle rozwijana, pragniemy wprowadzić wiele udogodnień zarówno dla pacjentów jak i dla lekrzy. Począwszy od wygodnej możliwości umówienia i odwołania wizyty, po indywidualną historię wizyt, aż po możliwość chatu na żywo z wykwalifikowanymi lekarzami."
+const tekst4 = "Jeżeli chcesz skorzytać z wszystkich dostępnych możliwości i tych, które są ciągle rozwijane, gorąco zachęcamy do zalogowania lub założenia darmowego konata, poprzez wciśnięcie poniższego przycisku. Pozdrawiamy Zespół Occurrens :)"
 
 function AboutContent() {
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      flexDirection: 'column',
-      alignItems: 'center', 
-      backgroundColor: '#167fd5',
-      width: '70%',
-      margin: '0 auto',
-      borderRadius: '15px',
-    }}> 
+    <div className='mainContainer'>
       <br></br>
-      <p className='mainTitle'>O Projekcie Ocuurrens</p>
+      <p className='mainTitle'>O Projekcie Occurrens</p>
       <br></br><br></br>
-      <p className='mainContainer'>{tekst}</p>
+      <p className='mainText'>{tekst}</p>
       <br></br>
+      <p className='mainText'>{tekst2}</p>
+      <br></br>
+      <p className='mainText'>{tekst3}</p>
+      <br></br>
+      <p className='mainText'>{tekst4}</p>
       <br></br>
       <Link to="/login" className='buttonLogin'>
         Zaloguj się
@@ -35,7 +33,10 @@ function AboutContent() {
 function AboutPage() {
 
   return (    
-  <div>
+  <div className='background'>
+    <br></br>
+    <br></br>
+    <br></br><br></br><br></br><br></br>
     <AboutContent />
   </div>
   );

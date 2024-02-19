@@ -1,10 +1,22 @@
-.mainContainer {
+.mainText {
     display: flex;
     justify-content: center;
     width: 90%;
     font-size: 18px;
     background-color: #167fd5;
     color: white;
+}
+
+.mainContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color:#167fd5;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 25px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
 }
 
 .mainTitle {
@@ -26,9 +38,18 @@
     border-radius: 15px;
     text-decoration: none;
     outline: none;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.9);
 }
   
   
   .centered-text {
     text-align: center;
+  }
+
+  
+  .background {
+    background-image: url("../../../images/Main.png");
+    background-size: cover;
+    height: 100vh;
+    margin-top: -10vh;
   }
