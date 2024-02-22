@@ -22,7 +22,12 @@ function KindOfLoginPage() {
         </div>
         <p className={classes.registerText}>
           Nie masz konta? Zarejestruj się jako lekarz
-          <span className={classes.registerLink}>klikając tutaj</span>
+          <span
+            className={classes.registerLink}
+            onClick={() => navigate("/register", { state: { role: 1 } })}
+          >
+            klikając tutaj
+          </span>
         </p>
         <div className={classes.cardBackground}></div>
       </div>
@@ -43,7 +48,12 @@ function KindOfLoginPage() {
         </div>
         <p className={classes.registerText}>
           Nie masz konta? Zarejestruj się jako pacjent
-          <span className={classes.registerLink}>klikając tutaj</span>
+          <span
+            className={classes.registerLink}
+            onClick={() => navigate("/register", { state: { role: 2 } })}
+          >
+            klikając tutaj
+          </span>
         </p>
         <div className={classes.cardBackground}></div>
       </div>

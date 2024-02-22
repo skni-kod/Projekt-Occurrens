@@ -1,0 +1,122 @@
+.background {
+  --text: #2e4450;
+  --login-btn-back: #136cfb;
+  --login-btn-back-hover: hsl(217, 97%, 47%);
+  --login-btn-text: #eaf2f8;
+  --register-text: #2e4450;
+  --register-link: #136cfb;
+}
+
+.background {
+  background-image: url("../../../images/BgImg.png");
+  background-size: cover;
+  height: 100vh;
+  margin-top: -10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  padding: 40px 80px 50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+  color: var(--text);
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  /* width: 250px; */
+}
+
+.twoInline {
+  display: flex;
+  gap: 50px;
+  align-items: end;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  font-size: 18px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  box-shadow: inset 0.5px 0.5px 5px -1px rgba(0, 0, 0, 0.35);
+}
+
+.inputLabel {
+  margin-left: 3px;
+}
+
+.acceptionInput {
+  margin-right: 7px;
+  height: 17px;
+  width: 17px;
+  vertical-align: -1.7px;
+}
+
+.registerBtn {
+  border: none;
+  background-color: var(--login-btn-back);
+  color: var(--login-btn-text);
+  padding: 15px 30px;
+  font-size: 23px;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.35);
+  margin-top: 25px;
+  transition: background-color 0.15s;
+}
+
+.registerBtn:hover {
+  background-color: var(--login-btn-back-hover);
+}
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  font-size: 18px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  box-shadow: inset 0.5px 0.5px 5px -1px rgba(0, 0, 0, 0.35);
+} */

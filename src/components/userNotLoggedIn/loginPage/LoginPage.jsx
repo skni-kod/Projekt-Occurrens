@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import classes from "./LoginPage.module.css";
 
 function LoginPage() {
+  const navigate = useNavigate();
+
   const selectedRole = useLocation().state.role;
   console.log(selectedRole);
 
@@ -71,7 +73,14 @@ function LoginPage() {
       </div>
       <p className={classes.registerText}>
         Nie masz konta? Zarejestruj się
-        <span className={classes.registerLink}>klikając tutaj</span>
+        <span
+          className={classes.registerLink}
+          onClick={() =>
+            navigate("/register", { state: { role: loginData.role } })
+          }
+        >
+          klikając tutaj
+        </span>
       </p>
     </div>
   );
