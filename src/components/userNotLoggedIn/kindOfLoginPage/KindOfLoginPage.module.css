@@ -1,0 +1,126 @@
+.background {
+  --card-back: hsl(206, 65%, 79%);
+  --login-text: #2e4450;
+  --role: #3c84fb;
+  --role-underline: #a50f0f;
+  --login-btn-back: #136cfb;
+  --login-btn-back-hover: hsl(217, 97%, 47%);
+  --login-btn-text: #eaf2f8;
+  --register-text: #2e4450;
+  --register-link: #136cfb;
+}
+
+.background {
+  background-image: url("../../../images/BgImg.png");
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+  margin-top: -10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 10vh;
+}
+
+.container {
+  font-style: italic;
+  margin: 40px 30px;
+  position: relative;
+}
+
+.card.doctor {
+  background-image: url("../../../images/doctor-login.png");
+  background-position-x: -49px;
+}
+
+.card.patient {
+  background-image: url("../../../images/patient-login.png");
+}
+
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 620px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cardBackground {
+  width: 620px;
+  height: 480px;
+  border-radius: 20px;
+  background-color: var(--card-back);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.card.doctor > .textContainer {
+  margin-left: auto;
+  margin-right: 70px;
+}
+
+.card.patient > .textContainer {
+  margin-left: 70px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginText {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--login-text);
+  text-align: center;
+}
+
+.loginRole {
+  color: var(--role);
+  text-decoration: underline;
+  text-decoration-color: var(--role-underline);
+  display: block;
+  margin-top: -10px;
+}
+
+.loginBtn {
+  border: none;
+  background-color: var(--login-btn-back);
+  color: var(--login-btn-text);
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin-top: 40px;
+  box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.35);
+  transition: background-color;
+}
+
+.loginBtn:hover {
+  background-color: var(--login-btn-back-hover);
+}
+
+.registerText {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--register-text);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.registerLink {
+  margin-left: 10px;
+  color: var(--register-link);
+  text-decoration: underline;
+  cursor: pointer;
+}
