@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import classes from "./KindOfLoginPage.module.css";
 
 function KindOfLoginPage() {
+  const navigate = useNavigate();
   return (
     <div className={classes.background}>
       <div className={classes.container}>
@@ -10,7 +12,12 @@ function KindOfLoginPage() {
               Zaloguj się jako
               <span className={classes.loginRole}>lekarz</span>
             </h3>
-            <button className={classes.loginBtn}>Zaloguj się</button>
+            <button
+              className={classes.loginBtn}
+              onClick={() => navigate("/log", { state: { role: 1 } })}
+            >
+              Zaloguj się
+            </button>
           </div>
         </div>
         <p className={classes.registerText}>
@@ -26,7 +33,12 @@ function KindOfLoginPage() {
               Zaloguj się jako
               <span className={classes.loginRole}>pacjent</span>
             </h3>
-            <button className={classes.loginBtn}>Zaloguj się</button>
+            <button
+              className={classes.loginBtn}
+              onClick={() => navigate("/log", { state: { role: 2 } })}
+            >
+              Zaloguj się
+            </button>
           </div>
         </div>
         <p className={classes.registerText}>
