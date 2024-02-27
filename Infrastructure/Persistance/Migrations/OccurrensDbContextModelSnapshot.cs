@@ -56,7 +56,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("occurrensBackend.Entities.DatabaseEntities.Diseases", b =>
+            modelBuilder.Entity("occurrensBackend.Entities.DatabaseEntities.Disease", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -328,7 +328,7 @@ namespace Infrastructure.Migrations
                     b.Navigation("Doctor");
                 });
 
-            modelBuilder.Entity("occurrensBackend.Entities.DatabaseEntities.Diseases", b =>
+            modelBuilder.Entity("occurrensBackend.Entities.DatabaseEntities.Disease", b =>
                 {
                     b.HasOne("occurrensBackend.Entities.DatabaseEntities.Patient", "Patient")
                         .WithMany("diseases")
