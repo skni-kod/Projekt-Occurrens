@@ -7,6 +7,6 @@ namespace Application.WorkAccount.Queries.ConfirmAccount;
 
 public record ConfirmAccountQuery(
     string Token,
-    string Role,
+    UserRoles Role,
     Guid Id
     ) : IRequest<ErrorOr<AccountResponse>>;

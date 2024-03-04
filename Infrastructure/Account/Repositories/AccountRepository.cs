@@ -103,9 +103,9 @@ public class AccountRepository : IAccountRepository
         return await Task.Run(() => tokenHandler.WriteToken(token));
     }
 
-    public async Task<bool> ConfirmAccount(string token, string role, Guid id, CancellationToken cancellationToken)
+    public async Task<bool> ConfirmAccount(string token, UserRoles role, Guid id, CancellationToken cancellationToken)
     {
-        if (role == "Doctor")
+        if (role == UserRoles.Doctor)
         {
             var doctor = await _context.Doctors.FindAsync(id);
             if (doctor is null || doctor.VerificationToken != token) return false;
@@ -113,7 +113,7 @@ public class AccountRepository : IAccountRepository
             doctor.VerifiedAt = _dateService.CurrentDateTime();
             await _context.SaveChangesAsync(cancellationToken);
         }
-        else if (role == "Patient")
+        else if (role == UserRoles.Patient)
         {
             var patient = await _context.Patients.FindAsync(id);
             if (patient is null || patient.VerificationToken != token) return false;

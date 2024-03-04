@@ -38,6 +38,7 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
+
 builder.Services.AddCors(opt => 
 {
     opt.AddDefaultPolicy(pol =>
@@ -46,7 +47,8 @@ builder.Services.AddCors(opt =>
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
-});
+}); 
+
 
 builder.Services
     .AddApplication()

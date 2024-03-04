@@ -100,7 +100,7 @@ public class AccountController : ApiController
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("verificate-account/{token}/{role}/{id}")]
-    public async Task<IActionResult> ConfirmAccount([FromRoute] string token, [FromRoute] string role,
+    public async Task<IActionResult> ConfirmAccount([FromRoute] string token, [FromRoute] UserRoles role,
         [FromRoute] Guid id)
     {
         var query = new ConfirmAccountQuery(token,role,id);
