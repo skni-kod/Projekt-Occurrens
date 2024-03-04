@@ -4,18 +4,18 @@
     using MediatR;
     using ErrorOr;
 
-    namespace Application.WorkAccount.Commands.SingUpUser;
+    namespace Application.WorkAccount.Commands.SignUpUser;
 
-    public class SingInUserHandler : IRequestHandler<SingInUserCommand, ErrorOr<AccountResponse>>
+    public class SignInUserHandler : IRequestHandler<SignInUserCommand, ErrorOr<AccountResponse>>
     {
         private readonly IAccountRepository _accountRepository;
 
-        public SingInUserHandler(IAccountRepository accountRepository)
+        public SignInUserHandler(IAccountRepository accountRepository)
         {
             _accountRepository = accountRepository;
         }
         
-        public async Task<ErrorOr<AccountResponse>> Handle(SingInUserCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<AccountResponse>> Handle(SignInUserCommand request, CancellationToken cancellationToken)
         {
             var user = await _accountRepository.UserData(request.Login,request.Password ,request.Who, cancellationToken);
 
