@@ -25,5 +25,10 @@ public static partial class Errors
             code: "Wrong disease",
             description: "Wybrałeś złą chorobę"
         );
+
+        public static Error NothingToDisplay => Error.Conflict(
+            code: "Nothing to display",
+            description: "Brak danych"
+            );
     }
 }

@@ -1,6 +1,7 @@
 using Application.Diseases.Commands.AddDisease;
 using Application.Diseases.Commands.DeleteDisease;
 using Application.Diseases.Commands.UpdateDisease;
+using Application.Diseases.Queries;
 using Core.Account.enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -63,6 +64,22 @@ public class DiseasesController : ApiController
         
         return response.Match(
             diseaseResponse => Ok(diseaseResponse),
+            errors => Problem(errors)
+        );
+    }
+
+    /// <summary>
+    /// Display all diseases of your patient
+    /// </summary>
+    /// <param name="query"></param>
+    /// <returns></returns>
+    [HttpGet("{PatientId}")]
+    public async Task<IActionResult> GetPatientDiseases([FromRoute] GetPatientDiseasesQuery query)
+    {
+        var response = await _mediator.Send(query);
+
+        return response.Match(
+            diseasesResponse => Ok(diseasesResponse),
             errors => Problem(errors)
         );
     }

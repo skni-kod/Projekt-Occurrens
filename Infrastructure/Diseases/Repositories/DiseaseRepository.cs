@@ -1,6 +1,8 @@
 using Core.Diseases.DTOS;
+using Core.Diseases.Extensions;
 using Core.Diseases.Repositories;
 using Infrastructure.Persistance;
+using Microsoft.EntityFrameworkCore;
 using occurrensBackend.Entities.DatabaseEntities;
 
 namespace Infrastructure.Diseases.Repositories;
@@ -49,5 +51,16 @@ public class DiseaseRepository : IDiseaseRepository
         _context.Diseases.Remove(result);
         await _context.SaveChangesAsync(cancellationToken);
         return true;
+    }
+
+    public async Task<List<GetPatientDiseasesDto>> GetPatientDiseases(Guid patientId, CancellationToken cancellationToken)
+    {
+        var result = await _context.Diseases.Where(x => x.PatientId == patientId).ToListAsync(cancellationToken);
+
+        if (result == null) return null;
+
+        var resultAsDto = result.Select(x => x.PatientDiseasesAsDto()).ToList();
+
+        return resultAsDto;
     }
 }
