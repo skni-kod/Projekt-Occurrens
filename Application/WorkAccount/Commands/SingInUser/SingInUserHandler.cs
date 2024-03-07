@@ -1,10 +1,11 @@
     using Application.Common.Errors;
     using Application.Contracts.AccountAnswer;
+    using Application.WorkAccount.Commands.SingUpUser;
     using Core.Account.Repositories;
     using MediatR;
     using ErrorOr;
 
-    namespace Application.WorkAccount.Commands.SingUpUser;
+    namespace Application.WorkAccount.Commands.SingInUser;
 
     public class SingInUserHandler : IRequestHandler<SingInUserCommand, ErrorOr<AccountResponse>>
     {

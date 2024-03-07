@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aqdGrAsgMHDJ51p0nVxATgr/0e7txeNSYcbTuFsgDZZmaw66pCl1ZWyUhCeC2Mp+vBMaGxjf4t4Vr8nLHbbanQ==",
+  "dgSpecHash": "Et+iRSAOPPnJBBMgfr7oH8TkZKlD10sm+8yY/rG+nvbLkKLBAN0x0SsFcYSyl/ZhkzuKYGYdggdj6z0U7xpHpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jcob\\Desktop\\Projekt-Occurrens\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
