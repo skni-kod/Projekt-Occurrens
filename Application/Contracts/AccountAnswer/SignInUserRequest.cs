@@ -1,4 +1,4 @@
-namespace Application.WorkAccount.Commands.SignInUser;
+namespace Application.Contracts.AccountAnswer;
 
 public record SignInUserRequest(
     string Login,
