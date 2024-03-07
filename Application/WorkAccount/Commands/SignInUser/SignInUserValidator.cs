@@ -1,10 +1,10 @@
 using FluentValidation;
 
-namespace Application.WorkAccount.Commands.SingUpUser;
+namespace Application.WorkAccount.Commands.SignInUser;
 
-public class SingInUserValidator : AbstractValidator<SingInUserCommand>
+public class SignInUserValidator : AbstractValidator<SignInUserCommand>
 {
-    public SingInUserValidator()
+    public SignInUserValidator()
     {
         RuleFor(x => x.Login)
             .NotEmpty().WithMessage("Podaj poprawny e-mail!");

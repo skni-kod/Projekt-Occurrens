@@ -3,9 +3,9 @@ using Core.Account.enums;
 using MediatR;
 using ErrorOr;
 
-namespace Application.WorkAccount.Commands.SingUpUser;
+namespace Application.WorkAccount.Commands.SignInUser;
 
-public record SingInUserCommand(
+public record SignInUserCommand(
     string Login,
     string Password,
     UserRoles Who

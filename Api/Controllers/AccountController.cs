@@ -1,6 +1,6 @@
 using Application.WorkAccount.Commands.RegisterUser;
 using Application.WorkAccount.Commands.ResetPassword;
-using Application.WorkAccount.Commands.SingUpUser;
+using Application.WorkAccount.Commands.SignInUser;
 using Application.WorkAccount.Queries.ConfirmAccount;
 using Application.WorkAccount.Queries.ForgotPassword;
 using Application.WorkAccount.Queries.GenerateTokenToResetPassword;
@@ -41,10 +41,10 @@ public class AccountController : ApiController
     /// <param name="request"></param>
     /// <param name="who"></param>
     /// <returns></returns>
-    [HttpPost("sing-in/{who}")]
-    public async Task<IActionResult> SingIn([FromBody] SingInUserRequest request, [FromRoute]UserRoles who)
+    [HttpPost("sign-in/{who}")]
+    public async Task<IActionResult> SignIn([FromBody] SignInUserRequest request, [FromRoute]UserRoles who)
     {
-        var command = new SingInUserCommand(
+        var command = new SignInUserCommand(
             request.Login,
             request.Password,
             who);
