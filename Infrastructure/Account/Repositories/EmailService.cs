@@ -12,15 +12,15 @@ public class EmailService : IEmailService
     public async Task SendEmail(EmailDto request)
     {
         var email = new MimeMessage();
-        email.From.Add(MailboxAddress.Parse("grover.mraz@ethereal.email"));
+        email.From.Add(MailboxAddress.Parse("occurrens@wp.pl"));
         email.To.Add(MailboxAddress.Parse(request.To));
         email.Subject = request.Subject;
         email.Body = new TextPart(TextFormat.Html) {Text = request.Body};
         
         using var smtp = new SmtpClient();
         
-        await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-        await smtp.AuthenticateAsync("grover.mraz@ethereal.email", "thuFyn2QFuZf1vbvfm");
+        await smtp.ConnectAsync("smtp.wp.pl", 465, SecureSocketOptions.StartTls);
+        await smtp.AuthenticateAsync("occurrens@wp.pl", "8!HP?S6fW)nuZj2");
         await smtp.SendAsync(email);
         await smtp.DisconnectAsync(true);
     }
