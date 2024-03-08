@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QzNM8mJnAtTNZWrJThmsE5UV/KsnPx/bkiMo5v/rBS3XlHNg63C5NIjXawLjdJzKqSqZropdhBhCj0Iz6Vv1/A==",
+  "dgSpecHash": "MVSQLajCuU7os2JEIVRYW2Sa6Cyf0zIOpdm6KEmK0EIJn2dm6j6qMgHBNB0zrLdJtPWVxfQvE8S3IxhfLfRn9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jcob\\Desktop\\Projekt-Occurrens\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
+    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
