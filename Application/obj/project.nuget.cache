@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mgXsAB3zHqR8wk0yQzJLsW+2XH2+hIQT6YgJvjbjlRtXV2F6r6lpMWLxoTRWJv5K27Sgl9pePnrZWxMoXP7rhw==",
+  "dgSpecHash": "iHjt8L7q0fsT0m9PsTK/XKp8BlDtSxDWRlWJsBr/YWfiBus/LefP3iHeYZ9H4cluRw+vLfqZSltFu7jtidx8IQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\Application\\Application.csproj",
+  "projectFilePath": "D:\\Projekt-Occurrens\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jakub\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\erroror\\1.9.0\\erroror.1.9.0.nupkg.sha512",

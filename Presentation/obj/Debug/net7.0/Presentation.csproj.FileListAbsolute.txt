@@ -37,3 +37,16 @@ C:\Users\Jcob\Desktop\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentati
 C:\Users\Jcob\Desktop\Projekt-Occurrens\Presentation\obj\Debug\net7.0\refint\Presentation.dll
 C:\Users\Jcob\Desktop\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.pdb
 C:\Users\Jcob\Desktop\Projekt-Occurrens\Presentation\obj\Debug\net7.0\ref\Presentation.dll
+D:\Projekt-Occurrens\Presentation\bin\Debug\net7.0\Presentation.deps.json
+D:\Projekt-Occurrens\Presentation\bin\Debug\net7.0\Presentation.dll
+D:\Projekt-Occurrens\Presentation\bin\Debug\net7.0\Presentation.pdb
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.csproj.AssemblyReference.cache
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.AssemblyInfoInputs.cache
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.AssemblyInfo.cs
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.csproj.CoreCompileInputs.cache
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.sourcelink.json
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.dll
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\refint\Presentation.dll
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\Presentation.pdb
+D:\Projekt-Occurrens\Presentation\obj\Debug\net7.0\ref\Presentation.dll

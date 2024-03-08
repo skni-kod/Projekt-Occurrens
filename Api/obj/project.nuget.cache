@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WRVAF4Q0BeIrMf5Q5wW/hrbAw1FJkUPQ+P2C3fWfPrOntc3uTAWqtDKMOQWIy1HkAffr81Hsrz+Vel/Zx8TMyg==",
+  "dgSpecHash": "3svbF91WYFgwOClugkzxq/AcnLATQTX+ukMBs10HrdteB+XBAn2AGmLf9fXGZmbZ8DJBuT4Y7oJlaHIVLfofQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-Occurrens\\Api\\Api.csproj",
+  "projectFilePath": "D:\\Projekt-Occurrens\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jakub\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",

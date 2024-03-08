@@ -34,3 +34,15 @@ C:\Users\Jcob\Desktop\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\Jcob\Desktop\Projekt-Occurrens\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\Jcob\Desktop\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\Jcob\Desktop\Projekt-Occurrens\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\Projekt-Occurrens\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\Projekt-Occurrens\Domain\bin\Debug\net7.0\Domain.dll
+D:\Projekt-Occurrens\Domain\bin\Debug\net7.0\Domain.pdb
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.sourcelink.json
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.dll
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\refint\Domain.dll
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\Domain.pdb
+D:\Projekt-Occurrens\Domain\obj\Debug\net7.0\ref\Domain.dll
