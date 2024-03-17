@@ -1,0 +1,6 @@
+.background {
+    background-image: url("../../../images/Main.png");
+    background-size: cover;
+    height: 100vh;
+    margin-top: -10vh;
+  }

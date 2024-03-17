@@ -5,6 +5,8 @@ import AboutPage from "./components/userNotLoggedIn/aboutPage/AboutPage";
 import ShowAllDoctorsPage from "./components/userNotLoggedIn/ShowAllDoctorsPage/ShowAllDoctorsPage";
 import KindOfLoginPage from "./components/userNotLoggedIn/kindOfLoginPage/KindOfLoginPage";
 
+import VisitSelection from "./components/userNotLoggedIn/visitSelection/visitSelection";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,7 +14,7 @@ const router = createBrowserRouter([
     id: "main",
     children: [
       { index: true, element: <MainPage /> },
-      { path: "about", element: <AboutPage /> },
+      { path: "about", element: <VisitSelection /> },//bedzie chwilowo pozmieniane - tutaj ma być aboutPage!!
       { path: "doctors", element: <ShowAllDoctorsPage /> },
       { path: "login", element: <KindOfLoginPage /> },
     ],
