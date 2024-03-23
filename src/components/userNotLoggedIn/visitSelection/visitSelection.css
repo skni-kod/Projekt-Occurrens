@@ -4,3 +4,116 @@
     height: 100vh;
     margin-top: -10vh;
   }
+
+  .mainframe{
+    background-color: rgba(28, 35, 162, 0.1);
+    width: 85%;
+    height: 85%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  
+  .react-calendar__navigation {
+    background-color: #7bd8df;
+    border-radius: 5px;
+  }
+
+  .react-calendar {
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 10px;
+
+  }
+
+  .react-calendar button {
+    background-color: #7bd8df; 
+    color: #333333; 
+    padding: 5px 5px;
+    margin: 5px 5px; 
+    border-radius: 5px; 
+    border: 1px solid #333333 !important;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .react-calendar__navigation span {
+    /* Dodaj style dla etykiety */
+    font-size: 18px; /* Przykładowa wielkość czcionki */
+    font-weight: bold; /* Pogrubienie tekstu */
+    color: #010101; /* Kolor tekstu */
+    /* Dodatkowe style według potrzeb */
+  }
+
+
+
+  .visitHeading{
+    background-color: #2225ae;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+  }
+
+  .visitsFrame{
+    width: 50%;
+    border-radius: 30px;
+    background-color: rgba(28, 35, 162, 0.1);
+  }
+
+.visit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 20px;
+  border: 1px solid #333333;
+  background-color: #d62430;
+  font-size: 15px;
+  align-items: center;
+  width: 90%;
+  margin-top: 5px;
+}
+
+.visitSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wybierzGodzineButton{
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.wybranyDoktor{
+  background-color: orange;
+  width: 95%;
+  height: 90%;
+}
+
+.chosenDoctor{
+  color:#2225ae;
+  height: 35%;
+  font-size: 16px;
+  width: 90%;
+}
+
+
+.calendarAndChosenDoctor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+}
+
+.scaledImage {
+  width: 50px; /* Ustawienie szerokości na 100 pikseli */
+  height: 50px; /* Ustawienie wysokości na 100 pikseli */
+  object-fit: cover;
+}
