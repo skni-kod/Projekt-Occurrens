@@ -7,18 +7,20 @@
 
   .mainframe{
     background-color: rgba(28, 35, 162, 0.1);
-    width: 85%;
+    width: 90%;
     height: 85%;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 20px;
+    padding: 15px;
   }
 
   
   .react-calendar__navigation {
-    background-color: #7bd8df;
+    /* background-color: #7bd8df; */
+    background-color: #2225ae;
+    color: white;
     border-radius: 5px;
   }
 
@@ -30,9 +32,11 @@
   }
 
   .react-calendar button {
-    background-color: #7bd8df; 
-    color: #333333; 
-    padding: 5px 5px;
+    /* background-color: #7bd8df; */
+    background-color: #2225ae;
+
+    /* color: #333333; */
+    color: white;
     margin: 5px 5px; 
     border-radius: 5px; 
     border: 1px solid #333333 !important;
@@ -44,8 +48,10 @@
     /* Dodaj style dla etykiety */
     font-size: 18px; /* Przykładowa wielkość czcionki */
     font-weight: bold; /* Pogrubienie tekstu */
-    color: #010101; /* Kolor tekstu */
+    /* color: #010101; /* Kolor tekstu */
     /* Dodatkowe style według potrzeb */
+    color: white;
+    
   }
 
 
@@ -61,7 +67,7 @@
   }
 
   .visitsFrame{
-    width: 50%;
+    width: 55%;
     border-radius: 30px;
     background-color: rgba(28, 35, 162, 0.1);
   }
@@ -83,6 +89,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
+  height: 40%;
+  overflow-y: auto;
 }
 
 .wybierzGodzineButton{
@@ -91,14 +100,19 @@
 }
 
 .wybranyDoktor{
-  background-color: orange;
+  /*background-color: orange; */
   width: 95%;
-  height: 90%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 25px;
 }
 
 .chosenDoctor{
   color:#2225ae;
-  height: 35%;
+  height: 37%;
   font-size: 16px;
   width: 90%;
 }
@@ -116,4 +130,13 @@
   width: 50px; /* Ustawienie szerokości na 100 pikseli */
   height: 50px; /* Ustawienie wysokości na 100 pikseli */
   object-fit: cover;
+}
+
+.askForVisitButton{
+  width: 20%;
+  height: 15%;
+  color: white;
+  background-color: #2225ae;
+  border-radius: 5px;
+  font-size: 20px;
 }

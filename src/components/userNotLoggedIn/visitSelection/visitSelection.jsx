@@ -35,17 +35,19 @@ function TextAreaComponent() {
   };
 
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
       <label>
-        <textarea 
+        <textarea  style={{borderRadius: '10px', resize: 'none'}}
           value={textAreaInput} 
           onChange={handleChange} 
           placeholder="Wpisz wiadomość..." 
-          rows={8} 
-          cols={75} 
+          rows={7} 
+          cols={70} 
         />
       </label>
       <p>Wprowadzona wiadomość: {textAreaInput}</p>
+      <AskForVisitButton/>
+
     </div>
   );
 }
@@ -58,6 +60,17 @@ function FrameWithVisits(){
         <Visit></Visit>
         <Visit></Visit>
         <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+        <Visit></Visit>
+
+
       </div>
   )
 }
@@ -66,12 +79,11 @@ function Visits(){
   return (
     <div className='visitsFrame'>
       <div  className='visitHeading'>Wizyty</div>
-        <div>
-          <FrameWithVisits></FrameWithVisits>
-          <MessageToDoctor></MessageToDoctor>
-        </div>
+      <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column', height: '100%'}}>
+        <FrameWithVisits></FrameWithVisits>
+        <MessageToDoctor></MessageToDoctor>
+      </div>
     </div>
-
   )
 }
 
@@ -123,11 +135,18 @@ function CalendarAndChosenDoctor(){
   )
   }
 
+  function AskForVisitButton(){
+    return(
+      <button className='askForVisitButton'>Wyślij</button>
+    )
+  }
+
   function MessageToDoctor(){
     return(
       <div className='wybranyDoktor'>
-        Podaj wiadomość, którą chciałbyć dołączyć do zgłoszenia do lekarza (opis choroby, jak się czujesz, jakich leków potrzebujesz itd.):
-        <TextAreaComponent></TextAreaComponent>
+        <h1>Wybrana godzina: </h1>
+        Podaj wiadomość, którą chciałbyć dołączyć do zgłoszenia do lekarza (opis choroby, jak się czujesz, jakich leków potrzebujesz, preferencje odnośnie godziny itd.):
+        <TextAreaComponent/>
       </div>
     )
   }
