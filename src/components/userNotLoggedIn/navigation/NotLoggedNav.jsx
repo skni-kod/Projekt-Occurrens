@@ -11,7 +11,9 @@ function NotLoggedNav() {
             <li className={classes.li}>
               <NavLink
                 to="/"
-                className={({ isActive }) => (isActive ? classes.active : classes.notactive)}
+                className={({ isActive }) =>
+                  isActive ? classes.active : classes.notactive
+                }
               >
                 Strona Główna
               </NavLink>
@@ -19,7 +21,9 @@ function NotLoggedNav() {
             <li className={classes.li}>
               <NavLink
                 to="about"
-                className={({ isActive }) => (isActive ? classes.active : classes.notactive)}
+                className={({ isActive }) =>
+                  isActive ? classes.active : classes.notactive
+                }
               >
                 O nas
               </NavLink>
@@ -27,15 +31,19 @@ function NotLoggedNav() {
             <li className={classes.li}>
               <NavLink
                 to="doctors"
-                className={({ isActive }) => (isActive ? classes.active : classes.notactive)}
+                className={({ isActive }) =>
+                  isActive ? classes.active : classes.notactive
+                }
               >
                 Nasi lekarze
               </NavLink>
             </li>
             <li className={classes.li}>
               <NavLink
-                to="login"
-                className={({ isActive }) => (isActive ? classes.active : classes.notactive)}
+                to="login-role"
+                className={({ isActive }) =>
+                  isActive ? classes.active : classes.notactive
+                }
               >
                 Zaloguj się
               </NavLink>

@@ -1,11 +1,13 @@
 .background {
-  --card-back: hsl(206, 65%, 79%);
+  --card-back: #a7ceec;
+  --card-shadow: rgba(0, 0, 0, 0.2);
   --login-text: #2e4450;
-  --role: #3c84fb;
+  --role-text: #3c84fb;
   --role-underline: #a50f0f;
-  --login-btn-back: #136cfb;
-  --login-btn-back-hover: hsl(217, 97%, 47%);
   --login-btn-text: #eaf2f8;
+  --login-btn-back: #136cfb;
+  --login-btn-back-hover: #045dec;
+  --login-btn-shadow: rgba(0, 0, 0, 0.35);
   --register-text: #2e4450;
   --register-link: #136cfb;
 }
@@ -45,7 +47,7 @@
   height: 480px;
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px 0px var(--shadow);
   border-radius: 20px;
   position: relative;
   z-index: 1;
@@ -85,7 +87,7 @@
 }
 
 .loginRole {
-  color: var(--role);
+  color: var(--role-text);
   text-decoration: underline;
   text-decoration-color: var(--role-underline);
   display: block;
@@ -102,7 +104,7 @@
   padding: 15px 30px;
   border-radius: 8px;
   margin-top: 40px;
-  box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 3px 5px 10px 0px var(--login-btn-shadow);
   transition: background-color;
 }
 

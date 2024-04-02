@@ -14,7 +14,7 @@ function KindOfLoginPage() {
             </h3>
             <button
               className={classes.loginBtn}
-              onClick={() => navigate("/log", { state: { role: 1 } })}
+              onClick={() => navigate("/login", { state: { role: 1 } })}
             >
               Zaloguj się
             </button>
@@ -40,7 +40,7 @@ function KindOfLoginPage() {
             </h3>
             <button
               className={classes.loginBtn}
-              onClick={() => navigate("/log", { state: { role: 2 } })}
+              onClick={() => navigate("/login", { state: { role: 2 } })}
             >
               Zaloguj się
             </button>
