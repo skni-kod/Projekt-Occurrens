@@ -50,14 +50,21 @@ function LoginPage() {
             <label className={classes.inputLabel}>Hasło</label>
           )}
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Hasło"
             value={loginData.password}
             onChange={updateLoginData}
             className={classes.input}
           />
-          <span className={classes.forgot}>Zapomniałeś hasła?</span>
+          <span
+            className={classes.forgot}
+            onClick={() =>
+              navigate("forgot-password", { state: { role: loginData.role } })
+            }
+          >
+            Zapomniałeś hasła?
+          </span>
           <label className={classes.remember}>
             <input
               type="checkbox"

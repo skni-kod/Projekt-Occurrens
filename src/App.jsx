@@ -6,6 +6,8 @@ import ShowAllDoctorsPage from "./components/userNotLoggedIn/ShowAllDoctorsPage/
 import KindOfLoginPage from "./components/userNotLoggedIn/kindOfLoginPage/KindOfLoginPage";
 import LoginPage from "./components/userNotLoggedIn/loginPage/LoginPage";
 import RegisterPage from "./components/userNotLoggedIn/registerPage/RegisterPage";
+import ForgotPasswordPage from "./components/userNotLoggedIn/forgotPasswordPage/ForgotPasswordPage";
+import ResetPasswordPage from "./components/userNotLoggedIn/forgotPasswordPage/resetPasswordPage/ResetPasswordPage";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
       { path: "login-role", element: <KindOfLoginPage /> },
       { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegisterPage /> },
+      { path: "login/forgot-password", element: <ForgotPasswordPage /> },
+      { path: "reset-password", element: <ResetPasswordPage /> },
     ],
   },
 ]);
