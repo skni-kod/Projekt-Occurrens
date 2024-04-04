@@ -1,5 +1,5 @@
 import classes from "./StartingPage.module.css";
-import RemindersCard from "/home/mono/vsprojects/otherprojects/Projekt-Occurrens/src/components/userDoctor/assets/RemindersCard.jsx"
+import RemindersCard from "/home/mono/vsprojects/otherprojects/Projekt-Occurrens/src/components/userDoctor/assets/RemindersCard.jsx";
 function StartingPage() {
     return (
       <>

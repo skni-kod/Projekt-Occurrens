@@ -1,7 +1,11 @@
 import classes from "./RemindersCard.module.css";
 
-export default function RemindersCard(props) {
+function RemindersCard(props) {
+    const {logo, description, } = props;
+
     return (
         <div className = {classes.card}>{props.children}</div>
     );
 }
+
+export default RemindersCard;
