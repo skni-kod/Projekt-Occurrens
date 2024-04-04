@@ -10,6 +10,7 @@ function StartingPage() {
           </div>
           <img className={classes.doctor} src="https://i.imgur.com/ZvxPxuo.png" alt = "doctor"/>
           </div>
+          <br/>
         </div>
       </>
     )
