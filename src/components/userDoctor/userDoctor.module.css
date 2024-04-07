@@ -88,6 +88,7 @@ html
 
 .offices
 {
+  position: relative;
   grid-area: offices;
   height: calc(90vh - 25px);
   /* transform: translate(0, -25px); */
@@ -100,8 +101,9 @@ html
   text-align: right;
   padding: 30px;
   top: 40%;
-  transform: translate(0,-50%);
+  transform: translate(0,-34vh);
   background-color: #e2e8ee69;
+  overflow: scroll;
 }
 
 .profileData
@@ -139,6 +141,7 @@ html
   background-color: #136cfb;
   position: absolute;
   right: 3vh;
+  margin-top: 10px;
   padding: 5px;
 }
 
