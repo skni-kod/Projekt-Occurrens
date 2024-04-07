@@ -1,0 +1,144 @@
+html
+{
+  background-image: url("../../images/BgImg.png");
+  background-size: cover;
+}
+
+.site{
+  position: relative;
+}
+.site h1{
+  font-size: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transparent{
+  background-color: rgba(0, 0, 0, 0.152);
+  border-radius: 50px;
+}
+
+.doctorProfile
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0%);
+
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "userData offices"
+    "specs offices";
+    column-gap: 1em;
+
+
+  position: relative;
+  height: 90vh;
+  width: 120vh;
+}
+
+.doctorProfile h2{
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.gridBox
+{
+  background-color: #eaf2f8;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.doctorProfile div h2{
+  text-align: center;
+  background-color: #136cfb;
+}
+
+.userData
+{
+  grid-area: userData;
+}
+
+
+
+.specs
+{
+  position: relative;
+  bottom: 25px;
+  grid-area: specs;
+}
+
+.specsList
+{
+  overflow: scroll;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: #e2e8ee6b;
+  width: 55vh;
+  height: 30vh;
+}
+
+.offices
+{
+  grid-area: offices;
+  height: calc(90vh - 25px);
+  /* transform: translate(0, -25px); */
+}
+
+.officesData{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: right;
+  padding: 30px;
+  top: 40%;
+  transform: translate(0,-50%);
+  background-color: #e2e8ee69;
+}
+
+.profileData
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profileData div{
+  margin: 10px;
+  text-align: right;
+  background-color: #e2e8ee69;
+}
+
+.editDataButton{
+  color: white;
+  border-radius: 10px;
+  background-color: #136cfb;
+  position: absolute;
+  right: 22vh;
+  padding: 5px;
+}
+.editSpecsButton{
+  color: white;
+  border-radius: 10px;
+  background-color: #136cfb;
+  position: absolute;
+  right: 3vh;
+  padding: 5px;
+}
+
+.editOfficesButton{
+  color: white;
+  border-radius: 10px;
+  background-color: #136cfb;
+  position: absolute;
+  right: 3vh;
+  padding: 5px;
+}
+
