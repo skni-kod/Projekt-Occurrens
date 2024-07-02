@@ -100,7 +100,7 @@ html
   grid-template-columns: 1fr 1fr;
   text-align: right;
   padding: 30px;
-  top: 40%;
+  top: 45%;
   transform: translate(0,-34vh);
   background-color: #e2e8ee69;
   overflow: scroll;
@@ -118,30 +118,16 @@ html
   background-color: #e2e8ee69;
 }
 
-.editDataButton{
-  color: white;
-  border-radius: 10px;
-  background-color: #136cfb;
-  position: absolute;
-  right: 22vh;
-  padding: 5px;
+h2 img{
+  width: 20px;
 }
-.editSpecsButton{
-  color: white;
-  border-radius: 10px;
-  background-color: #136cfb;
-  position: absolute;
-  right: 3vh;
-  padding: 5px;
+button{
+  background-color: transparent;
+  border: none;
+  position: relative;
 }
 
-.editOfficesButton{
-  color: white;
-  border-radius: 10px;
-  background-color: #136cfb;
-  position: absolute;
-  right: 3vh;
-  margin-top: 10px;
-  padding: 5px;
+button:hover{
+  cursor: pointer;
+  transform: scale(1.2);
 }
-
