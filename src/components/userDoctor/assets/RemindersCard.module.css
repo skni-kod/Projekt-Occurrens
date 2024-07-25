@@ -5,6 +5,8 @@
     height: 395px;
     margin:10px;
     background-color: #89dee2;
+    display: inline-flex;
+    justify-content: space-between;
 }
 
 .button {
@@ -27,7 +29,7 @@
 
 .information {
     font-family: Roboto;
-    font-size: 26px;
+    font-size: 40px;
     font-style: italic;
     font-weight: 900;
     line-height: 52px;
@@ -36,6 +38,14 @@
     color: #2E4450;
     display: flex;
     flex-direction: column;
+}
+
+.components {
+    margin-right: 70px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .logo {

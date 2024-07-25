@@ -22,18 +22,30 @@
 
 .header {
     position: fixed;
-    top: 175px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.presentationContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reminders {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .doctor {  
-    height: 550px;
+    height: 400px;
+    margin-right: 100px;
 }
 
 .description {
