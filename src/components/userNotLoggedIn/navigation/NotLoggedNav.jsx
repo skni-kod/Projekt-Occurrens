@@ -18,7 +18,7 @@ function NotLoggedNav() {
             </li>
             <li className={classes.li}>
               <NavLink
-                to="about"
+                to="forgotPassword"
                 className={({ isActive }) => (isActive ? classes.active : classes.notactive)}
               >
                 O nas

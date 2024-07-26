@@ -1,7 +1,13 @@
 import './ForgotPassword.css';
 import React, { useState } from 'react';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import EmailSent from "../emailSent/EmailSent";
+import { useNavigate } from 'react-router-dom';
+import { NavLink, Outlet } from "react-router-dom";
 
-function AboutPage() {
+
+function ForgotPassword() {
+
     return <div className='background'>
         <ForgotPasswordFrame/>
     
@@ -25,6 +31,9 @@ function AboutPage() {
         <h1>Podaj swój adres email</h1>
         <TextAreaComponent/>
         <SendButton/>
+        <NavLink
+                to="emailSent"
+              ></NavLink>
     </div>
   }
 
@@ -47,12 +56,18 @@ function AboutPage() {
   }
 
   function SendButton(){
+    const navigate = useNavigate(); // Use useNavigate hook to programmatically navigate
+
+  const handleButtonClick = () => {
+    // Navigate to the emailSent route
+    navigate("emailSent");
+  };
     return(
-      <button className='sendButton'>Wyślij</button>
+      <button className='sendButton' onClick={handleButtonClick}>Wyślij </button>
     )
   }
 
   
   
-  export default AboutPage;
+  export default ForgotPassword;
   
