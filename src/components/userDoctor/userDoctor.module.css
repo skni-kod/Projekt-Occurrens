@@ -98,12 +98,13 @@ html
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  row-gap: 7px;
   text-align: right;
-  padding: 30px;
+  padding: 20px;
   top: 45%;
   transform: translate(0,-34vh);
   background-color: #e2e8ee69;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .profileData
@@ -131,3 +132,4 @@ button:hover{
   cursor: pointer;
   transform: scale(1.2);
 }
+

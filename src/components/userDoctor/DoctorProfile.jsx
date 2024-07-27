@@ -1,8 +1,8 @@
 import styles from "./userDoctor.module.css";
-import editPencil from  "../../icons/edit-3-svgrepo-com.svg";
 import UserData from "./UserData";
 import Specs from "./Specs";
 import Offices from "./Offices";
+
 
 const DoctorProfile = () => {
     return ( 
