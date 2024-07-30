@@ -15,10 +15,12 @@ const router = createBrowserRouter([
     id: "main",
     children: [
       { index: true, element: <MainPage /> },
-      { path: "forgotPassword", element: <ForgotPassowrd /> },
+      { path: "about", element: <AboutPage /> },
       { path: "doctors", element: <ShowAllDoctorsPage /> },
       { path: "login", element: <KindOfLoginPage /> },
-      { path: "forgotPassword/emailSent", element: <EmailSent />}
+      { path: "forgotPassword", element: <ForgotPassowrd /> },
+      { path: "forgotPassword/emailSent", element: <EmailSent />},
+      { path: "passwordReset", element: <PasswordReset />}
     ],
   },
 ]);

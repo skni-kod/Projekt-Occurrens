@@ -1,6 +1,6 @@
 import './PasswordReset.css';
 
-function EmailSent() {
+function PasswordReset() {
   return <div className='background'>
       <ForgotPasswordFrame/>
   </div>;
@@ -47,5 +47,5 @@ function NewPasswordFrame(){
     )
   }
 
-  export default EmailSent;
+  export default PasswordReset;
   
