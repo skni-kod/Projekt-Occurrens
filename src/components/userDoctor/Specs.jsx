@@ -1,26 +1,27 @@
 import styles from "./userDoctor.module.css";
-import editPencil from  "../../icons/edit-3-svgrepo-com.svg";
-import { useState } from "react";
-import SpecsPopup from './userDoctorPopups/SpecsPopup';
 import '../userDoctor/userDoctorPopups/UserDataPopup';
+import deleteButton from "../../icons/icons8-delete.svg";
 
 
 const Specs = () => {
-    const [specsButtonPopup, setSpecsTrigger] = useState(false); 
     return ( 
         <div className={`${styles.specs} ${styles.gridBox}`}>
-            <SpecsPopup trigger = { specsButtonPopup } setTrigger = { setSpecsTrigger }>
-                <p>ELO</p>
-            </SpecsPopup>
             <h2>
-            Specjalizacje 
-            <button onClick={() => { setSpecsTrigger(true)}}>
-                <img src={editPencil} alt="edit button"/>
-            </button>
+            Specjalizacje &nbsp;
             </h2>
         <div className={styles.specsList}>
-
+            <div className="specName">[specjalizacja 1] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 2] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 3] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 4] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 5] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 6] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 7] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 8] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 9] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>   
+            <div className="specName">[specjalizacja 10] <button className="bin"> <img src={ deleteButton } alt="deletebutton" /></button> </div>  
         </div>
+        <button className={styles.specAddButton}>Dodaj Specjalizacje</button>
             
     </div>
      );

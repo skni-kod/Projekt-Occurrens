@@ -11,7 +11,7 @@ function SpecsPopup(props){
                         <img src={ closeButton } alt="closebutton" />
                     </button> 
                 </button>
-                { props.children}
+                { props.children }
             </div>
         </div>
     ) : '';

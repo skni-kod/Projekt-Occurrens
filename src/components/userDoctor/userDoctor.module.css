@@ -78,12 +78,36 @@ html
 
 .specsList
 {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr auto;
   overflow: scroll;
   margin-left: 20px;
   margin-top: 20px;
   background-color: #e2e8ee6b;
   width: 55vh;
   height: 30vh;
+}
+
+.specsList .specName{
+  display: block;
+}
+
+.bin {
+  grid-column: 2 / 3;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.specAddButton{
+  display: block;
+  position: relative;
+  left: 65%;
+  border-radius: 20px;
+  padding: 5px;
+  color: #fff;
+  background-color: #136cfb;
+  cursor: pointer;
 }
 
 .offices
@@ -105,6 +129,28 @@ html
   transform: translate(0,-34vh);
   background-color: #e2e8ee69;
   overflow: hidden;
+}
+
+.officesPopupFlex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.officesPopupFlex input{
+  border-radius: 20px;
+  width: 70vh;
+}
+
+.officesPopupFlex button{
+  background-color: #136cfb;
+  margin-top: 10px;
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 20vh;
 }
 
 .profileData
@@ -130,6 +176,9 @@ button{
 
 button:hover{
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
+.userDataSaveButton{
+  background-color: #136cfb;
+}

@@ -31,8 +31,9 @@ const UserData = () => {
                                 <input/>
                             </div>
                         </form>
+                        <button className="userDataSaveButton" >Save</button>
             </UserDataPopup>
-            <h2>Dane użytkownika 
+            <h2>Dane użytkownika &nbsp; 
             <button onClick={ () => setUserDataPopup(true) }>
                 <img src={editPencil} alt="edit button"/>
             </button>
