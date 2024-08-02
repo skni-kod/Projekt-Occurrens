@@ -65,6 +65,7 @@ function RegisterPage() {
                 value={registerData.firstName}
                 onChange={updateRegisterData}
                 className={classes.input}
+                required
               />
             </div>
             <div className={classes.inputGroup}>
@@ -91,6 +92,7 @@ function RegisterPage() {
             value={registerData.lastName}
             onChange={updateRegisterData}
             className={classes.input}
+            required
           />
           <div className={classes.twoInline}>
             <div className={classes.inputGroup}>
@@ -98,12 +100,15 @@ function RegisterPage() {
                 <label className={classes.inputLabel}>Numer telefonu</label>
               )}
               <input
-                type="text"
+                type="tel"
+                inputmode = "numeric"
                 name="phoneNumber"
                 placeholder="Numer telefonu"
+                pattern="[0-9]{9}"
                 value={registerData.phoneNumber}
                 onChange={updateRegisterData}
                 className={classes.input}
+                required
               />
             </div>
             <div className={classes.inputGroup}>
@@ -117,6 +122,7 @@ function RegisterPage() {
                 value={registerData.email}
                 onChange={updateRegisterData}
                 className={classes.input}
+                required
               />
             </div>
           </div>
@@ -132,6 +138,7 @@ function RegisterPage() {
                 value={registerData.password}
                 onChange={updateRegisterData}
                 className={classes.input}
+                required
               />
             </div>
             <div className={classes.inputGroup}>
@@ -145,6 +152,7 @@ function RegisterPage() {
                 value={registerData.passwordConfirm}
                 onChange={updateRegisterData}
                 className={classes.input}
+                required
               />
             </div>
           </div>
@@ -155,6 +163,7 @@ function RegisterPage() {
             value={registerData.birthDate}
             onChange={updateRegisterData}
             className={classes.input}
+            required
           />
           <label className={classes.acception}>
             <input
