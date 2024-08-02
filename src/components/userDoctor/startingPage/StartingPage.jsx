@@ -1,5 +1,15 @@
 import classes from "./StartingPage.module.css";
 import RemindersCard from "/home/mono/vsprojects/otherprojects/Projekt-Occurrens/src/components/userDoctor/assets/RemindersCard.jsx";
+
+let day = new Date().toLocaleString("pl-PL", {day : 'numeric'})
+let month = new Date().toLocaleString("pl-PL", {month : 'long'})
+let year = new Date().getFullYear()
+
+const separator = ' '
+
+let dateString = day + separator + month + separator + year
+
+
 function StartingPage() {
     return (
       <>
@@ -12,8 +22,10 @@ function StartingPage() {
               <img className={classes.doctor} src="https://i.imgur.com/ZvxPxuo.png" alt = "doctor"/>
             </div>
             <div className={classes.reminders}>
-              <RemindersCard description = "Dzisiaj jest (data) (X) Pacjentów oczekuje na wizytę" buttonText = "Dzisiejsze wizyty"/>
-              <RemindersCard description = "Masz X nowych wizyt do przydzielenia" buttonText = "Wizyty do przedzielenia"/>
+              <RemindersCard logo = "https://i.imgur.com/QJtQdLL.png" 
+              description = {<div>Dzisiaj jest <br></br> {dateString} <br></br><br></br> 5 pacjentów oczekuje na wizytę </div>} 
+              buttonText = "Dzisiejsze wizyty"/>
+              <RemindersCard logo = "https://i.imgur.com/MXql48L.png" description = "Masz X nowych wizyt do przydzielenia" buttonText = "Wizyty do przedzielenia"/>
             </div>
           </div>
           <br/>
