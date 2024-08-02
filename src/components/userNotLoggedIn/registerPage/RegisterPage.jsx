@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import classes from "./RegisterPage.module.css";
+import { register } from "../api/RegistrationAPI";
 
 function RegisterPage() {
   const roleChoice = useLocation().state.role;
@@ -31,6 +32,8 @@ function RegisterPage() {
   }
 
   function submitRegisterData(event) {
+register(registerData)
+
     event.preventDefault();
     console.log(registerData);
   }
@@ -40,86 +43,77 @@ function RegisterPage() {
       <div className={classes.container}>
         <h2 className={classes.title}>REJESTRACJA</h2>
         <form onSubmit={submitRegisterData} className={classes.form}>
-          {registerData.pesel && (
-            <label className={classes.inputLabel}>Pesel</label>
-          )}
-          {registerData.role === 2 && (
-            <input
-              type="text"
-              name="pesel"
-              placeholder="Pesel"
-              value={registerData.pesel}
-              onChange={updateRegisterData}
-              className={classes.input}
-            />
+          {registrationData.role === 2 &&
+          (
+            <div className={classes.inputGroup}>
+              <label className={classes.inputLabel}>Pesel</label>
+              <input
+                type="text"
+                name="pesel"
+                placeholder="Pesel"
+                value={registrationData.pesel}
+                onChange={updateRegisterData}
+                className={classes.input}
+              />
+            </div>
           )}
           <div className={classes.twoInline}>
-            <div className={classes.inputGroup}>
-              {registerData.firstName && (
-                <label className={classes.inputLabel}>Imię</label>
-              )}
+            <div className={classes.inputGroup}>  
+              <label className={classes.inputLabel}>Imię</label>              
               <input
                 type="text"
                 name="firstName"
                 placeholder="Imię"
-                value={registerData.firstName}
+                value={registrationData.firstName}
                 onChange={updateRegisterData}
                 className={classes.input}
                 required
               />
             </div>
             <div className={classes.inputGroup}>
-              {registerData.secondName && (
-                <label className={classes.inputLabel}>Drugie imię</label>
-              )}
+              <label className={classes.inputLabel}>Drugie imię</label>
               <input
                 type="text"
                 name="secondName"
                 placeholder="Drugie imię"
-                value={registerData.secondName}
+                value={registrationData.secondName}
                 onChange={updateRegisterData}
                 className={classes.input}
               />
             </div>
           </div>
-          {registerData.lastName && (
             <label className={classes.inputLabel}>Nazwisko</label>
-          )}
           <input
             type="text"
             name="lastName"
             placeholder="Nazwisko"
-            value={registerData.lastName}
+            value={registrationData.lastName}
             onChange={updateRegisterData}
             className={classes.input}
             required
           />
           <div className={classes.twoInline}>
             <div className={classes.inputGroup}>
-              {registerData.phoneNumber && (
                 <label className={classes.inputLabel}>Numer telefonu</label>
-              )}
               <input
                 type="tel"
                 inputmode = "numeric"
                 name="phoneNumber"
                 placeholder="Numer telefonu"
                 pattern="[0-9]{9}"
-                value={registerData.phoneNumber}
+                value={registrationData.phoneNumber}
                 onChange={updateRegisterData}
                 className={classes.input}
                 required
               />
             </div>
             <div className={classes.inputGroup}>
-              {registerData.email && (
                 <label className={classes.inputLabel}>Adres e-mail</label>
-              )}
               <input
                 type="email"
                 name="email"
                 placeholder="Adres e-mail"
-                value={registerData.email}
+                value={registrationData.email}
                 onChange={updateRegisterData}
                 className={classes.input}
                 required
@@ -128,28 +122,24 @@ function RegisterPage() {
           </div>
           <div className={classes.twoInline}>
             <div className={classes.inputGroup}>
-              {registerData.password && (
-                <label className={classes.inputLabel}>Hasło</label>
-              )}
+              <label className={classes.inputLabel}>Hasło</label>
               <input
                 type="text"
                 name="password"
                 placeholder="Hasło"
-                value={registerData.password}
+                value={registrationData.password}
                 onChange={updateRegisterData}
                 className={classes.input}
                 required
               />
             </div>
             <div className={classes.inputGroup}>
-              {registerData.passwordConfirm && (
-                <label className={classes.inputLabel}>Powtórz hasło</label>
-              )}
+              <label className={classes.inputLabel}>Powtórz hasło</label>
               <input
                 type="text"
                 name="passwordConfirm"
                 placeholder="Powtórz hasło"
-                value={registerData.passwordConfirm}
+                value={registrationData.passwordConfirm}
                 onChange={updateRegisterData}
                 className={classes.input}
                 required
@@ -160,7 +150,7 @@ function RegisterPage() {
           <input
             type="date"
             name="birthDate"
-            value={registerData.birthDate}
+            value={registrationData.birthDate}
             onChange={updateRegisterData}
             className={classes.input}
             required
@@ -169,7 +159,7 @@ function RegisterPage() {
             <input
               type="checkbox"
               name="acception"
-              value={registerData.acception}
+              value={registrationData.acception}
               onChange={updateRegisterData}
               className={classes.acceptionInput}
             />
