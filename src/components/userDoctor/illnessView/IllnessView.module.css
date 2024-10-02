@@ -1,0 +1,71 @@
+.bcg{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.089);
+}
+body{
+    background-image: url(../../../images/BgImg.png);
+    overflow: hidden;
+    background-size: cover;
+}
+
+.maingrid{
+    position: relative;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    column-gap: 4vh;
+    
+    border-radius: 20px;
+    display: grid;
+    width: 70%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.label{
+    color: white;
+    -webkit-text-stroke: 1px black;
+    font-size: x-large;
+    font-weight: 900;
+    background-color: #136cfb;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    padding: 1vh 0;
+    min-width: 400px;
+}
+
+.info{
+    min-height: 300px;
+    height: 30vh;
+    border-radius: 20px;
+    background-color: #eaf2f8;
+}
+
+.description{
+    min-height: 300px;
+    background-color: #eaf2f8;
+    border-radius: 20px;
+    height: 30vh;
+}
+
+.history{
+    min-height: 300px;
+    background-color: #eaf2f8;
+    border-radius: 20px;
+    height: 30vh;
+    transform: translateY(-3vh);
+}
+
+.meds{
+    min-height: 300px;
+    background-color: #eaf2f8;
+    border-radius: 20px;
+    height: 30vh;
+    transform: translateY(-3vh);
+}
+
+/*  musze dostać się do każdego kafelka i ustawic mu wymiary
+    translatem nałożyć dolne kafelki na te wyższe  
+    
+*/
