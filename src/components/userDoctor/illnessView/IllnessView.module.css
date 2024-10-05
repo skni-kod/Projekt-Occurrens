@@ -1,4 +1,4 @@
-.bcg{
+.background{
     height: 100vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.089);
@@ -35,7 +35,7 @@ body{
     min-width: 400px;
 }
 
-.info{
+.info{ 
     min-height: 300px;
     height: 30vh;
     border-radius: 20px;
@@ -65,7 +65,95 @@ body{
     transform: translateY(-3vh);
 }
 
-/*  musze dostać się do każdego kafelka i ustawic mu wymiary
-    translatem nałożyć dolne kafelki na te wyższe  
-    
-*/
+.infodata{
+    position: relative; 
+    text-align: end;
+    top: 4%;
+    right: 4%;
+    display: grid;
+    column-gap: 1vh;
+    row-gap: 1vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0 2vh 0 2vh;   
+}
+
+.patientNameSurnameData, .doctorNameSurnameData, .illnessData, .dateOfAddingTheIllnessData{
+    background-color: #d0e5f5;
+    margin: 1vh 0 1vh 0;
+}
+
+.patientNameSurname, .doctorNameSurname, .illness, .dateOfAddingTheIllness{
+    margin: 1vh 0 1vh 0;
+}
+
+.illnessDesctription{
+    position: relative;
+    background-color: #d0e5f5;
+    width: 90%;
+    height: 70%;
+    max-height: 300px;
+    top: 5%;
+    left: 5%;
+    overflow: scroll;
+}
+
+.illnessHistory{
+    position: relative;
+    background-color: #d0e5f5;
+    overflow: scroll;
+    width: 90%;
+    height: 70%;
+    max-height: 300px;
+    top: 5%;
+    left: 5%;
+}
+
+.medsData{
+    position: relative;
+    background-color: #d0e5f5;
+    overflow: scroll;
+    width: 90%;
+    height: 50%;
+    max-height: 200px;
+    top: 5%;
+    left: 5%;
+}
+
+.editIllnessButton{
+    position: relative;
+    top: 12%;
+    left: 20%;    
+    background-color: #136cfb;
+    color: #d0e5f5;
+    padding: 2%;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    text-shadow: 1px 1px 10px black;
+}
+.editIllnessButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.deleteIllnessButton{
+    position: relative;
+    top: 12%;
+    left: 40%;
+    background-color: rgb(255, 69, 69);
+    color: #d0e5f5;
+    padding: 2%;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    text-shadow: 1px 1px 10px black;
+}
+
+.deleteIllnessButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
