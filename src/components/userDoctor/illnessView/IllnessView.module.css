@@ -118,42 +118,12 @@ body{
     overflow: scroll;
     width: 90%;
     height: 50%;
-    max-height: 200px;
+    max-height: 210px;
     top: 5%;
     left: 5%;
 }
 
-.editIllnessButton{
-    position: relative;
-    top: 12%;
-    left: 20%;    
-    background-color: #136cfb;
-    color: #d0e5f5;
-    padding: 2%;
-    border-radius: 10px;
-    border: none;
-    font-weight: 600;
-    text-shadow: 1px 1px 10px black;
-}
-.editIllnessButton:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.expanded {
+    height: 100%; /* większa wysokość po ukryciu przycisków */
 }
 
-.deleteIllnessButton{
-    position: relative;
-    top: 12%;
-    left: 40%;
-    background-color: rgb(255, 69, 69);
-    color: #d0e5f5;
-    padding: 2%;
-    border-radius: 10px;
-    border: none;
-    font-weight: 600;
-    text-shadow: 1px 1px 10px black;
-}
-
-.deleteIllnessButton:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-}
