@@ -1,0 +1,307 @@
+.background {
+    background-image: url("../../../images/Main.png");
+    background-size: cover;
+    height: 100vh;
+    margin-top: -10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainframe{
+    /*background-color: rgba(28, 35, 162, 0.1); */
+    background-color: rgba(213, 31, 159, 0.5);
+    width: 85%;
+    height: 82%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1px;
+  }
+
+  .doctornote{
+    background-color: blue;
+    width: 100%;
+    height: 22%;
+    border-radius: 20px;
+  }
+
+  .headingnote{
+    background-color: orange;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .summaryframe{
+    width: 100%;
+    height: 75%;
+  }
+
+  .summaryheading{
+    background-color: aqua;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+  }
+  
+  .summaryandimage{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .summaryandmedicines{
+    background-color: pink;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .photo{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  .summary{
+    background-color: yellow;
+    width: 90%;
+    height: 45%;
+  }
+
+  .medicnes{
+    background-color: green;
+    width: 90%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .smallheading{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    height: 25%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .medicinesfieldandslider{
+    background-color: orange;
+    width: 100%;
+    height: 100%;
+  }
+
+  .medicinesfield{
+    background-color: blue;
+    display: flex;
+    width: 90%;
+    height: 90%;
+  }
+
+  .visitinfo{
+    background-color: lightblue;
+    width: 40%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  .visitdetails{
+    background-color: pink;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px;
+  }
+
+  .detail{
+    width: 50%;
+    text-align: right;
+    font-size: 12px;
+  }
+
+  .payment{
+    background-color: orange;
+    width: 90%;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .visitHeading{
+    background-color: #2225ae;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+
+  .visitsFrame{
+    width: 50%;
+    border-radius: 30px;
+    background-color: rgba(28, 35, 162, 0.1);
+  }
+
+.visit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 20px;
+  border: 1px solid #333333;
+  font-size: 22px;
+  align-items: center;
+  width: 90%;
+  height: 20%;
+  margin-top: 5px;
+  background-color: white;
+}
+
+.visitSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  overflow-y: auto;
+}
+
+.wybierzGodzineButton{
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.wybranyDoktor{
+  /*background-color: orange; */
+  width: 95%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.chosenDoctor{
+  color:#2225ae;
+  height: 37%;
+  font-size: 16px;
+  width: 90%;
+}
+
+
+.calendarAndChosenDoctor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+}
+
+.scaledImage {
+  width: 50px; /* Ustawienie szerokości na 100 pikseli */
+  height: 50px; /* Ustawienie wysokości na 100 pikseli */
+  object-fit: cover;
+}
+
+.askForVisitButton{
+  width: 20%;
+  height: 20%;
+  color: white;
+  background-color: #2225ae;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.4s;
+  transition: color 0.4s;
+  cursor: pointer;
+}
+
+.askForVisitButton:hover {
+  background-color:white; /* Nowy kolor po najechaniu kursorem */
+  color: #2225ae;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* szerokość scrollbara */
+}
+
+
+/* Styl dla paska przewijania */
+::-webkit-scrollbar-thumb {
+  background: #2225ae; /* kolor paska przewijania */
+  border-radius: 20px; /* Zaokrąglenie paska przewijania */
+}
+
+/* Styl dla paska przewijania po najechaniu kursorem */
+::-webkit-scrollbar-thumb:hover {
+  background: white; /* kolor paska przewijania po najechaniu kursorem */
+}
+
+.choseHourButton{
+  width: 30%;
+  height: 90%;
+  color: white;
+  background-color: #2225ae;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.4s;
+  transition: color 0.4s;
+  cursor: pointer;
+}
+
+.choseHourButton:hover {
+  background-color:white; /* Nowy kolor po najechaniu kursorem */
+  color: #2225ae;
+}
