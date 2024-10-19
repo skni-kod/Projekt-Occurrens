@@ -25,6 +25,15 @@ function DoctorNote(){
   return(
     <div className='doctornote'>
       <div className='headingnote'>Notatka od lekarza</div>
+      <Note />
+    </div>
+  )
+}
+
+function Note({note}){
+  return(
+    <div className='note'>
+      {note}
     </div>
   )
 }
@@ -75,7 +84,7 @@ function Summary(){
   return(
     <div className='summary'>
       <SmallHeading text={"Podsumowanie "} />
-      <VisitDetails text={"Data Wizyty "} information={"dipa"} />
+      <VisitDetails text={"Data Wizyty "}/>
       <VisitDetails text={"Imie i Nazwisko Lekarza "} />
       <VisitDetails text={"Choroba "} />
       <VisitDetails text={"Do zapłaty "} /> 
@@ -144,11 +153,20 @@ function VisitInfo({info}){
 function Payment(){
   return(
     <div className='payment'>
-      dupa
+      <img className='paymentphoto' src = {paypal} />
+      <img className='paymentphoto' src = {visa} />
+      <img className='paymentphoto' src = {mastercad} />
+      <img className='paymentphoto' src = {americanexpress} />
+      <PaymentButton />
     </div>
   )
 }
 
+function PaymentButton(){
+  return(
+    <button className='paymentbutton'> Przejdź do płatności </button>
+  )
+}
 
   
 export default AfterVisit;
