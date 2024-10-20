@@ -26,6 +26,8 @@
 
   .headingnote{
     background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     width: 100%;
     height: 30%;
     display: flex;
@@ -43,6 +45,8 @@
   }
 
   .summaryheading{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     height: 12%;
     width: 100%;
     display: flex;
@@ -81,6 +85,7 @@
     width: 15%;
     height: 90%;
     border-radius: 5px;
+    margin: 0.5%;
   }
 
   .summary{
@@ -103,7 +108,10 @@
   }
 
   .smallheading{
-    background-color: red;
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,17 +123,65 @@
   }
 
   .medicinesfieldandslider{
-    background-color: orange;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+    height: 70%;
+    margin-top: 1%;
   }
 
   .medicinesfield{
-    background-color: blue;
+    background-color: lightblue;
     display: flex;
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto; /* Enables scrolling */
+    white-space: pre-wrap;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 2%;
   }
+  ::-webkit-scrollbar {
+    width: 10px; /* szerokość scrollbara */
+    
+  }
+  
+  
+  /* Styl dla paska przewijania */
+  ::-webkit-scrollbar-thumb {
+    background: #2225ae; /* kolor paska przewijania */
+    border-radius: 20px; /* Zaokrąglenie paska przewijania */
+  }
+  
+  /* Styl dla paska przewijania po najechaniu kursorem */
+  ::-webkit-scrollbar-thumb:hover {
+    background: white; /* kolor paska przewijania po najechaniu kursorem */
+  }
+
+  .scroll-container {
+    width: 300px;
+    height: 150px;
+    padding-right: 20px; /* Adds space for the scrollbar */
+    overflow-y: auto;
+    box-shadow: inset 0px 0px 0px 1px #ccc; /* Border-like shadow */
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 5px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
 
   .visitinfo{
     background-color: lightblue;
@@ -155,7 +211,8 @@
   }
 
   .payment{
-    width: 90%;
+    padding-left: 3%;
+    width: 95%;
     height: 20%;
     margin: 2px;
     display: flex;
@@ -192,148 +249,3 @@
     font-size: 13px;
     padding: 3px;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .visitHeading{
-    background-color: #2225ae;
-    color: white;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-weight: bold;
-  }
-
-  .visitsFrame{
-    width: 50%;
-    border-radius: 30px;
-    background-color: rgba(28, 35, 162, 0.1);
-  }
-
-.visit{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border-radius: 20px;
-  border: 1px solid #333333;
-  font-size: 22px;
-  align-items: center;
-  width: 90%;
-  height: 20%;
-  margin-top: 5px;
-  background-color: white;
-}
-
-.visitSection{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 40%;
-  overflow-y: auto;
-}
-
-.wybierzGodzineButton{
-  border-radius: 5px;
-  font-size: 20px;
-}
-
-.wybranyDoktor{
-  /*background-color: orange; */
-  width: 95%;
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 16px;
-  margin-top: 25px;
-}
-
-.chosenDoctor{
-  color:#2225ae;
-  height: 37%;
-  font-size: 16px;
-  width: 90%;
-}
-
-
-.calendarAndChosenDoctor{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 35%;
-}
-
-.scaledImage {
-  width: 50px; /* Ustawienie szerokości na 100 pikseli */
-  height: 50px; /* Ustawienie wysokości na 100 pikseli */
-  object-fit: cover;
-}
-
-.askForVisitButton{
-  width: 20%;
-  height: 20%;
-  color: white;
-  background-color: #2225ae;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  transition: background-color 0.4s;
-  transition: color 0.4s;
-  cursor: pointer;
-}
-
-.askForVisitButton:hover {
-  background-color:white; /* Nowy kolor po najechaniu kursorem */
-  color: #2225ae;
-}
-
-::-webkit-scrollbar {
-  width: 8px; /* szerokość scrollbara */
-}
-
-
-/* Styl dla paska przewijania */
-::-webkit-scrollbar-thumb {
-  background: #2225ae; /* kolor paska przewijania */
-  border-radius: 20px; /* Zaokrąglenie paska przewijania */
-}
-
-/* Styl dla paska przewijania po najechaniu kursorem */
-::-webkit-scrollbar-thumb:hover {
-  background: white; /* kolor paska przewijania po najechaniu kursorem */
-}
-
-.choseHourButton{
-  width: 30%;
-  height: 90%;
-  color: white;
-  background-color: #2225ae;
-  border-radius: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  transition: background-color 0.4s;
-  transition: color 0.4s;
-  cursor: pointer;
-}
-
-.choseHourButton:hover {
-  background-color:white; /* Nowy kolor po najechaniu kursorem */
-  color: #2225ae;
-}

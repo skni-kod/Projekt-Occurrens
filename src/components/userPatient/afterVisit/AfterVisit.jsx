@@ -5,6 +5,7 @@ import visa from './../../../../src/images/visa.png';
 import mastercad from './../../../../src/images/mastercard.png';
 import americanexpress from './../../../../src/images/americane.png';
 
+
 function AfterVisit() {
   return(
   <div className='background'>
@@ -97,7 +98,7 @@ function Medicines(){
   return(
     <div className='medicnes'>
       <SmallHeading text={"Leki"} />
-      <MedicinesFieldAndSlider/>
+      <MedicinesFieldAndSlider />
     </div>
   )
 }
